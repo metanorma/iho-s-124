@@ -1,0 +1,30 @@
+== Data product identification
+
+*Title*:: Navigational Warning
+
+*Alternate Title*:: NAVWARN
+
+*Abstract*:: Navigational Warning dataset is a vector dataset containing the extent
+and nature of an individual Navigational Warning, for navigational purposes.
+Information on the duration of the information may be included.
+
+*Geographic Description*:: Areas specific to marine navigation
+
+*Spatial Resolution*:: Information is compiled as scale independent information using
+the required accuracy
+
+*Purpose*:: Navigational Warning datasets are produced for navigational purposes
+within an ECDIS, and to allow the producer or issuer to exchange NAVWARN information
+with navigators.
+
+*Language*:: English must be used for international services, while local language may
+be provided in addition to English. National services may provide either local
+language only, or a combination of local language and English.
+
+*Classification*:: 1) Unclassified
+
+*Spatial Representation Type*:: Vector
+
+*Point of Contact*:: Producing Agency
+
+*Use Limitation*:: Should be used with an ENC

@@ -1,0 +1,8 @@
+[[annex-a]]
+[appendix,obligation=normative]
+== Data Classification and Encoding Guide
+
+The latest version of the Data Classification and Encoding Guide (DCEG) is found on
+the website:
+
+https://www.bshc.pro/s-124-document-management-page/[S-124 document management page -- www.bshc.pro]

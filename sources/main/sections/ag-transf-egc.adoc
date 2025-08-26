@@ -1,0 +1,5 @@
+[[annex-g]]
+[appendix,obligation=normative]
+== Transformation Into EGC
+
+This appendix will be developed further in subsequent versions of this document.

@@ -1,0 +1,292 @@
+[[cls-4]]
+== Data Content and Structure
+
+The S-124 application schema is simple and aims to remain compatible with S-53 style
+navigational warnings for the purpose of backwards compatibility of the information. A
+general principle of one navigational warning per dataset applies throughout. The
+application schema is presented as a UML data model. The data model consists of five
+classes whereof three feature types and two information types. These may also be
+referred to as feature classes and information classes. Abstract classes are not
+discussed since they are included to show the to link with the S-100 General Feature
+Model. The feature types are *NavwarnPart*, *NavwarnAreaAffected*, and
+*TextPlacement*, and these are derived from the _S100_GF_FeatureType_ meta class.
+*NavwarnPart* holds the what and where part of a navigational warning,
+*NavwarnAreaAffected* is an optional construct and used to mark areas impacted by a
+navigational warning outside the immediate vicinity where the navigational warning
+itself is placed, while *TextPlacement* is an optional construct for placing text
+labels on the display that may aid in explaining the content of the navigational
+warning. Depending on the purpose of navigational warning, all feature types are
+optional for a compliant dataset. The information types consist of *NavwarnPreamble*
+and *References*, and both are derived from the _S100_GF_InformationType_ meta
+class. *NavwarnPreamble* is a mandatory part of every navigational warning as it
+provides the general overview information about the specific navigational warning.
+Therefore, every compliant S-124 dataset must contain only one *NavwarnPreamble*. The
+*References* class serves several potential functions. It is used to reference earlier
+navigational warnings for cancellation or for creating in-force bulletins. It is also
+used to declare when no navigational warnings are present in a series. <<fig-4-1>>
+below gives an overview of these five main classes and the relationships between them.
+
+[[fig-4-1]]
+.Feature and Information Types in S-124 data model
+image::img01.png[]
+
+=== Relationships in the data model
+
+*NavwarnPreamble* can have two types of relationships; *navwarnPreambleContent* and
+*navwarnReferences*. The *navwarnPreambleContent* is an optional relationship with one
+or more *NavwarnPart* feature classes which hold any location specific information of
+a navigational warning, as well as any further details on the nature of a warning. The
+*navwarnReferences* relationship is an optional relationship with one or more
+*References* information classes which hold any reference to previously issued
+navigational warnings and describes the nature of that reference. The nature of the
+references currently supported are described in the *referenceCategory* enumerated
+list.
+
+Each *NavwarnPart* can geographically locate a piece of warning information (also see
+<<cls-4.4>>). For example, a Navigational Warning about a newly discovered wreck
+marked with a new wreck buoy should have two instances of *NavwarnPart*: one for the
+wreck and one for the buoy which marks the new wreck. Each instance of *NavwarnPart*
+can be associated with zero to many instances of *NavwarnAreaAffected* and
+*TextPlacement* classes through the *AreaAffected* and *textAssociation* associations,
+respectively. The instances are linked indirectly through their relationships to a
+common *NavwarnPreamble* and will constitute a single NAVWARN.
+
+[[cls-4.2]]
+=== Use of geometry attributes
+
+The *NavwarnPart* class can have three types of spatial geometries: point, curve, or
+surface, as well as no geometry (see <<cls-5.6>>). The *geometry* spatial attribute
+holds the location of the issue being warned about. In some cases, there are impacts
+from an issue that occurs outside the immediate vicinity of the warning itself and
+such impacts can be annotated by using the *NavwarnAreaAffected* class and referencing
+it back to the originating *NavwarnPart*. This method can be used to enhance the
+user's awareness of an affected area following some incident. For example, should a
+light be out of service, the location of the light should be marked using a
+*NavwarnPart* instance, while the area where the light can be expected to be visible
+may be marked with an area demarked by a *NavwarnAreaAffected* instance. The
+*NavwarnAreaAffected* class can thus draw the user's attention to the outage, even
+though it may be outside the immediate area of focus.
+
+It is permissible to have navigational warnings without geometry that contain general
+statements without a geographic component, however it is encouraged to use the
+*NavwarnAreaAffected* feature class for such navigational warnings to give them a
+general area of applicability. Moreover, these should be assigned to the publisher's
+area of responsibility. This is necessary to enable the user system to place the
+navigational warning on the display, since the only alternative when geometry is not
+provided is to list the navigational warning in a list with all others that may
+increase the difficulty for the user to accurately understand the impact of the
+information.
+
+[[cls-4.3]]
+=== Full S-124 data model
+
+[[fig-4-2]]
+.The Full S-124 Data Model
+image::img02.png[]
+
+<<fig-4-2>> shows the full S-124 data model, but note that the codelist
+*navwarnTypeDetails* have been collapsed. This is to facilitate reading of the model
+since this list is of significant length. The full content of the *navwarnTypeDetails*
+codelist can be viewed in the feature catalogue.
+
+==== Enumerations and Codelists
+
+[[fig-4-3]]
+.Enumerations
+image::img03.png[]
+
+[[fig-4-4]]
+.Codelists
+image::img04.png[]
+
+<<fig-4-3;and!fig-4-4>> show all S-124 enumerations and codelists. Enumeration and
+code list values are represented in the data by their numerical value and label. The
+codelist for navigational warning type details has been collapsed due to its
+significant length and may be reviewed in its entirety in the feature catalogue (see
+<<annex-b>>). The codelists <<ISO639-2>> (language code), <<ISO3166-1>> (country
+code), <<S62>> (IHO data producer code) and EPSG (horizontal datum code) have been
+collapsed due to their length and may be reviewed in their entirety in the relevant
+reference documents. The <<ISO639-2>>, <<ISO3166-1>>, <<S62>> and EPSG codelists
+are not directly implemented in the data model, and the relevant attributes are of
+text data type, but expect a data value that conforms with the relevant standard.
+
+Both *navwarnTypeGeneral* and *navwarnTypeDetails* are open enumeration codelists,
+meaning that additional values can be defined by producers if needed. It is
+recommended that as new needs are identified, requests for amendments to S-124 be
+made, and thus standardize the hazard types as far as possible. The predefined values
+are represented in the data by a numerical value.
+
+[example]
+The navwarnTypeDetails codelist does not contain the value Space Weather, and
+producer need this value and intend to make an S-124 change request submission to get
+this type added to a future version of the standard. Meanwhile, the producer can make
+use of the open codelist capability and configure the production system to display
+Space Weather as an allowable value, but in the output the GML encoding is;
+
+[source%unnumbered]
+----
+<S124:warningInformation>
+  <S124:navwarnTypeDetails code="other">other: Space Weather</S124:navwarnTypeDetails>
+</S124:warningInformation>
+----
+
+[[cls-4.3.2]]
+==== Soft List of an informative mapping between general and detailed warning types
+
+<<annex-h>> - Soft Listis a comprehensive and informative list that groups all values in
+the *navwarnTypeDetails* codelist with values in the *navwarnTypeGeneral* codelist.
+The Soft list helps implementers of production systems to design interfaces that allow
+a logical filtering of values. This filtering is intended to enable a simpler
+production process and remove illogical choices from the process. In addition to the
+logical combination of *navwarnTypeGeneral* and *navwarnTypeDetails*, the complex
+attribute *warningInformation* has an information attribute that provides amplifying
+text. This text furnishes the associated NAVWARN with sufficient information regarding
+the situation that is being published.
+
+[[cls-4.3.3]]
+==== Complex attributes
+
+[[fig-4-5]]
+.Complex Attributes
+image::img05.png[]
+
+<<fig-4-5>> shows all the complex attributes used in the S-124 data model. Note that
+the instances where <<ISO3166-1>> and <<ISO639-2>> are used, the data type is text
+that must conform to the formatting of the code format given in the ISO standards.
+
+All complex attributes with the *language* sub attribute have only one language per
+instance. Meaning that if the producer wishes to enhance the service with more than
+one language, there must be as many instances of these complex attributes as there are
+languages in the data.
+
+Any instance of time, either in text or in attributes, such as *timeOfDayEnd* and
+*timeOfDayStart* in the complex attribute *fixedDateRange,* must be populated with UTC
+time values.
+
+The attribute interoperabilityIdentifier of the messageSeriesIdentifer complex
+attribute should follow the MRN concept (see paragraph 8.7). The
+agencyResponsibleForProduction attribute of the same must be populated with a alpha
+code value that corresponds with one of the valid values in the S-62 list of S-100
+codes found in the Producer Code Register of the IHO GI Registry.
+
+The *affectedChartPublications* complex attribute is intended for capturing any
+references to charts or publications whose content is concerned by the navigational
+warning. Any instance is intended to hold only one reference, and when more than one
+chart and/or publication must be referenced within a navigational warning, additional
+instances of the attribute must be included. The *chartAffected* complex attribute has
+been added to give a common standard structure to any chart number references.
+
+The *featureReference* complex attribute has been added to give producers a structured
+reference to any features that may be concerned by the navigational warning, or parts
+thereof. Wherever possible, references should use the *interoperabilityIdentifier*
+attribute to capture the MRN of any affected features which may be utilized by user
+system functions to create intuitive references in the navigational data to help the
+user to better understand what is impacted by a navigational warning. Alternatively,
+an attribute for the AtoN Number has been provided. Other types of references are not
+supported at this time, and can be included in the *warningInformation* complex
+attribute if considered relevant to the warning message.
+
+The *featureName* complex attribute has been added to the *NavwarnPart* feature class
+to enable a logical reference to a named object by adding the object name for which
+the navigational warning, or part thereof, refers to. If it is required to include
+more than one name of an item, this is done by using as many instances of
+*featureName* as required. The *nameUsage* sub-attribute can be used to indicate if
+the name is the default name for display or an alternative name, such as when two
+different languages are present in the NAVWARN. Other usages are also possible.
+Caution should be taken when employing this function as it may cause screen clutter.
+
+[[cls-4.4]]
+=== Language and text
+
+[[fig-4-6]]
+.Model elements related to international service and language
+image::img06.png[]
+
+The mandatory *NavwarnPreamble* class has the mandatory attribute *intService*. This
+attribute is a Boolean that indicates if the navigational warning message is part of
+an international service or a national service. When *intService* is true, then it is
+mandatory to provide all text in the attributes of text data type using the English
+language, while any other languages can be added where appropriate. Any user system
+should provide a function to give the user the option to see the information in any
+language that is supported by the navigational warning dataset.
+
+When a NAVWARN service is provided in languages other than English, a language pack
+for that language should be created using the methods described in <<S100,part=18>>
+and distributed through the appropriate channels. The language pack will include
+appropriate translation for the feature catalogue elements needed to enhance the user
+interface with text in the selected language. The language pack must therefore be
+present in the user system to work as intended. It may be advantageous to also include
+support for the language pack in the S-124 production system to ensure best possible
+harmonization between data and the language pack.
+
+The *TextPlacement* class is a cartographic feature used specifically to place text
+cartographically and is always point geometry. The *text* attribute holds the string
+which is to be placed, while the *textOffsetBearing* and *textOffsetDistance*
+attributes give the bearing and distance (in millimetres in the ECDIS display) used to
+position the text relative to the source *NavwarnPart* feature.
+
+The Text Placement feature may provide functionality such that, as an ECDIS screen
+rotates from its optimum position in "north up" display mode (for example, if display
+is set to "course up") text can remain readable, or clear other important charted
+information.
+
+The *scale minimum* value of a feature determines the display scale below which the
+feature is no longer displayed. Its purpose is to reduce clutter, to prioritise the
+display of features and to improve display speed. In encoding its value, the producing
+authority should consider these factors, as well as the scale at which the feature is
+no longer likely to be required for navigation. The value encoded in the attribute
+must be selected from the following list;
+
+[[tab-4-1]]
+.Scale minimum values
+[cols=1]
+|===
+| 19999999
+| 9999999
+| 4999999
+| 3499999
+| 1499999
+| 999999
+| 699999
+| 499999
+| 349999
+| 259999
+| 179999
+| 119999
+| 89999
+| 59999
+| 44999
+| 29999
+| 21999
+| 17999
+| 11999
+| 7999
+| 3999
+| 2999
+| 1999
+| 999
+|===
+
+=== Classification of a navigational warning
+
+[[fig-4-7]]
+.Model elements used in classifying a NAVWARN
+image::img07.png[]
+
+All S-124 based navigational warnings datasets must be classified using the
+*navwarnTypeGeneral* attribute of *NavwarnPreamble*. This is done to enable user
+systems to present the user with filtering options. In the event that none of the pre
+defined values in the *navwarnTypeGeneral* codelist is appropriate, special
+classifications can be added using the encoding "other: [something]".
+
+When it is required to locate NAVWARN information using one or more *NavwarnPart*
+instances, these must be classified using the *warningInformation* attribute. The
+*warningInformation* attribute must include at least one instance of its
+sub-attributes. The *navwarnTypeDetails* attribute should be given priority and be
+used to classify the warning. If amplifying remarks are required, these should be
+added to the *information* attribute.
+
+Using the predefined values in *navwarnTypeGeneral* and *navwarnTypeDetails* should be
+given priority over specially defined classification values, since the predefined
+values take less data because they are represented in the data by a numerical value as
+opposed to text strings.

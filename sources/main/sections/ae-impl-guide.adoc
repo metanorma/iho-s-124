@@ -1,0 +1,19 @@
+[[annex-e]]
+[appendix,obligation=normative]
+== Implementation Guide
+
+. System using S-124 in a navigation setting should treat S-124 datasets as overlay
+information to the underlying chart.
+. There are no restrictions what the underlying chart means, but in most cases will
+be an ENC conforming to either the <<S57>> or <<S101>> Product Specifications as
+issued by IHO.
+. The <<S98>> Interoperability Catalogue standard, specifies requirements for
+<<S100>> ECDIS using S-124 in a navigational setting. This includes that:
+.. S-124 compliant ECDIS should have a function to generate an electronic report that
+can be used by the inspector for comparison with the latest in-force NAVWARN list
+from the service website, and;
+.. a function to generate a report that shows changes since last update request, for
+example what has been cancelled and what is new.
+. It is envisioned that this section will be enhanced with more guidance will be
+added as experience is gained. Two main areas of guidance is being studied,
+production system guidance and user system guidance.

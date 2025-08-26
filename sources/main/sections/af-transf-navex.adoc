@@ -1,0 +1,5 @@
+[[annex-f]]
+[appendix,obligation=normative]
+== Transformation Into NAVTEX
+
+This appendix will be developed further in subsequent versions of this document.

@@ -1,0 +1,247 @@
+[[cls-8]]
+== Datasets
+
+[[cls-8.1]]
+=== Introduction
+
+A Navigational Warning is communicated via a dataset. A dataset is a grouping of
+features, attributes, geometry and metadata which comprises a specific coverage. Some
+products include a coverage feature to describe where content of a dataset is. This
+method is not utilized by S-124 datasets, primarily since the majority of S-124
+datasets contains only one point, see <<cls-8.9>> for more details.
+
+[[cls-8.1.1]]
+==== Data encoding
+
+The principal encoding is the Open Geospatial Consortium (OGC), Geography Markup
+Language (GML) format as profiled by the <<S100>> GML schema in <<S100,part=10b>>.
+
+The XML Schema for the S-124 GML application schema is available at the GI Registry
+(http://registry.iho.int). Feature instances must validate against the schema and
+conform to all other requirements specified in this data product specification
+including all constraints not captured in the XML Schema document.
+
+[[cls-8.1.2]]
+==== Types of datasets
+
+There are five types of S-124 datasets, and a dataset must contain only one
+Navigational Warning or In-force Bulletin.
+
+[[tab-8-1]]
+.Dataset types
+[cols="a,a",options=header]
+|===
+| Dataset type | Explanations
+
+| New dataset
+| Dataset with a new warning. The dataset is valid until a cancellation dataset is issued.
+
+A _new dataset_ will include only one *NavwarnPreamble* instance and may include one or more *References* with *noMessageOnHand* equal false, and may include one or more *NavwarnPart*. If one or more *NavwarnPart* are present, the dataset may include one or more *TextPlacement*.
+
+| New dataset self-cancelling | Dataset with a new warning that includes a cancellation date.
+
+A _new dataset that self-cancels_ has the same content rules as a _new dataset_, with the addition of the *NavwarnPreamble* attribute *cancellationDate* being populated with a value.
+
+| New dataset with cancellation
+| Dataset used to cancel previous warning. May include updated information related to the warning that is being cancelled.
+
+A _new dataset with cancellation_ has the same content rules as a _new dataset_, with the addition of having at least one *References* instance with *noMessageOnHand* equal false, and with *referenceCategory* set to _1 (warning cancellation),_ and one or more instances of *messageSeriesIdentifier*, each corresponding to a previous NAVWARN to be cancelled.
+
+| New dataset with cancellation self-cancelling
+| Dataset used to cancel previous warning. May include updated information related to the warning that is being cancelled. Includes a cancellation date.
+
+A _new dataset with cancellation self-cancelling_ has the same content rules as _New dataset with cancellation_, with the addition of the *NavwarnPreamble* attribute *cancellationDate* being populated with a value.
+
+| In-force bulletin
+| Dataset that references all in-force navigational warnings, and always cancels the previous in-force bulletin.
+
+An _in-force bulletin_ dataset will include only one *NavwarnPreamble* instance and must include one *References* instance with *referenceCategory* set to 3 (in-force). If *noMessageOnHand* equals true, then no other content is permissible. If *noMessageOnHand* equals false then one or more *messageSeriesIdentifier* instance(s) must be included.
+Any reference to messages still in force but not being broadcast must be captured in a *NavwarnPart*.
+
+The dataset must not contain any geomtry nor NavwarnAreaAffected nor *TextPlacement* instances.
+|===
+
+[[cls-8.1.3]]
+==== In-Force Bulletin
+
+All datasets must be considered in-force and valid until a new dataset with
+cancellation information is issued or where cancellation date is present in a
+dataset, that date is not passed. Due to the regional nature of navigational warnings
+services, it is possible that users enter and exit NAVWARN services, or miss
+broadcasts of NAVWARNs and that such stop and go movement of a ship will cause a user
+to miss out on cancellation information. To act as a fail safe for the status of
+information issued in a NAVWARN service, the In-Force Bulletin has been created.
+
+An In-Force Bulletin dataset can be issued at regular intervals, such as the weekly
+minimum prescribed by S-53, to inform users of the active NAVWARNs in a service. For
+completeness and to support machine readability, the In-Force Bulletin should include
+a reference to itself as active.
+
+In-Force Bulletin datasets should be accompanied by metadata that contain the Dataset
+Discovery Metadata (DDM) for the dataset itself (see <<tab-8-1>>) packaged in an
+exchange set. The ECDIS will load the dataset before processing it as the In-Force
+Bulletin for the series.
+
+The in-force bulletin must not be used by a producer to cancel valid datasets, see
+<<cls-9.3>>.
+
+[[cls-8.1.4]]
+==== No message on hand
+
+When there are no active warnings in a series, the regularly issued in-force bulletin
+dataset must be encoded with an *NavwarnPreamble* associated with only one instance
+of *References*. The *References* instance must have *referenceCategory* set to 3
+(in-force), and *noMessageOnHand* set to true.
+
+[[cls-8.2]]
+=== Encoding of latitude and longitude
+
+Values of latitude and longitude can be accurate up to 7 decimal places. Coordinate
+values should be coded as decimal numbers with 7 or fewer digits after the decimal.
+The normative encoding is in degrees, with an accuracy of 10^-7^ degrees; that is, up
+to 7 digits after the decimal point.
+
+[[cls-8.3]]
+=== Numeric attribute encoding
+
+Integer attribute values must not contain leading zeros.
+
+Floating point attributes must not contain leading zeros. Values in the interval (-1,
+1) may use a single zero before the decimal point.
+
+Floating point attribute values must not contain non-significant trailing zeros
+exceeding the attribute's precision as specified in the Feature Catalogue.
+
+[[cls-8.4]]
+=== Text attribute values
+
+Character strings must be encoded using the character set defined in <<ISO10646-1>>,
+in Unicode Transformation Format-8 (UTF-8).
+
+[[cls-8.5]]
+=== Mandatory Attribute Values
+
+There are four reasons why attribute values may be considered mandatory:
+
+* They determine whether a feature is to be displayed,
+* Certain features make no logical sense without specific attributes,
+* Some attributes are necessary to determine which symbol is to be displayed,
+* Some attributes are required for safety of navigation.
+
+All mandatory attributes are identified in the Feature Catalogue and summarised in
+Appendix A -- Data Classification and Encoding Guide.
+
+[[cls-8.6]]
+=== Unknown attribute values
+
+Mandatory attributes in an S-124 dataset are not permitted to contain a nil value.
+All mandatory attributes must contain meaningful data.
+
+[[cls-8.7]]
+=== Object identifiers
+
+Navigational warnings are identified by the *messageSeriesIdentifer* complex
+attribute. Within this complex attribute the *interoperabilitIdentifier* simple
+attribute is used to capture the navigational warning identifier as an MRN identifier.
+
+The *featureReference* complex attribute also contains the
+*interoperabilitIdentifier* simple attribute, which is where references to other
+objects in other products can be included when useful. These references must be of
+MRN type.
+
+Guidance on use of MRN identifiers can be found in <<iala>>. This guidance should be
+considered informative and should be superseded with future IHO guidance.
+
+[[cls-8.8]]
+=== Geometry
+
+Navigational warning features are encoded as vector entities which conform to S-100
+geometry configuration level 3a (see <<S100,clause="7-4.3">>).
+
+S-124 further constrains Level 3a with the following clarifications:
+
+* Coincident linear geometry must be avoided when there is a dependency between
+features.
+* The interpolation of GM_CurveSegment should be either loxodromic,
+circularArc3Points, or circularArcCenterPointWithRadius, depending on the use case.
+* Linear geometry is defined by curves which are made of curve segments. Each curve
+segment contains the geographic coordinates as control points and defines an
+interpolation method between them. Coordinate density can have a significant impact
+on file size and system performance and should be as low as possible.
+* For a scale-less product, the producer should keep in mind the expected scale range
+for typical use and the density of coordinates needed to suit the needs of the
+product.
+
+The use of coordinates is restricted to two dimensions (DirectPosition is restricted
+to two coordinates) in S-124 datasets.
+
+[[cls-8.9]]
+=== Data coverage
+
+A common feature of S-100 based datasets is a data coverage meta feature class.
+Navigational Warnings, however, more resemble messages and contain only the essential
+information to communicate urgent safety information. Therefore a distinct meta
+feature class to mark the data coverage is not included. The discovery metadata
+associated with each S-124 dataset fulfils this function and describes the area in
+which the information in the associated dataset is located.
+
+[[cls-8.9.1]]
+==== Data extent
+
+A datasets must not cross the stem:[180"unitsml(deg)"] meridian of longitude.
+
+[[cls-8.10]]
+=== Data overlap
+
+S-124 datasets may overlap other S-124 datasets.
+
+[[cls-8.11]]
+=== Data quality
+
+Datasets conforming to S-124 should always be created with the best available source
+information. Due to the urgency of the information, datasets may be based on
+incomplete or unconfirmed information and mariners will need to take this into
+account when deciding what reliance to place on the information contained therein. It
+is often not possible to determine quantifiable values to measures of data quality.
+Generally the quality of information can be made evident from the navigational
+warning amplifying text by the use of qualitative words such as 'approximate',
+'reported', 'in the vicinity of' and 'about'.
+
+[example]
+Dredging operations will be taking place in the vicinity of Goldwood Sawmill
+(stem:[49"unitsml(deg)"12.47"unitsml(')" " N"] /
+stem:[123"unitsml(deg)"04.83"unitsml(')" " W"]), in the Mitchell Slough starting on
+Saturday, February 2 to Monday, February 5.
+
+Geometry in datasets should by default have a *qualityOfPosition* set to 4
+(approximate). Other values should only be chosen when source material justify such
+values.
+
+[example]
+A light is reported as unlit, due to the access to the national AtoN database, the
+position of the light can accurately be determined. The *qualityOfPosition* of the
+geometry of the NAVWARN is set to 10 (precisely known).
+
+[[cls-8.11.1]]
+==== Validation checks
+
+S-124 products must be validated by appropriate means. Datasets and exchange sets
+that conform to this specification must be validated to have no critical errors with
+checks defined in the relevant version of S-158.
+
+[[cls-8.12]]
+=== Use of datasets
+
+S-124 datasets are intended to be used as an overlay over an electronic navigational
+chart. This means that S-124 datasets must be created with content sufficient to
+communicate the intended information to a user when the user views the datasets over
+the chart display. This includes sufficient accuracy of location information, as well
+as sufficient levels of details on the navigational safety information contained in
+the S-124 dataset.
+
+[[cls-8.13]]
+=== Scale in S-124 datasets
+
+Navigational Warning data must be compiled in the best applicable scale. The use of
+the data itself is scale independent. That means that the data can be used at any
+scale.

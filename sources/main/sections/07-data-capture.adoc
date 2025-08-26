@@ -1,0 +1,12 @@
+[[cls-7]]
+== Data Capture and Classification
+
+S-124 products are the result of the official production agency process. S-124
+products must be based on data sources deemed reliable by the production agency. The
+Data Classification and Encoding Guide (DCEG) describes how data describing a
+Navigational Warning should be captured using the types defined in the S-124 Feature
+Catalogue, and is found in Appendix A. General principles for Navigational Warnings
+according to WWNWS, such as how to administer a NAVAREA, what constitute a sub area
+warning and coastal warning are found in <<S53>> - Joint IHO/IMO/WMO Manual on
+Maritime Safety Information (MSI). Local warnings are outside of scope of <<S53>>,
+and will be defined in national or local documentation.

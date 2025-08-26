@@ -1,0 +1,358 @@
+[[annex-h]]
+[appendix,obligation=normative]
+== Soft List
+
+Soft List of NAVWARN general types to detail types cross mapping. The aids to
+navigation section has sub sections, due to its length. These sub sections do not
+appear in the data model. Those general sections that do not have any details
+listings stand by themselves and can only be amplified by using the text attributes
+in the complex attribute *warningInformation*.
+
+The Soft List is not a normative grouping, and is intended to help implementors of
+the S-124 Product Specification with grouping the large number of NAVWARN types. The
+list is meant as a recommended mapping between the various general types and the
+various detailed types. For example, an operator could be presented with the general
+types and through an interface be given only the detailed types that this Soft List
+has mapped to that general type. This represents a filtering of choices down to what
+is considered most logical from a general type to the detailed type.
+
+[cols="a,a"]
+|===
+h| TypeGeneral h| TypeDetails
+
+| drifting hazards | container adrift
+| | derelict vessel adrift
+| | dead whale adrift
+| | deadhead adrift
+| | dock adrift
+| | fishing net adrift
+| | log adrift
+| | log boom adrift
+| | floating debris
+| | vessel adrift
+| | object adrift
+| | scientific buoy adrift
+h| TypeGeneral h| TypeDetails
+| newly discovered dangers | sandspit or sandbar change
+| | shallow depth reported
+| | shallow depth confirmed
+| | presence of submerged fishing net
+| | submerged object
+| | uncharted rock
+| | dangerous wreck
+| | subsurface mooring
+h| TypeGeneral h| TypeDetails
+| offshore infrastructure | submarine cable changes
+| | submarine pipeline changes
+| | offshore rigs or platform changes
+| | drilling site operations
+| | renewable energy device or farm change
+h| TypeGeneral h| TypeDetails
+| rig list | nil
+h| TypeGeneral h| TypeDetails
+| In-force bulletin | nil
+h| TypeGeneral h| TypeDetails
+| ECDIS operating anomalies including official data issues | nil
+h| TypeGeneral h| TypeDetails
+| piracy or robbery | nil
+h| TypeGeneral h| TypeDetails
+| communication or broadcast service change | EGC MSI service
+| | HF service
+| | MF service
+| | MSI service
+| | NAVTEX service change
+| | VHF service change
+h| TypeGeneral h| TypeDetails
+| scientific instruments change | acoustic recorder
+| | presence of scientific equipment
+| | scientific moorings
+| | tide gauge change
+h| TypeGeneral h| TypeDetails
+| routeing change | cluster of fishing vessels
+| | exclusion zone
+| | fireworks
+| | presence of marine mammals
+| | opening or closing of harbour
+| | opening or closing of swing bridge
+| | opening or closing of waters
+| | bridge horizontal clearance change
+| | bridge unable to close
+| | bridge unable to open
+| | bridge vertical clearance change
+| | lock closed
+| | regatta or race
+| | new or amended regulation
+| | restricted area changes
+| | swimmers
+| | traffic congestion
+| | horizontal clearance reduced
+| | vertical clearance reduced
+| | vessel disabled
+| | VTS change
+| | waterway recommended or not recommended for shipping
+| | radar surveillance system service change
+h| TypeGeneral h| TypeDetails
+| security requirement change | maritime security level changes
+| | security regulation change
+h| TypeGeneral h| TypeDetails
+| special operations | sea trials
+| | seaplane operations
+| | military exercise
+| | military operation
+| | blasting operation
+| | firing exercise
+| | hydrographic survey activity
+| | scientific survey
+| | anti pollution exercise
+| | anti pollution operation
+| | SAR exercise
+| | SAR operation
+| | seismic survey operation
+| | jamming exercise
+h| TypeGeneral h| TypeDetails
+| dangerous natural phenomena | tsunami warning
+| | volcano activity
+| | low water level
+| | high water level
+| | storm surge
+h| TypeGeneral h| TypeDetails
+| towing operations | drill rig under tow
+| | unwieldy tow
+h| TypeGeneral h| TypeDetails
+| health advisories | national health authority notice
+| | World Health Organization notice
+| | local health authority notice
+h| TypeGeneral h| TypeDetails
+| ice information | ice boom - installation or removal
+| | ice control zone in-force or deactivated
+| | iceberg outside advertised limits
+| | unidentified radar target - possible iceberg
+| | authorized ice routeing information
+h| TypeGeneral h| TypeDetails
+| other hazards | presence of naval mines
+| | explosive device
+| | fallout hazard
+| | hazardous area
+h| TypeGeneral h| TypeDetails
+| aquaculture and fishing installations | aquaculture site
+| | Fish Aggregating Device
+| | presence of long fishing gear
+| | numerous fishing vessels
+h| TypeGeneral h| TypeDetails
+| works | dredging operation
+| | breakwater construction
+| | wharf construction
+| | works in progress
+| | diving operation
+| | cable laying operation
+| | pipe laying operation
+| | cable operations
+| | pipe operations
+| | underwater operations
+h| TypeGeneral h| TypeDetails
+| aids to navigation changes | span:lb[*_Buoyage_*]
+| | temporary buoyage
+| | span:lb[*_Buoy_*]
+| | light buoy - light damaged
+| | light buoy - light not synchronized
+| | light buoy - light unlit
+| | light buoy - light unreliable
+| | light spar buoy - light damaged
+| | light spar buoy - light not synchronized
+| | light spar buoy - light unlit
+| | light spar buoy - light unreliable
+| | buoy missing
+| | buoy move
+| | buoy off position
+| | buoy adrift
+| | buoy damaged
+| | buoy restored to normal
+| | buoy destroyed
+| | buoy re-established
+| | buoy topmark missing
+| | buoy topmark damaged
+| | buoy daymark unreliable
+| | buoy will be withdrawn
+| | buoy withdrawn
+| | buoy withdrawn for winter
+| | buoy replaced by winter spar
+| | buoy decommissioned for winter
+| | buoy commissioned for navigation season
+| | marine aids to navigation unreliable
+| | fairway marker - light unlit
+| | fairway marker - light unreliable
+| | fairway marker - light not synchronized
+| | fairway marker damaged
+| | fairway marker destroyed
+| | seasonal decommissioning complete
+| | seasonal decommissioning in progress
+| | seasonal commissioning complete
+| | seasonal commissioning in progress
+| | spar buoy adrift
+| | spar buoy damaged
+| | spar buoy destroyed
+| | spar buoy missing
+| | spar buoy move
+| | spar buoy off position
+| | spar buoy re-established
+| | spar buoy restored to normal
+| | spar buoy topmark missing
+| | spar buoy withdrawn
+| | span:lb[*_Light/sector light_*]
+| | light unlit
+| | light unreliable
+| | light re-establishment
+| | light range reduced
+| | light without rhythm
+| | light out of synchronization
+| | light daymark unreliable
+| | light operating properly
+| | sector light - sector obscured
+| | span:lb[*_Beacon_*]
+| | beacon missing
+| | beacon damaged
+| | lighted beacon - light unlit
+| | lighted beacon - light unreliable
+| | lighted beacon - light not synchronized
+| | lighted beacon - light damaged
+| | beacon topmark missing
+| | beacon topmark damaged
+| | beacon daymark unreliable
+| | floodlit beacon - unlit
+| | beacon restored to normal
+| | span:lb[*_Leading lights and beacons_*]
+| | front light unlit
+| | rear light unlit
+| | front light unreliable
+| | rear light unreliable
+| | front light range reduced
+| | rear light range reduced
+| | front light without rhythm
+| | rear light without rhythm
+| | front and rear lights out of synchronization
+| | front beacon unreliable
+| | rear beacon unreliable
+| | front light is operating properly
+| | rear light is operating properly
+| | front beacon restored to normal
+| | rear beacon restored to normal
+| | span:lb[*_Audible and Fog signals_*]
+| | audible signal out of service
+| | fog signal out of service
+| | audible signal operating properly
+| | fog signal operating properly
+| | span:lb[*_Radionavigation aids, signal and radio aids_*]
+| | AIS transmitter out of service
+| | AIS transmitter unreliable
+| | AIS transmitter operating properly
+| | V-AIS out of service
+| | V-AIS unreliable
+| | V-AIS operating properly
+| | RACON out of service
+| | RACON unreliable
+| | RACON operating properly
+| | RAMARK out of service
+| | RAMARK unreliable
+| | RAMARK operating properly
+| | DGPS out of service
+| | DGPS operating properly
+| | DGPS unreliable
+| | LORAN C - operating properly
+| | LORAN C - unreliable
+| | LORAN C - out of service
+| | eLORAN operating properly
+| | eLORAN unreliable
+| | eLORAN out of service
+| | DGLONASS operating properly
+| | DGLONASS unreliable
+| | DGLONASS out of service
+| | Chayka operating properly
+| | Chayka unreliable
+| | Chayka out of service
+| | e-Chayka operating properly
+| | e-Chayka unreliable
+| | e-Chayka out of service
+| | EGNOS operating properly
+| | EGNOS unreliable
+| | EGNOS out of service
+| | GNSS degradation
+| | span:lb[*_AtoN commissioning_*]
+| | buoy establishment
+| | light establishment
+| | beacon establishment
+| | audible signal establishment
+| | fog signal establishment
+| | AIS transmitter establishment
+| | V-AIS establishment
+| | RACON establishment
+| | RAMARK establishment
+| | DGPS station establishment
+| | eLORAN station establishment
+| | DGLONASS station establishment
+| | e-Chayka station establishment
+| | EGNOS station establishment
+| | buoy temporary establishment
+| | light temporary establishment
+| | beacon temporary establishment
+| | audible signal temporary establishment
+| | fog signal temporary establishment
+| | AIS temporary establishment
+| | V-AIS temporary establishment
+| | RACON temporary establishment
+| | RAMARK temporary establishment
+| | span:lb[*_AtoN change_*]
+| | buoy change
+| | buoy temporary change
+| | light change
+| | light temporary change
+| | sector light change
+| | sector light temporary change
+| | beacon change
+| | beacon temporary change
+| | fog signal change
+| | fog signal temporary change
+| | audible signal change
+| | audible signal temporary change
+| | V-AIS change
+| | V-AIS temporary change
+| | RACON change
+| | RACON temporary change
+| | RAMARK change
+| | RAMARK temporary change
+| | span:lb[*_AtoN removal_*]
+| | buoy removal
+| | buoy temporary removal
+| | light removal
+| | light temporary removal
+| | beacon removal
+| | beacon temporary removal
+| | fog signal removal
+| | fog signal temporary removal
+| | audible signal removal
+| | audible signal temporary removal
+| | AIS transmitter removal
+| | AIS transmitter temporary removal
+| | V-AIS removal
+| | V-AIS temporary removal
+| | RACON removal
+| | RACON temporary removal
+| | RAMARK removal
+| | RAMARK temporary removal
+| | DGPS station removal
+| | DGPS station temporary removal
+| | EGNOS station removal
+| | EGNOS station temporary removal
+| | LORAN C station removal
+| | LORAN C station temporary removal
+| | eLORAN station removal
+| | eLORAN station temporary removal
+| | Chayka station removal
+| | Chayka station temporary removal
+| | e-Chayka station removal
+| | e-Chayka station temporary removal
+| | span:lb[*_all AtoN unreliable_*]
+| | all aids to navigation unreliable
+| | span:lb[*_End of incident_*]
+| | AtoN operating properly
+2+h| End of list
+|===
