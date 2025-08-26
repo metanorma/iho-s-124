@@ -1,0 +1,444 @@
+---
+navigational_warnings:
+  - cls_num: "3.9.1"
+    title: "Example 1 -- Hydrographic Survey"
+    message: |
+      NAVAREA III 821/21
+      EASTERN MEDITERRANEAN SEA.
+      CYPRUS.
+      CHART _________ (INT ___________ ).
+      1. HYDROGRAPHIC SURVEY IN PROGRESS UNTIL
+      170001 UTC NOV 2021
+      BY M/V NAUTICAL GEO IN AREA BOUND BY
+      34-18.65N 033-08.00E, 34-24.23N 032-20.74E,
+      34-20.11N 032-20.63E, 34-13.36N 033-07.27E.
+      WIDE BERTH REQUESTED.
+      2. CANCEL THIS MSG 170101 UTC NOV 2021.
+    navwarn_preamble:
+      id: "ID00"
+      general_area:
+        location_name:
+          language: "eng"
+          text: "EASTERN MEDITERRANEAN SEA"
+      locality:
+        location_name:
+          language: "eng"
+          text: "CYPRUS"
+      message_series_identifier:
+        agency_responsible_for_production: "ESXX"
+        nationality: "ES"
+        name_of_series: "NAVAREA III"
+        series_number: "821"
+        warning_type: "(4) NAVAREA navigational warning"
+        year: "21"
+      publication_time: "20211113T000000Z"
+      cancellation_date: "20211117T010100Z"
+      navwarn_type_general: "Special operations"
+      int_service: true
+    navwarn_preamble_content:
+      header_role: "ID00"
+      the_warning_part_role: "ID01"
+    navwarn_parts:
+      - id: "ID01"
+        fixed_date_range:
+          - date_end: "20211117"
+            date_start: "20211113"
+            time_of_day_end: "000100Z"
+            time_of_day_start: "000000Z"
+        warning_information:
+          information:
+            language: "eng"
+            text: "M/v nautical geo WIDE BERTH REQUESTED"
+          navwarn_type_details: "hydrographic survey activity"
+        geometry:
+          - "POLYGON (SURFACE) 34-18.65N 033-08.00E, 34-24.23N 032-20.74E, 34-20.11N 032-20.63E, 34-13.36N 033-07.27E."
+
+  - cls_num: "3.9.2"
+    title: "Example 2 -- Scientific Survey"
+    message: |
+      NAVAREA XV 95/21
+      EASTERN SOUTH PACIFIC.
+      CHILE
+      CHART _________ (INT ___________ ).
+      1. SCIENTIFIC OPERATIONS BY M/V ABATE MOLINA FROM
+      090345 UTC MAY 2021 TO 07000 UTC JUN 2021
+      IN AREA BOUND BY
+      32-10.00S 071-41.00W, 38-02.00S 074-05.00W,
+      40-20.00S 074-40.00W, 40-20.00S 073-47.00W.
+      WIDE BERTH REQUESTED.
+      2. CANCEL THIS MSG 070100 UTC JUN 2021.
+    navwarn_preamble:
+      id: "ID00"
+      general_area:
+        location_name:
+          language: "eng"
+          text: "EASTERN SOUTH PACIFIC"
+      locality:
+        location_name:
+          language: "eng"
+          text: "CHILIE"
+      message_series_identifier:
+        agency_responsible_for_production: "CLXX"
+        nationality: "CL"
+        name_of_series: "NAVAREA XV"
+        series_number: "95"
+        warning_type: "(4) NAVAREA navigational warning"
+        year: "21"
+      publication_time: "20210507T000000Z"
+      cancellation_date: "20210607T010000Z"
+      navwarn_type_general: "Special operations"
+      int_service: true
+    navwarn_preamble_content:
+      header_role: "ID00"
+      the_warning_part_role: "ID01"
+    navwarn_parts:
+      - id: "ID01"
+        fixed_date_range:
+          - date_end: "20210607"
+            date_start: "20210509"
+            time_of_day_end: "000100Z"
+            time_of_day_start: "000000Z"
+        warning_information:
+          information:
+            language: "eng"
+            text: "M/V ABATE MOLINA WIDE BERTH REQUESTED"
+        geometry:
+          - "POLYGON (SURFACE) 32-10.00S 071-41.00W, 38-02.00S 074-05.00W, 40-20.00S 074-40.00W, 40-20.00S 073-47.00W."
+
+  - cls_num: "3.9.3"
+    title: "Example 3 -- Seismic Survey"
+    message: |
+      NAVAREA XIII 43/21
+      SEA OF OKHOTSK.
+      CHART _________ (INT ___________ )
+      1. SEISMIC SURVEY OPERATIONS IN PROGRESS
+      UNTIL 310001 UTC AUG 2021 BY M/V VYACHESLAV TIKHONOV AND M/V PX GEO TOWING 4050 METER LONG CABLES IN AREA BOUND BY
+      52-46.56N 143-22.21E, 52-45.73N 143-57.85E,
+      52-02.62N 143-54.99E, 52-03.61N 143-11.28E.
+      FOUR MILE BERTH REQUESTED.
+      2. CANCEL THIS MSG 3101001 UTC AUG 2021.
+    navwarn_preamble:
+      id: "ID00"
+      general_area:
+        location_name:
+          language: "eng"
+          text: "SEA OF OKHOTSK"
+      message_series_identifier:
+        agency_responsible_for_production: "RUXX"
+        nationality: "RU"
+        name_of_series: "NAVAREA XIII"
+        series_number: "43"
+        warning_type: "(4) NAVAREA navigational warning"
+        year: "21"
+      publication_time: "202108029T000000Z"
+      cancellation_date: "20210831T010100Z"
+      navwarn_type_general: "Special operations"
+      int_service: true
+    navwarn_preamble_content:
+      header_role: "ID00"
+      the_warning_part_role: "ID01"
+    navwarn_parts:
+      - id: "ID01"
+        fixed_date_range:
+          - date_end: "20210831"
+            date_start: "20210829"
+            time_of_day_end: "000100Z"
+            time_of_day_start: "000000Z"
+        warning_information:
+          information:
+            language: "eng"
+            text: "BY M/V VYACHESLAV TIKHONOV AND M/V PX GEO TOWING 4050 METER LONG CABLES, four mile berth requested."
+          navwarn_type_details: "seismic survey operation"
+        geometry:
+          - "POLYGON (SURFACE) 52-46.56N 143-22.21E, 52-45.73N 143-57.85E,52-02.62N 143-54.99E, 52-03.61N 143-11.28E."
+
+  - cls_num: "3.9.4"
+    title: "Example 4 -- Dredging Operations"
+    message: |
+      NAVAREA XVIII 42/21
+      HUDSON BAY.
+      CANADA.
+      CHART _________ (INT ___________ ).
+      DREDGING OPERATIONS 1100 UTC TO 2300 UTC DAILY 18 AUG 2021 UNTIL FURTHER NOTICE BY TUGS POINCIANA AND MANUELS RIVER IN VICINITY 47-12.96N 061-59.09W.
+    navwarn_preamble:
+      id: "ID00"
+      general_area:
+        location_name:
+          language: "eng"
+          text: "HUDSON BAY"
+      locality:
+        location_name:
+          language: "eng"
+          text: "CANADA"
+      message_series_identifier:
+        agency_responsible_for_production: "CAXX"
+        nationality: "CA"
+        name_of_series: "NAVAREA XVIII"
+        series_number: "42"
+        warning_type: "(4) NAVAREA navigational warning"
+        year: "21"
+      publication_time: "202108017T000000Z"
+      navwarn_type_general: "works"
+      int_service: true
+    navwarn_preamble_content:
+      header_role: "ID00"
+      the_warning_part_role: "ID01"
+    navwarn_parts:
+      - id: "ID01"
+        fixed_date_range:
+          - date_start: "20210818"
+            time_of_day_start: "110000Z"
+        warning_information:
+          information:
+            language: "eng"
+            text: "1100 UTC TO 2300 UTC DAILY 18 AUG 2021 UNTIL FURTHER NOTICE BY TUGS POINCIANA AND MANUELS RIVER."
+          navwarn_type_details: "dredging operation"
+        geometry:
+          - "POINT 47-12.96N 061-59.09W"
+
+  - cls_num: "3.9.5"
+    title: "Example 5 -- Pipe Laying Operations"
+    message: |
+      NAVAREA III 795/21
+      MEDITERRANEAN SEA.
+      TUNISIA.
+      CHART _________ (INT ___________ ).
+      1. PIPELAYING OPERATIONS IN PROGRESS UNTIL 130001 UTC FEB 2022 BY M/V IEVOLI IVORI IN AREA BOUND BY
+      37-01.01N 011-04.22E, 37-12.80N 011-15.51E,
+      37-12.80N 011-15.10E, 37-25.47N 011-42.71E.
+      ONE MILE BERTH REQUESTED.
+      2. CANCEL THIS MSG 130001 UTC FEB 2022.
+    navwarn_preamble:
+      id: "ID00"
+      general_area:
+        location_name:
+          language: "eng"
+          text: "MEDITERRANEAN SEA."
+      locality:
+        location_name:
+          language: "eng"
+          text: "Tunisia"
+      message_series_identifier:
+        agency_responsible_for_production: "ESXX"
+        nationality: "ES"
+        name_of_series: "NAVAREA III"
+        series_number: "795"
+        warning_type: "(4) NAVAREA navigational warning"
+        year: "21"
+      publication_time: "20210209T000001Z"
+      cancellation_date: "20210213T000100Z"
+      navwarn_type_general: "works"
+      int_service: true
+    navwarn_preamble_content:
+      header_role: "ID00"
+      the_warning_part_role: "ID01"
+    navwarn_parts:
+      - id: "ID01"
+        fixed_date_range:
+          - date_end: "20210213"
+            date_start: "20210209"
+            time_of_day_end: "000100Z"
+            time_of_day_start: "000001Z"
+        warning_information:
+          information:
+            language: "eng"
+            text: "M/V IEVOLI IVORI. ONE MILE BERTH REQUESTED"
+          navwarn_type_details: "pipe laying operation"
+        geometry:
+          - "POLYGON (SURFACE) 37-01.01N 011-04.22E, 37-12.80N 011-15.51E, 37-12.80N 011-15.10E, 37-25.47N 011-42.71E."
+
+  - cls_num: "3.9.6"
+    title: "Example 6 -- Unmanned Operations"
+    message: |
+      NAVAREA IV 1123/21
+      NORTH ATLANTIC OCEAN.
+      1. UNMANNED ATLANTIC CROSSING BY FOUR METRE
+      M/V MAHI TWO IN VICINITY OF LINE JOINING
+      19-38.30N 035-00.00W, 18-50.01N 036-36.39W,
+      17-24.81N 044-29.68W, 17-04.67N 051-21.64W,
+      16-23.00N 059-04.41W.
+      2. FOR THE MOST CURRENT POSITION OF M/V MAHI TWO,
+      GO TO PROJECTMAHI.DATYLON.COM
+    navwarn_preamble:
+      id: "ID00"
+      general_area:
+        location_name:
+          language: "eng"
+          text: "NORTH ATLANTIC OCEAN"
+      message_series_identifier:
+        agency_responsible_for_production: "USXX"
+        nationality: "US"
+        name_of_series: "NAVAREA IV"
+        series_number: "1123"
+        warning_type: "(4) NAVAREA navigational warning"
+        year: "21"
+      publication_time: "20210209T000001Z"
+      navwarn_type_general: "Other: Unmanned Operations"
+      int_service: true
+    navwarn_preamble_content:
+      header_role: "ID00"
+      the_warning_part_role: "ID01"
+    navwarn_parts:
+      - id: "ID01"
+        fixed_date_range:
+          - date_start: "20210209"
+            time_of_day_start: "000001Z"
+        warning_information:
+          information:
+            language: "eng"
+            text: "M/V UNMANNED ATLANTIC CROSSING BY FOUR METRE M/V MAHI TWO. FOR THE MOST CURRENT POSITION OF M/V MAHI TWO, GO TO PROJECTMAHI.DATYLON.COM"
+        geometry:
+          - "LINE (SURFACE) 19-38.30N 035-00.00W, 18-50.01N 036-36.39W, 17-24.81N 044-29.68W, 17-04.67N 051-21.64W, 16-23.00N 059-04.41W."
+
+  - cls_num: "3.9.7"
+    title: "Example 7 -- Cable Laying Operations"
+    message: |
+      NAVAREA I 193/21
+      WESTERN APPROACHES TO THE ENGLISH CHANNEL.
+      CHART _________ (INT ___________ ).
+      CABLE LAYING OPERATIONS IN PROGRESS BY M/V ILE DE
+      BREHAT IN VICINITY OF LINES JOINING:
+        A. 49-00.80N 007-55.60W, 49-02.20N 007-53.90W.
+        B. 49-05.10N 007-52.40W, 49-06.00N 007-52.60W.
+    navwarn_preamble:
+      id: "ID00"
+      general_area:
+        location_name:
+          language: "eng"
+          text: "WESTERN APPROACHES TO THE ENGLISH CHANNEL."
+      message_series_identifier:
+        agency_responsible_for_production: "UKXX"
+        nationality: "UK"
+        name_of_series: "NAVAREA I"
+        series_number: "193"
+        warning_type: "(4) NAVAREA navigational warning"
+        year: "21"
+      publication_time: "20210209T000001Z"
+      navwarn_type_general: "works"
+      int_service: true
+    navwarn_preamble_content:
+      header_role: "ID00"
+      the_warning_part_role: "ID01"
+    navwarn_parts:
+      - id: "ID01"
+        fixed_date_range:
+          - date_start: "20210209"
+            time_of_day_start: "000001Z"
+        warning_information:
+          information:
+            language: "eng"
+            text: "M/V ILE DE BREHAT"
+          navwarn_type_details: "cable laying operation"
+        geometry:
+          - "LINE (SURFACE) 49-00.80N 007-55.60W, 49-02.20N 007-53.90W."
+          - "LINE (SURFACE) 9-05.10N 007-52.40W, 49-06.00N 007-52.60W."
+
+  - cls_num: "3.9.8"
+    title: "Example 8 -- Ship to Ship Operations"
+    message: |
+      NAVAREA IV 20/22
+      WESTERN SOUTH ATLANTIC.
+      EAST OF PARANAGUA.
+      CHART _________ (INT ___________ ).
+      1. SHIP TO SHIP OPERATIONS 290900 UTC DEC 2021 TO
+      010900 UTC JAN 2022 BETWEEN M/V LENA KNUTSEN AND
+      M/V SAVEIROS IN 10-02.28N 060-15.08W.
+      2. CANCEL THIS MESSAGE 011000 UTC JAN 2022.
+    navwarn_preamble:
+      id: "ID00"
+      general_area:
+        location_name:
+          language: "eng"
+          text: "WESTERN SOUTH ATLANTIC."
+      locality:
+        location_name:
+          language: "eng"
+          text: "EAST OF PARANAGUA."
+      message_series_identifier:
+        agency_responsible_for_production: "USXX"
+        nationality: "US"
+        name_of_series: "NAVAREA IV"
+        series_number: "20"
+        warning_type: "(4) NAVAREA navigational warning"
+        year: "22"
+      publication_time: "20211224T090001Z"
+      cancellation_date: "20220101T100000Z"
+      navwarn_type_general: "Other = Ship to Ship operations"
+      int_service: true
+    navwarn_preamble_content:
+      header_role: "ID00"
+      the_warning_part_role: "ID01"
+    navwarn_parts:
+      - id: "ID01"
+        fixed_date_range:
+          - date_end: "20220101"
+            date_start: "20211229"
+            time_of_day_end: "090000Z"
+            time_of_day_start: "090000Z"
+        warning_information:
+          information:
+            language: "eng"
+            text: "M/V LENA KNUTSEN AND M/V SAVEIROS"
+        geometry:
+          - "Point 10-02.28N 060-15.08W"
+
+  - cls_num: "3.9.9"
+    title: "Example 9 -- Diving Operations"
+    message: |
+      NAVAREA V 20/22
+      WESTERN SOUTH ATLANTIC.
+      EAST OF PONTA DO UBU.
+      CHART _________ (INT ___________ ).
+      1.DIVING OPERATIONS IN PROGRESS 1100 UTC TO 2100
+      UTC DAILY 23 TO 26 OCT 2022 IN 20-50.33S 040-03.52W.
+      2.CANCEL THIS MESSAGE 262200 UTC OCT 2022.
+    navwarn_preamble:
+      id: "ID00"
+      general_area:
+        location_name:
+          language: "eng"
+          text: "WESTERN SOUTH ATLANTIC."
+      locality:
+        location_name:
+          language: "eng"
+          text: "EAST OF PONTA DO UBU."
+      message_series_identifier:
+        agency_responsible_for_production: "BRXX"
+        nationality: "BR"
+        name_of_series: "NAVAREA V"
+        series_number: "20"
+        warning_type: "(4) NAVAREA navigational warning"
+        year: "22"
+      publication_time: "20221024T000001Z"
+      cancellation_date: "20221026T220000Z"
+      navwarn_type_general: "works"
+      int_service: true
+    navwarn_preamble_content:
+      header_role: "ID00"
+      the_warning_part_role: "ID01"
+    navwarn_parts:
+      - id: "ID01"
+        fixed_date_range:
+          - date_end: "20221023"
+            date_start: "20221023"
+            time_of_day_end: "210000Z"
+            time_of_day_start: "110000Z"
+          - date_end: "20221024"
+            date_start: "20221024"
+            time_of_day_end: "210000Z"
+            time_of_day_start: "110000Z"
+          - date_end: "20221025"
+            date_start: "20221025"
+            time_of_day_end: "210000Z"
+            time_of_day_start: "110000Z"
+          - date_end: "20221026"
+            date_start: "20221026"
+            time_of_day_end: "210000Z"
+            time_of_day_start: "110000Z"
+        warning_information:
+          information:
+            language: "eng"
+            text: "1100 UTC TO 2100 UTC DAILY 23 TO 26 OCT 2022"
+          navwarn_type_details: "diving operation"
+        geometry:
+          - "Point 20-50.33S 040-03.52W"

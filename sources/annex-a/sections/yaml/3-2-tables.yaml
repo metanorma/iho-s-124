@@ -1,0 +1,125 @@
+---
+navigational_warnings:
+  - cls_num: "3.2.1"
+    title: "Example 1 -- Dangerous Wreck"
+    message: |
+      NAVAREA VIII 805/21
+      BAY OF BENGAL.
+      OFF KRISHNAPATNAM.
+      CHART _______ (INT _______).
+      DANGEROUS WRECK REPORTED IN 14-14.25N 080-09.85E.
+    note: In the Geometry section we would need to note a "reported" designation
+    navwarn_preamble:
+      id: "ID00"
+      general_area:
+        location_name:
+          language: "eng"
+          text: "Bay of Bengal"
+      locality:
+        location_name:
+          language: "eng"
+          text: "off Krishnapatnam"
+      message_series_identifier:
+        agency_responsible_for_production: "INXX"
+        nationality: "IN"
+        name_of_series: "NAVAREA VIII"
+        series_number: "805"
+        warning_type: "(4) NAVAREA navigational warning"
+        year: "21"
+      publication_time: "20210101T000000Z"
+      navwarn_type_general: "newly discovered dangers"
+      int_service: true
+    navwarn_preamble_content:
+      header_role: "ID00"
+      the_warning_part_role: "ID01"
+    navwarn_parts:
+      - id: "ID01"
+        warning_information:
+          information:
+            language:
+          navwarn_type_details: "dangerous wreck"
+        geometry:
+          - "Point 14-14.25N 080-09.85E (Reported)"
+
+  - cls_num: "3.2.2"
+    title: "Example 2 -- Wreck Located with Depth"
+    message: |
+      NAVAREA xx 110/22
+      BARENTS SEA.
+      CHART _______ (INT _______).
+      WRECK, LEAST DEPTH 20 METRES,
+      IN 70-10.72N 032-56.55E.
+    navwarn_preamble:
+      id: "ID00"
+      general_area:
+        location_name:
+          language: "eng"
+          text: "Barents Sea"
+      locality:
+        location_name:
+          language: "eng"
+          text:
+      message_series_identifier:
+        agency_responsible_for_production: "RUXX"
+        nationality: "RU"
+        name_of_series: "NAVAREA XX"
+        series_number: "110"
+        warning_type: "(4) NAVAREA navigational warning"
+        year: "22"
+      publication_time: "20220101T000000Z"
+      navwarn_type_general: "newly discovered dangers"
+      int_service: true
+    navwarn_preamble_content:
+      header_role: "ID00"
+      the_warning_part_role: "ID01"
+    navwarn_parts:
+      - id: "ID01"
+        warning_information:
+          information:
+            language: "eng"
+            text: "least depth 20 metres"
+          navwarn_type_details: "dangerous wreck"
+        geometry:
+          - "Point 70-10.72N 032-56.55E"
+
+  - cls_num: "3.2.3"
+    title: "Example 3 -- Wreck with Buoy"
+    message: |
+      NAVAREA IX 279/21
+      IRAN.
+      RAS E JESK.
+      CHART _______ (INT _______).
+      DANGEROUS WRECK MARKED BY SOUTH CARDINAL BUOY
+      IN 25-38.85N 057-39.51E.
+    navwarn_preamble:
+      id: "ID00"
+      general_area:
+        location_name:
+          language: "eng"
+          text: "IRAN"
+      locality:
+        location_name:
+          language: "eng"
+          text: "RAS E JESK"
+      message_series_identifier:
+        agency_responsible_for_production: "PKXX"
+        nationality: "PK"
+        name_of_series: "NAVAREA IX"
+        series_number: "279"
+        warning_type: "(4) NAVAREA navigational warning"
+        year: "21"
+      publication_time: "20210101T000000Z"
+      navwarn_type_general: "newly discovered dangers"
+      int_service: true
+    navwarn_preamble_content:
+      header_role: "ID00"
+      the_warning_part_role: "ID01"
+    navwarn_parts:
+      - id: "ID01"
+        warning_information:
+          information:
+            language: "eng"
+            text: "Marked by South Cardinal Buoy"
+          navwarn_type_details: "dangerous wreck"
+        geometry:
+          - "Point 25-38.85N 057-39.51E"

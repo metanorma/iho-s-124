@@ -1,0 +1,419 @@
+---
+navigational_warnings:
+  - cls_num: "3.5.1"
+    title: "Example 1 -- Container Adrift"
+    message: |
+      NAVAREA I 215/21.
+      CELTIC SEA.
+      OFF USHANT TSS.
+      CHART __________ (INT ____________ ).
+      1. SEVEN CONTAINERS ADRIFT IN VICINITY
+      48-40.00N 005-56.00W AT 250856 UTC NOV 2021.
+      2.CANCEL THIS MSG 280856 UTC NOV 2021.
+    navwarn_preamble:
+      id: "ID00"
+      general_area:
+        location_name:
+          language: "eng"
+          text: "CELTIC SEA"
+      locality:
+        location_name:
+          language: "eng"
+          text: "OFF USHANT TSS"
+      message_series_identifier:
+        agency_responsible_for_production: "GBXX"
+        nationality: "GB"
+        name_of_series: "NAVAREA I"
+        series_number: "215"
+        warning_type: "(4) NAVAREA navigational warning"
+        year: "2021"
+      cancellation_date: "20211128T085600Z"
+      publication_time: "20211125T000000Z"
+      navwarn_type_general: "drifting hazards"
+      int_service: true
+    navwarn_preamble_content:
+      header_role: "ID00"
+      the_warning_part_role: "ID01"
+    navwarn_parts:
+      - id: "ID01"
+        fixed_date_range:
+          - date_start: "20211125"
+            time_of_day_start: "085600Z"
+        warning_information:
+          information:
+            language: "eng"
+            text: "seven containers"
+          navwarn_type_details: "container adrift"
+        geometry:
+          - "Point 48-40.00N 005-56.00W"
+
+  - cls_num: "3.5.2"
+    title: "Example 2 -- Derelict Vessel Adrift"
+    message: |
+      NAVAREA II 418/21
+      EASTERN NORTH ATLANTIC.
+      MADEIRA.
+      CHART ________ (INT __________ ).
+      1. DERELICT SAILING VESSEL ADRIFT IN VICINITY
+      32-46.60N 014-09.10W AT 031423 UTC NOV 2021.
+      2. CANCEL THIS MSG 061423 UTC NOV 2021.
+    navwarn_preamble:
+      id: "ID00"
+      general_area:
+        location_name:
+          language: "eng"
+          text: "EASTERN NORTH ATLANTIC"
+      locality:
+        location_name:
+          language: "eng"
+          text: "MADEIRA"
+      message_series_identifier:
+        agency_responsible_for_production: "FRXX"
+        nationality: "FR"
+        name_of_series: "NAVAREA II"
+        series_number: "418"
+        warning_type: "(4) NAVAREA navigational warning"
+        year: "2021"
+      cancellation_date: "20211106T142300Z"
+      publication_time: "20211103T142300Z"
+      navwarn_type_general: "drifting hazards"
+      int_service: true
+    navwarn_preamble_content:
+      header_role: "ID00"
+      the_warning_part_role: "ID01"
+    navwarn_parts:
+      - id: "ID01"
+        fixed_date_range:
+          - date_start: "20211103"
+            time_of_day_start: "142300Z"
+        warning_information:
+          information:
+            language: "eng"
+            text: "sailing vessel"
+          navwarn_type_details: "derelict vessel adrift"
+        geometry:
+          - "Point 32-46.60N 014-09.10W"
+
+  - cls_num: "3.5.3"
+    title: "Example 3 -- Fishing Net Adrift"
+    message: |
+      NAVAREA XI 384/21
+      TIMOR SEA.
+      CHART _________ (INT ___________ ).
+      1. FISHING NET, 50 METRES LONG, ADRIFT
+      IN 09-27.60S 131-49.00E AT 230022 UTC NOV 2021.
+      2. CANCEL THIS MSG 260022 UTC NOV 2021.
+    navwarn_preamble:
+      id: "ID00"
+      general_area:
+        location_name:
+          language: "eng"
+          text: "TIMOR SEA"
+      message_series_identifier:
+        agency_responsible_for_production: "JPXX"
+        nationality: "JP"
+        name_of_series: "NAVAREA XI"
+        series_number: "384"
+        warning_type: "(4) NAVAREA navigational warning"
+        year: "2021"
+      cancellation_date: "20211126T002200Z"
+      publication_time: "20211122T000000Z"
+      navwarn_type_general: "drifting hazards"
+      int_service: true
+    navwarn_preamble_content:
+      header_role: "ID00"
+      the_warning_part_role: "ID01"
+    navwarn_parts:
+      - id: "ID01"
+        fixed_date_range:
+          - date_start: "20211123"
+            time_of_day_start: "002200Z"
+        warning_information:
+          information:
+            language: "eng"
+            text: "50 metres long"
+          navwarn_type_details: "fishing net adrift"
+        geometry:
+          - "Point 09-27.60S 131-49.00E"
+
+  - cls_num: "3.5.4"
+    title: "Example 4 -- Object Adrift"
+    message: |
+      NAVAREA IV 1044/21
+      WESTERN CARIBBEAN SEA.
+      COLOMBIA.
+      CHART _________ (INT ___________ ).
+      1. PARTIALLY SUBMERGED RECTANGULAR METALLIC OBJECT
+      ADRIFT IN VICINITY 12-58.31N 078-03.09W
+      AT 190030 UTC NOV 2021.
+      2. CANCEL THIS MSG 220030 UTC NOV 2021.
+    navwarn_preamble:
+      id: "ID00"
+      general_area:
+        location_name:
+          language: "eng"
+          text: "WESTERN CARIBBEAN SEA"
+      locality:
+        location_name:
+          language: "eng"
+          text: "COLOMBIA"
+      message_series_identifier:
+        agency_responsible_for_production: "USXX"
+        nationality: "US"
+        name_of_series: "NAVAREA IV"
+        series_number: "1044"
+        warning_type: "(4) NAVAREA navigational warning"
+        year: "2021"
+      cancellation_date: "20211122T003000Z"
+      publication_time: "20211119T000000Z"
+      navwarn_type_general: "drifting hazards"
+      int_service: true
+    navwarn_preamble_content:
+      header_role: "ID00"
+      the_warning_part_role: "ID01"
+    navwarn_parts:
+      - id: "ID01"
+        fixed_date_range:
+          - date_start: "20211119"
+            time_of_day_start: "003000Z"
+        warning_information:
+          information:
+            language: "eng"
+            text: "PARTIALLY SUBMERGED RECTANGULAR METALLIC OBJECT"
+          navwarn_type_details: "object adrift"
+        geometry:
+          - "Point 12-58.31N 078-03.09W"
+
+  - cls_num: "3.5.5"
+    title: "Example 5 -- Buoy Adrift"
+    message: |
+      NAVAREA VIII 709/21.
+      BAY OF BENGAL.
+      OFF MACHILIPATNAM.
+      CHART _________ (INT ___________ ).
+      1. BUOY ADRIFT IN VICINITY 15-37.90N 082-10.3E
+      ON 042359 UTC MAR 2021.
+      2. CANCEL THIS MSG 072359 UTC MAR 2021.
+    navwarn_preamble:
+      id: "ID00"
+      general_area:
+        location_name:
+          language: "eng"
+          text: "BAY OF BENGAL"
+      locality:
+        location_name:
+          language: "eng"
+          text: "OFF MACHILIPATNAM"
+      message_series_identifier:
+        agency_responsible_for_production: "INXX"
+        nationality: "IN"
+        name_of_series: "NAVAREA VIII"
+        series_number: "709"
+        warning_type: "(4) NAVAREA navigational warning"
+        year: "2021"
+      cancellation_date: "20210307T235900Z"
+      publication_time: "20210305T000000Z"
+      navwarn_type_general: "aids to navigation change"
+      int_service: true
+    navwarn_preamble_content:
+      header_role: "ID00"
+      the_warning_part_role: "ID01"
+    navwarn_parts:
+      - id: "ID01"
+        fixed_date_range:
+          - date_start: "20210304"
+            time_of_day_start: "2359Z"
+        warning_information:
+          information:
+            language: "eng"
+          navwarn_type_details: "buoy adrift"
+        geometry:
+          - "Point 15-37.90N 082-10.30E"
+
+  - cls_num: "3.5.6"
+    title: "Example 6 -- Floating Debris"
+    message: |
+      NAVAREA VII 93/21
+      WESTERN INDIAN OCEAN.
+      OFF REUNION.
+      CHART _________ (INT ___________ ).
+      1. WOOD DEBRIS ADRIFT IN 21-10.50S 055-12.33E AT 291036 UTC MAR 2021.
+      2. CANCEL THIS MSG 011036 UTC APR 2021.
+    navwarn_preamble:
+      id: "ID00"
+      general_area:
+        location_name:
+          language: "eng"
+          text: "WESTERN INDIAN OCEAN"
+      locality:
+        location_name:
+          language: "eng"
+          text: "OFF REUNION"
+      message_series_identifier:
+        agency_responsible_for_production: "ZAXX"
+        nationality: "ZA"
+        name_of_series: "NAVAREA VIII"
+        series_number: "93"
+        warning_type: "(4) NAVAREA navigational warning"
+        year: "2021"
+      cancellation_date: "20210401T103600Z"
+      publication_time: "20210329T120000Z"
+      navwarn_type_general: "Drifting hazards"
+      int_service: true
+    navwarn_preamble_content:
+      header_role: "ID00"
+      the_warning_part_role: "ID01"
+    navwarn_parts:
+      - id: "ID01"
+        fixed_date_range:
+          - date_start: "20210329"
+            time_of_day_start: "1036Z"
+        warning_information:
+          information:
+            language: "eng"
+            text: "wood debris"
+        geometry:
+          - "Point 21-10.50S 055-12.33E"
+
+  - cls_num: "3.5.7"
+    title: "Example 7 -- Dead Whale Adrift"
+    message: |
+      NAVAREA IV 05/21
+      NORTHWEST ATLANTIC OCEAN.
+      SOUTHEASTERN GRAND BANKS OF NEWFOUNDLAND.
+      CHART _________ (INT ___________ ).
+      1. DEAD WHALE, 10 METRES IN LENGTH, REPORTED ADRIFT
+      IN 45-02.60N 048-52.80W AT 032100 UTC AUG 2021.
+      2. CANCEL THIS MSG 042100 UTC AUG 2021.
+    navwarn_preamble:
+      id: "ID00"
+      general_area:
+        location_name:
+          language: "eng"
+          text: "NORTHWEST ATLANTIC OCEAN"
+      locality:
+        location_name:
+          language: "eng"
+          text: "SOUTHEASTERN GRAND BANKS OF NEWFOUNDLAND"
+      message_series_identifier:
+        agency_responsible_for_production: "USXX"
+        nationality: "US"
+        name_of_series: "NAVAREA IV"
+        series_number: "5"
+        warning_type: "(4) NAVAREA navigational warning"
+        year: "2021"
+      cancellation_date: "20210804T210000Z"
+      publication_time: "20210803T22000Z"
+      navwarn_type_general: "Drifting hazards"
+      int_service: true
+    navwarn_preamble_content:
+      header_role: "ID00"
+      the_warning_part_role: "ID01"
+    navwarn_parts:
+      - id: "ID01"
+        fixed_date_range:
+          - date_start: "20210803"
+            time_of_day_start: "210000Z"
+        warning_information:
+          information:
+            language: "eng"
+            text: "10 metres in length"
+          navwarn_type_details: "dead whale adrift"
+        geometry:
+          - "Point 45-02.60N 048-52.80W (reported)"
+
+  - cls_num: "3.5.8"
+    title: "Example 8 - Mines"
+    message: |
+      NAVAREA IX 71/20
+      SOUTHERN RED SEA.
+      FARASAN BANK.
+      1. MINES REPORTED ADRIFT IN AREA BOUND BY
+      16-45.6N 042-15.7E, 15-41.5N 042-39.4E,
+      15-54.0N 043-02.3E, 16-58.7N 042-35.1E.
+      2. MARINERS ARE REQUESTED TO NAVIGATE WITH CAUTION
+      IN THE ABOVE AREA.
+    navwarn_preamble:
+      id: "ID00"
+      general_area:
+        location_name:
+          language: "eng"
+          text: "SOUTHERN RED SEA."
+      locality:
+        location_name:
+          language: "eng"
+          text: "FARASAN BANK"
+      message_series_identifier:
+        agency_responsible_for_production: "PKXX"
+        nationality: "PK"
+        name_of_series: "NAVAREA IX"
+        series_number: "5"
+        warning_type: "(4) NAVAREA navigational warning"
+        year: "2020"
+      publication_time: "2020003T220000Z"
+      navwarn_type_general: "other hazards"
+      int_service: true
+    navwarn_preamble_content:
+      header_role: "ID00"
+      the_warning_part_role: "ID01"
+    navwarn_parts:
+      - id: "ID01"
+        warning_information:
+          information:
+            language: "eng"
+            text: "reported adrift, mariners are requested to navigate with caution"
+          navwarn_type_details: "presence of naval mines"
+        geometry:
+          - "Polygon Surface (reported) 16-45.6N 042-15.7E,15-41.5N 042-39.4E,15-54.0N 043-02.3E,16-58.7N 042-35.1E."
+
+  - cls_num: "3.5.9"
+    title: "Example 9 -- Pumice Raft"
+    message: |
+      NAVAREA XIV 108/22
+      SOUTH PACIFIC OCEAN.
+      LAU BASIN.
+      1. LARGE PUMICE RAFT FROM RECENT VOLCANIC ACTIVITY IN VICINITY 18-56.0S 176-21.0W. 124 MILES WEST OF VAVAU, TONGA AT 262300 UTC AUG 2022. PUMICE RAFT APPROXIMATELY 70 SQUARE MILES IN SIZE.
+      2. CANCEL THIS MSG 292300 UTC AUG 2022.
+    navwarn_preamble:
+      id: "ID00"
+      general_area:
+        location_name:
+          language: "eng"
+          text: "SOUTH PACIFIC OCEAN"
+      locality:
+        location_name:
+          language: "eng"
+          text: "LAU BASIN"
+      message_series_identifier:
+        agency_responsible_for_production: "NZXX"
+        nationality: "NZ"
+        name_of_series: "NAVAREA XIV"
+        series_number: "108"
+        warning_type: "(4) NAVAREA navigational warning"
+        year: "22"
+      cancellation_date: "20220829T230000Z"
+      publication_time: "20220826T000100Z"
+      navwarn_type_general: "dangerous natural phenomena"
+      int_service: true
+    navwarn_preamble_content:
+      header_role: "ID00"
+      the_warning_part_role: "ID01"
+    area_affected:
+      impacts_role: "ID01"
+      affects_role: "ID02"
+    navwarn_parts:
+      - id: "ID01"
+        fixed_date_range:
+          - date_start: "20220826"
+            time_of_day_start: "000100Z"
+        warning_information:
+          information:
+            language: "eng"
+            text: "70NM Large Pumice raft in vicinity"
+          navwarn_type_details: "volcano activity"
+        geometry:
+          - "Point 18-56.0S 176-21.0W"
+    navwarn_area_affected:
+      - id: "ID02"
+        geometry:
+          - "Circle by centerpoint 70 NM radius 18-56.0S 176-21.0W"

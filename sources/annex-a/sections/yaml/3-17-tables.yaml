@@ -1,0 +1,59 @@
+---
+navigational_warnings:
+  - cls_num: "3.17.1"
+    title: "Example 1 -- WHO Advisory"
+    message: |
+      NAVAREA XVIII 69/21
+      CANADA
+      1. ON 11 MARCH 2020, THE WORLD HEALTH ORGANIZATION DECLARED THAT THE GLOBAL OUTBREAK OF COVID-19 IS A PANDEMIC. TO REDUCE THE SPREAD OF COVID-19, WHERE POSSIBLE, PRACTICE PHYSICAL DISTANCING AND PROPER HYGIENE, KEEP ROOMS WELL VENTILATED AND DISINFECT SURFACES ON BOARD.MARINERS ARE REMINDED OF THEIR RESPONSIBILITY TO DECLARE ANY ON-BOARD ILLNESS AS OUTLINED IN PART 4, OF THE CANADIAN COAST GUARD PUBLICATION, RADIO AIDS TO MARINE NAVIGATION.
+      THE CANADIAN COAST GUARD REMAINS READY TO PROVIDE ASSISTANCE TO MARINERS.
+      VISIT WWW.CANADA.CA FOR UPDATES ON COVID-19.
+      VISIT WWW.TC.CANADA.CA FOR COVID-19 UPDATES RELATED TO MARINE TRANSPORTATION.
+      2. CANCEL NAVAREA XVIII 125/20.
+    note: Bounding box of Candian territorial waters required
+    navwarn_preamble:
+      id: "ID00"
+      general_area:
+        location_name:
+          language: "eng"
+          text: "CANADA"
+      message_series_identifier:
+        agency_responsible_for_production: "CAXX"
+        nationality: "CA"
+        name_of_series: "NAVAREA XVIII"
+        series_number: "69"
+        warning_type: "(4) NAVAREA navigational warning"
+        year: "2021"
+      publication_time: "20210524T010000Z"
+      navwarn_type_general: "Health advisories"
+      int_service: true
+    navwarn_preamble_content:
+      header_role: "ID00"
+      the_warning_part_role: "ID01"
+    navwarn_references:
+      the_warning_role: "ID01"
+      the_references_role: "ID02"
+    area_affected:
+      impacts_role: "ID01"
+      affects_role: "ID03"
+    navwarn_parts:
+      - id: "ID01"
+        warning_information:
+          information:
+            language: "eng"
+            text: "ON 11 MARCH 2020, THE WORLD HEALTH ORGANIZATION DECLARED THAT THE GLOBAL OUTBREAK OF COVID-19 IS A PANDEMIC. TO REDUCE THE SPREAD OF COVID-19, WHERE POSSIBLE, PRACTICE PHYSICAL DISTANCING AND PROPER HYGIENE, KEEP ROOMS WELL VENTILATED AND DISINFECT SURFACES ON BOARD.MARINERS ARE REMINDED OF THEIR RESPONSIBILITY TO DECLARE ANY ON-BOARD ILLNESS AS OUTLINED IN PART 4, OF THE CANADIAN COAST GUARD PUBLICATION, RADIO AIDS TO MARINE NAVIGATION. THE CANADIAN COAST GUARD REMAINS READY TO PROVIDE ASSISTANCE TO MARINERS. VISIT WWW.CANADA.CA FOR UPDATES ON COVID-19. VISIT WWW.TC.CANADA.CA FOR COVID-19 UPDATES RELATED TO MARINE TRANSPORTATION."
+    navwarn_area_affected:
+      - id: "ID03"
+        geometry:
+          - "POLYGON (SURFACE): polygon representing Canadian territorial waters"
+    references:
+      - id: "ID02"
+        message_series_identifier:
+          agency_responsible_for_production: "CAXX"
+          nationality: "CA"
+          name_of_series: "NAVAREA XVIII"
+          series_number: "68"
+          warning_type: "(4) NAVAREA navigational warning"
+          year: "2021"
+        no_message_on_hand: false
+        reference_category: "(1) warning cancellation"

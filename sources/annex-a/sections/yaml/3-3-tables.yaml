@@ -1,0 +1,358 @@
+---
+navigational_warnings:
+  - cls_num: "3.3.1"
+    title: "Example 1 -- Light Established"
+    message: |
+      NAVAREA VIII 600/21
+      INDIA -- WEST COAST.
+      VALIYAZHIKAL.
+      CHART _______ (INT _______).
+      LIGHT, FL(3) W 2 SEC 15 M, ESTABLISHED
+      IN 09-08.41N 076-27.27E.
+    navwarn_preamble:
+      id: "ID00"
+      general_area:
+        location_name:
+          language: "eng"
+          text: "INDIA -- WEST COAST"
+      locality:
+        location_name:
+          language: "eng"
+          text: "VALIYAZHIKAL"
+      message_series_identifier:
+        agency_responsible_for_production: "INXX"
+        nationality: "IN"
+        name_of_series: "NAVAREA VIII"
+        series_number: "600"
+        warning_type: "(4) NAVAREA navigational warning"
+        year: "21"
+      publication_time: "20210101T000000Z"
+      navwarn_type_general: "aids to navigation change"
+      int_service: true
+    navwarn_preamble_content:
+      header_role: "ID00"
+      the_warning_part_role: "ID01"
+    area_affected:
+      impacts_role: "ID01"
+      affects_role: "ID02"
+    navwarn_parts:
+      - id: "ID01"
+        feature_name:
+          language: "eng"
+          name: "[name of light]"
+        warning_information:
+          information:
+            language: "eng"
+            text: "FL(3) W 2 SEC 15 M"
+          navwarn_type_details: "light establishment"
+        geometry:
+          - "Point 09-08.41N 076-27.27E"
+    navwarn_area_affected:
+      - id: "ID02"
+        geometry:
+          - "Circle by centerpoint 15 NM radius 09-08.41N 076-27.27E"
+
+  - cls_num: "3.3.2"
+    title: "Example 2 -- Buoy Established"
+    message: |
+      NAVAREA V 556/21
+      BRAZIL.
+      ILHA DE SAO SEBASTIAO.
+      CHART _______ (INT _______).
+      SPECIAL BUOY (ODAS), YELLOW, FL(5) Y 20 SEC,
+      ESTABLISHED IN 24-28.03S 044-24.36W.
+    note: Buoy has 5NM range
+    navwarn_preamble:
+      id: "ID00"
+      general_area:
+        location_name:
+          language: "eng"
+          text: "BRAZIL"
+      locality:
+        location_name:
+          language: "eng"
+          text: "ILHA DE SAO SEBASTIAO"
+      message_series_identifier:
+        agency_responsible_for_production: "BRXX"
+        nationality: "BR"
+        name_of_series: "NAVAREA VIII"
+        series_number: "556"
+        warning_type: "(4) NAVAREA navigational warning"
+        year: "21"
+      publication_time: "20210101T000000Z"
+      navwarn_type_general: "aids to navigation change"
+      int_service: true
+    navwarn_preamble_content:
+      header_role: "ID00"
+      the_warning_part_role: "ID01"
+    area_affected:
+      impacts_role: "ID01"
+      affects_role: "ID02"
+    navwarn_parts:
+      - id: "ID01"
+        warning_information:
+          information:
+            language: "eng"
+            text: "SPECIAL BUOY (ODAS), YELLOW, FL(5) Y 20 SEC"
+          navwarn_type_details: "buoy establishment"
+        geometry:
+          - "Point 24-28.03S 044-24.36W"
+    navwarn_area_affected:
+      - id: "ID02"
+        geometry:
+          - "Circle by centerpoint 50 NM radius 24-28.03S 044-24.36W"
+
+  - cls_num: "3.3.3"
+    title: "Example 3 -- Range Reduced"
+    message: |
+      NAVAREA VIII 664/21
+      ANDAMAN SEA.
+      PORT BLAIR.
+      CHART _______ (INT _______).
+      NORTH POINT LIGHT 11-42.29N 092-45.22E RANGE REDUCED TO 10 MILES.
+    navwarn_preamble:
+      id: "ID00"
+      general_area:
+        location_name:
+          language: "eng"
+          text: "ANDAMAN SEA"
+      locality:
+        location_name:
+          language: "eng"
+          text: "PORT BLAIR"
+      message_series_identifier:
+        agency_responsible_for_production: "BRXX"
+        nationality: "BR"
+        name_of_series: "NAVAREA VIII"
+        series_number: "556"
+        warning_type: "(4) NAVAREA navigational warning"
+        year: "21"
+      publication_time: "20210101T000000Z"
+      navwarn_type_general: "aids to navigation change"
+      int_service: true
+    navwarn_preamble_content:
+      header_role: "ID00"
+      the_warning_part_role: "ID01"
+    area_affected:
+      impacts_role: "ID01"
+      affects_role: "ID02"
+    navwarn_parts:
+      - id: "ID01"
+        feature_name:
+          language: "eng"
+          name: "north point light"
+        feature_reference:
+          feature_identifier: "[MRN]"
+        warning_information:
+          information:
+            language: "eng"
+            text: "REDUCED TO 10 MILES"
+          navwarn_type_details: "light range reduced"
+        geometry:
+          - "Point 11-42.29N 092-45."
+    navwarn_area_affected:
+      - id: "ID02"
+        geometry:
+          - "Circle by centerpoint 10 NM radius 11-42.29N 092-45."
+
+  - cls_num: "3.3.4"
+    title: "Example 4 -- Sector Light"
+    message: |
+      NAVAREA VIII 528/22
+      INDIA.
+      KANHOJI ANGRE.
+      CHART _______ (INT _______).
+      KHANDERI ISLAND LIGHT 18-42.20N 072-48.82E VISIBLE SECTOR CHANGED TO WHITE 181-018, RED 018-181 DEGREES.
+    note: 10 Mile Range
+    navwarn_preamble:
+      id: "ID00"
+      general_area:
+        location_name:
+          language: "eng"
+          text: "INDIA"
+      locality:
+        location_name:
+          language: "eng"
+          text: "KANHOJI ANGRE"
+      message_series_identifier:
+        agency_responsible_for_production: "INXX"
+        nationality: "IN"
+        name_of_series: "NAVAREA VIII"
+        series_number: "528"
+        warning_type: "(4) NAVAREA navigational warning"
+        year: "22"
+      publication_time: "20220101T000000Z"
+      navwarn_type_general: "aids to navigation change"
+      int_service: true
+    navwarn_preamble_content:
+      header_role: "ID00"
+      the_warning_part_role: "ID01"
+    area_affected:
+      impacts_role: "ID01"
+      affects_role: "ID02"
+    navwarn_parts:
+      - id: "ID01"
+        feature_name:
+          language: "eng"
+          name: "KHANDERI ISLAND LIGHT"
+        feature_reference:
+          feature_identifier: "[MRN]"
+        warning_information:
+          information:
+            language: "eng"
+            text: "WHITE 181-018, RED 018-181"
+          navwarn_type_details: "sector light change"
+        geometry:
+          - "Point 18-42.20N 072-48.82E"
+
+  - cls_num: "3.3.5"
+    title: "Example 5 -- Light Change"
+    message: |
+      NAVAREA III 863/21
+      WESTERN MEDITERRANEAN SEA.
+      ALGERIA.
+      CHART _______ (INT _______).
+      ILE RACHGOUN LIGHT 35-19.45N 001-28.65W
+      CHANGED TO F R.
+    note: Ile Rachgoun light has an 8 mile range.
+    navwarn_preamble:
+      id: "ID00"
+      general_area:
+        location_name:
+          language: "eng"
+          text: "WESTERN MEDITERRANEAN SEA"
+      locality:
+        location_name:
+          language: "eng"
+          text: "ALGERIA"
+      message_series_identifier:
+        agency_responsible_for_production: "ESXX"
+        nationality: "ES"
+        name_of_series: "NAVAREA III"
+        series_number: "863"
+        warning_type: "(4) NAVAREA navigational warning"
+        year: "21"
+      publication_time: "20210101T000000Z"
+      navwarn_type_general: "aids to navigation change"
+      int_service: true
+    navwarn_preamble_content:
+      header_role: "ID00"
+      the_warning_part_role: "ID01"
+    area_affected:
+      impacts_role: "ID01"
+      affects_role: "ID02"
+    navwarn_parts:
+      - id: "ID01"
+        feature_name:
+          language: "eng"
+          name: "ILE RACHGOUN LIGHT"
+        feature_reference:
+          aton_number: "E6718"
+          feature_identifier: "[MRN]"
+          enc_feature_reference: ""
+        warning_information:
+          information:
+            language: "eng"
+            text: "CHANGED TO F R"
+          navwarn_type_details: "light change"
+        geometry:
+          - "Point 35-19.45N 001-28.65W"
+    navwarn_area_affected:
+      - id: "ID02"
+        geometry:
+          - "Circle by centerpoint 8 NM radius 35-19.45N 001-28.65W"
+
+  - cls_num: "3.3.6"
+    title: "Example 6 -- AIS (Physical)"
+    message: |
+      NAVAREA I 12/21
+      SCOTLAND, NORTH-EAST COAST.
+      APPROACHES TO INVERNESS.
+      CHART _______ (INT _______).
+      AIS AID TO NAVIGATION MMSI 992351072 ESTABLISHED AT RIFF BANK EAST LIGHT-BUOY 57-38.38N 003-58.15W.
+    navwarn_preamble:
+      id: "ID00"
+      general_area:
+        location_name:
+          language: "eng"
+          text: "SCOTLAND-NORTH EAST COAST"
+      locality:
+        location_name:
+          language: "eng"
+          text: "APPROACHES TO INVERNESS"
+      message_series_identifier:
+        agency_responsible_for_production: "GBXX"
+        nationality: "GB"
+        name_of_series: "NAVAREA I"
+        series_number: "12"
+        warning_type: "(4) NAVAREA navigational warning"
+        year: "21"
+      publication_time: "20210101T000000Z"
+      navwarn_type_general: "aids to navigation change"
+      int_service: true
+    navwarn_preamble_content:
+      header_role: "ID00"
+      the_warning_part_role: "ID01"
+    navwarn_parts:
+      - id: "ID01"
+        feature_name:
+          language: "eng"
+          name: "AT RIFF BANK EAST LIGHT-BUOY"
+        warning_information:
+          information:
+            language: "eng"
+            text: "MMSI 992351072"
+          navwarn_type_details: "AIS transmitter establishment"
+        geometry:
+          - "Point 57-38.38N 003-58.15W"
+
+  - cls_num: "3.3.7"
+    title: "Example 7 -- AIS (Virtual)"
+    message: |
+      NAVAREA X 12/21
+      TORRES STRAIT.
+      CAPE YORK NORTHWESTWARD.
+      CHART _______ (INT _______).
+      HERALD PATCHES BUOY 10-30.16S 142-21.50E TEMPORARILY REMOVED. VIRTUAL AIS AID TO NAVIGATION STARBOARD HAND MARK MMSI 995036022 ESTABLISHED AT THE SAME POSITION.
+    navwarn_preamble:
+      id: "ID00"
+      general_area:
+        location_name:
+          language: "eng"
+          text: "TORRES STRAIT"
+      locality:
+        location_name:
+          language: "eng"
+          text: "CAPE YORK NORTHWESTWARD"
+      message_series_identifier:
+        agency_responsible_for_production: "AUXX"
+        nationality: "AU"
+        name_of_series: "NAVAREA X"
+        series_number: "12"
+        warning_type: "(4) NAVAREA navigational warning"
+        year: "21"
+      publication_time: "20210101T000000Z"
+      navwarn_type_general: "aids to navigation change"
+      int_service: true
+    navwarn_preamble_content:
+      header_role: "ID00"
+      the_warning_part_role: "ID01, ID02"
+    navwarn_parts:
+      - id: "ID01"
+        feature_name:
+          language: "eng"
+          name: "HERALD PATCHES BUOY"
+        warning_information:
+          information:
+            language: "eng"
+          navwarn_type_details: "buoy withdrawn"
+        geometry:
+          - "Point 10-30.16S 142-21.50E"
+      - id: "ID02"
+        warning_information:
+          information:
+            language: "eng"
+            text: "STARBOARD HAND MARK MMSI 992351072"
+          navwarn_type_details: "V-AIS establishment"
+        geometry:
+          - "Point 10-30.16S 142-21.50E"

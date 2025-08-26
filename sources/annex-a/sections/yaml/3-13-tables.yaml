@@ -1,0 +1,283 @@
+---
+navigational_warnings:
+  - cls_num: "3.13.1"
+    title: "Example 1 -- Firing Operations"
+    message: |
+      NAVAREA XVI 221/21
+      EASTERN SOUTH PACIFIC.
+      PERU.
+      CHART ____ (INT ____).
+      1. NAVAL FIRING EXERCISES 161400 UTC TO 170000 UTC JAN 2021 IN AREA BOUND BY
+      11-35.00S 077-43.00W,11-35.00S 077-33.00W, 11-47.00S 077-33.00W,11-47.00S 077-43.00W.
+      2. CANCEL THIS MESSAGE 181700 UTC JAN 2021.
+    navwarn_preamble:
+      id: "ID00"
+      general_area:
+        location_name:
+          language: "eng"
+          text: "EASTERN SOUTH PACIFIC"
+      locality:
+        location_name:
+          language: "eng"
+          text: "PERU"
+      message_series_identifier:
+        agency_responsible_for_production: "PEXX"
+        nationality: "PE"
+        name_of_series: "NAVAREA XVI"
+        series_number: "221"
+        warning_type: "(4) NAVAREA navigational warnings"
+        year: "2021"
+      cancellation_date: "20210118T170000Z"
+      publication_time: "20210115T000001Z"
+      navwarn_type_general: "Special operations"
+      int_service: true
+    navwarn_preamble_content:
+      header_role: "ID00"
+      the_warning_part_role: "ID01"
+    navwarn_parts:
+      - id: "ID01"
+        fixed_date_range:
+          - date_end: "20210117"
+            date_start: "2021011"
+            time_of_day_end: "170000Z"
+            time_of_day_start: "140000Z"
+        warning_information:
+          navwarn_type_details: "firing exercise"
+        geometry:
+          - "POLYGON (SURFACE) 11-35.00S 077-43.00W,11-35.00S 077-33.00W, 11-47.00S 077-33.00W,11-47.00S 077-43.00W."
+        restriction: "14 = area to be avoided"
+
+  - cls_num: "3.13.2"
+    title: "Example 2 -- Blasting Operation"
+    message: |
+      NAVAREA VIII 864/21
+      INDIA WEST COAST.
+      OFF ALAPPUZHA.
+      1. SUBSURFACE EXPLOSIVE OPERATIONS SCHEDULED 0330 TO 0630 UTC DAILY ON 17 AND 21 DEC 2021 IN AREA WITHIN FIVE MILES OF 09-19.58N 075-46.8E.
+      2. CANCEL THIS MSG 210730 UTC DEC 21.
+    navwarn_preamble:
+      id: "ID00"
+      general_area:
+        location_name:
+          language: "eng"
+          text: "INDIA WEST COAST"
+      locality:
+        location_name:
+          language: "eng"
+          text: "OFF ALAPPUZHA"
+      message_series_identifier:
+        agency_responsible_for_production: "INXX"
+        nationality: "IN"
+        name_of_series: "NAVAREA VIII"
+        series_number: "864"
+        warning_type: "(4) NAVAREA navigational warnings"
+        year: "2021"
+      cancellation_date: "20211221T073000Z"
+      publication_time: "20211171T073000Z"
+      navwarn_type_general: "Special operations"
+      int_service: true
+    navwarn_preamble_content:
+      header_role: "ID00"
+      the_warning_part_role: "ID01"
+    navwarn_parts:
+      - id: "ID01"
+        fixed_date_range:
+          - date_end: "20211217"
+            date_start: "20211217"
+            time_of_day_end: "063000Z"
+            time_of_day_start: "033000Z"
+          - date_end: "20211221"
+            date_start: "20211221"
+            time_of_day_end: "063000Z"
+            time_of_day_start: "033000Z"
+        warning_information:
+          navwarn_type_details: "blasting operation"
+        geometry:
+         - "Polygon (Circle by centerpoint) Radius 5NM centerpoint 09-19.58N 075-46.8 E"
+        restriction: "14 = area to be avoided"
+
+  - cls_num: "3.13.3"
+    title: "Example 3 -- Fallout Hazard (Space Debris)"
+    message: |
+      NAVAREA XIV 218/21.
+      SOUTHWEST PACIFIC BASIN.
+      1. HAZARDOUS OPERATIONS, SPACE DEBRIS SCHEDULED FROM 062240 UTC TO 200925 UTC DEC 2021 IN AREAS BOUND BY:
+        A. 41-06.00S 176-18.00W, 39-54.00S 175-42.00W,
+        40-36.00S 171-06.00W, 41-54.00S 171-18.00W.
+        B. 42-36.00S 163-06.00W, 41-36.00S 163-12.00W,
+        41-42.00S 158-00.00W, 42-36.00S 157-48.00W.
+      2. CANCEL THIS MSG 201025 UTC DEC 2021.
+    navwarn_preamble:
+      id: "ID00"
+      general_area:
+        location_name:
+          language: "eng"
+          text: "SOUTHWEST PACIFIC BASIN"
+      message_series_identifier:
+        agency_responsible_for_production: "NZXX"
+        nationality: "NZ"
+        name_of_series: "NAVAREA XIV"
+        series_number: "218"
+        warning_type: "(4) NAVAREA navigational warnings"
+        year: "2021"
+      cancellation_date: "20211220T102500Z"
+      publication_time: "20211201T224000Z"
+      navwarn_type_general: "Other hazards"
+      int_service: true
+    navwarn_preamble_content:
+      header_role: "ID00"
+      the_warning_part_role: "ID01"
+    navwarn_parts:
+      - id: "ID01"
+        fixed_date_range:
+          - date_end: "20211220"
+            date_start: "20211206"
+            time_of_day_end: "092500Z"
+            time_of_day_start: "224000Z"
+        warning_information:
+          navwarn_type_details: "fallout hazard"
+        geometry:
+          - "POLYGON (SURFACE) 41-06.00S 176-18.00W, 39-54.00S 175-42.00W,40-36.00S 171-06.00W, 41-54.00S 171-18.00W."
+          - "POLYGON (SURFACE) 42-36.00S 163-06.00W, 41-36.00S 163-12.00W, 41-42.00S 158-00.00W, 42-36.00S 157-48.00W."
+        restriction: "14 = area to be avoided"
+
+  - cls_num: "3.13.4"
+    title: "Example 4 -- Military Exercise"
+    message: |
+      NAVAREA VIII 857/21.
+      ARABIAN SEA.
+      OFF BALASORE.
+      1. INDIAN AIR FORCE EXERCISE 0430 TO 0630 UTC AND 0830 TO 1030 20 THRU 22 DEC 2021 IN AREA BOUND BY
+      21-41.00N 087-44.00E, 20-57.00N 086-53.00E
+      20-56.00N 086-55.00E.
+      2. CANCEL THIS MSG 221130 UTC DEC 2021.
+    navwarn_preamble:
+      id: "ID00"
+      general_area:
+        location_name:
+          language: "eng"
+          text: "ARABIAN SEA"
+      locality:
+        location_name:
+          language: "eng"
+          text: "OFF BALASORE"
+      message_series_identifier:
+        agency_responsible_for_production: "INXX"
+        nationality: "IN"
+        name_of_series: "NAVAREA VIII"
+        series_number: "857"
+        warning_type: "(4) NAVAREA navigational warnings"
+        year: "2021"
+      cancellation_date: "20211222T113000Z"
+      publication_time: "20212115T043000Z"
+      navwarn_type_general: "Special operations"
+      int_service: true
+    navwarn_preamble_content:
+      header_role: "ID00"
+      the_warning_part_role: "ID01"
+    navwarn_parts:
+      - id: "ID01"
+        fixed_date_range:
+          - date_end: "20211220"
+            date_start: "20211220"
+            time_of_day_end: "063000Z"
+            time_of_day_start: "043000Z"
+          - date_end: "20211220"
+            date_start: "20211220"
+            time_of_day_end: "103000Z"
+            time_of_day_start: "083000Z"
+          - date_end: "20211221"
+            date_start: "20211221"
+            time_of_day_end: "063000Z"
+            time_of_day_start: "043000Z"
+          - date_end: "20211221"
+            date_start: "20211221"
+            time_of_day_end: "103000Z"
+            time_of_day_start: "083000Z"
+          - date_end: "20211222"
+            date_start: "20211222"
+            time_of_day_end: "063000Z"
+            time_of_day_start: "043000Z"
+          - date_end: "20211222"
+            date_start: "20211222"
+            time_of_day_end: "103000Z"
+            time_of_day_start: "083000Z"
+        warning_information:
+          information:
+            language: "eng"
+            text: "Indian Air Force"
+          navwarn_type_details: "military exercise"
+        geometry:
+          - "POLYGON (SURFACE) 41-06.00S 176-18.00W, 39-54.00S 175-42.00W, 40-36.00S 171-06.00W, 41-54.00S 171-18.00W."
+          - "POLYGON (SURFACE) 42-36.00S 163-06.00W, 41-36.00S 163-12.00W, 41-42.00S 158-00.00W, 42-36.00S 157-48.00W."
+        restriction: "14 = area to be avoided"
+
+  - cls_num: "3.13.5"
+    title: "Example 5 -- Fallout Hazard (Rocket Launch)"
+    message: |
+      NAVAREA IV 1092/21
+      WESTERN NORTH ATLANTIC.
+      FLORIDA.
+      1. ROCKET LAUNCHING 090600 UTC TO 090753 UTC DEC 2021, ALTERNATE 0600 UTC TO 0753 UTC DAILY 10 THRU 14 DEC 2021 IN AREA BOUND BY
+      28-39.03N 080--37.70W, 28-41.00N 080-20.00W, 28-38.00N 079-42.00W, 28-35.00N 079-43.00W,
+      28-33.00N 080-17.00W, 28-34.78N 080-34.08W.
+      2. CANCEL THIS MESSAGE 140853 UTC DEC 2021.
+    navwarn_preamble:
+      id: "ID00"
+      general_area:
+        location_name:
+          language: "eng"
+          text: "Western North Atlantic"
+      locality:
+        location_name:
+          language: "eng"
+          text: "Florida"
+      message_series_identifier:
+        agency_responsible_for_production: "USXX"
+        nationality: "US"
+        name_of_series: "NAVAREA IV"
+        series_number: "1092"
+        warning_type: "(4) NAVAREA navigational warnings"
+        year: "2021"
+      cancellation_date: "20211214T085300Z"
+      publication_time: "20211205T043000Z"
+      navwarn_type_general: "Special operations"
+      int_service: true
+    navwarn_preamble_content:
+      header_role: "ID00"
+      the_warning_part_role: "ID01"
+    navwarn_parts:
+      - id: "ID01"
+        fixed_date_range:
+          - date_end: "20211209"
+            date_start: "20211209"
+            time_of_day_end: "075300Z"
+            time_of_day_start: "060000Z"
+          - date_end: "20211210"
+            date_start: "20211210"
+            time_of_day_end: "075300Z"
+            time_of_day_start: "060000Z"
+          - date_end: "20211211"
+            date_start: "20211211"
+            time_of_day_end: "075300Z"
+            time_of_day_start: "060000Z"
+          - date_end: "20211212"
+            date_start: "20211212"
+            time_of_day_end: "075300Z"
+            time_of_day_start: "060000Z"
+          - date_end: "20211213"
+            date_start: "20211213"
+            time_of_day_end: "075300Z"
+            time_of_day_start: "060000Z"
+          - date_end: "20211214"
+            date_start: "20211214"
+            time_of_day_end: "075300Z"
+            time_of_day_start: "060000Z"
+        warning_information:
+          information:
+            language: "eng"
+            text: "ROCKET LAUNCHING 090600 UTC TO 090753 UTC DEC 2021, ALTERNATE 0600 UTC TO 0753 UTC DAILY 10 THRU 14 DEC 2021"
+          navwarn_type_details: "fallout hazard"
+        geometry:
+          - "POLYGON (SURFACE) 28-39.03N 080-37.70W, 28-41.00N 080-20.00W, 28-38.00N 079-42.00W, 28-35.00N 079-43.00W, 28-33.00N 080-17.00W, 28-34.78N 080-34.08W"
+        restriction: "14 = area to be avoided"

@@ -1,0 +1,336 @@
+---
+navigational_warnings:
+  - cls_num: "3.11.1"
+    title: "Example 1 -- Drill Rig on Location"
+    message: |
+      NAVAREA X 5/21
+      INDIAN OCEAN.
+      AUSTRALIA-NORTHWEST COAST.
+      CHART _________ (INT ___________ ).
+      DRILL RIG VALARIS MS-1 IN 20-57.27S 114-52.10E.
+      2.5 MILES CLEARANCE REQUESTED.
+    navwarn_preamble:
+      id: "ID00"
+      general_area:
+        location_name:
+          language: "eng"
+          text: "INDIAN OCEAN"
+      locality:
+        location_name:
+          language: "eng"
+          text: "AUSTRALIA-NORTHWEST COAST"
+      message_series_identifier:
+        agency_responsible_for_production: "AUXX"
+        nationality: "AU"
+        name_of_series: "NAVAREAX"
+        series_number: "5"
+        warning_type: "(4) NAVAREA Navigational Warning"
+        year: "2021"
+      publication_time: "20210201T000001Z"
+      navwarn_type_general: "Offshore infrastructure"
+      int_service: true
+    navwarn_preamble_content:
+      header_role: "ID00"
+      the_warning_part_role: "ID01"
+    area_affected:
+      impacts_role: "ID01"
+      affects_role: "ID02"
+    navwarn_parts:
+      - id: "ID01"
+        fixed_date_range:
+          - date_start: "20210201"
+            time_of_day_start: "000001Z"
+        warning_information:
+          information:
+            language: "eng"
+            text: "DRILL RIG VALARIS MS-1, 2.5 MILE CLEARANCE REQUESTED"
+          navwarn_type_details: "drilling site operations"
+        geometry:
+          - "Point 20-57.27S 114-52.10E."
+        restriction: "8=entry restricted"
+    navwarn_area_affected:
+      - id: "ID02"
+        geometry:
+          - "Circle by center point radius 2.5NM 20-57.27S 114-52.10E."
+
+  - cls_num: "3.11.2"
+    title: "Example 2 -- Drilling Site Operations"
+    message: |
+      NAVAREA VII 117/21
+      SOUTH ATLANTIC OCEAN.
+      ANGOLA, CONGO, IVORY COAST AND NAMIBIA. CHART (INT ).
+      RIG LIST:
+        05-08.58S 011-55.15E PRIDE CAPINDA.
+        05-33.08S 011-27.08E PRIDE VENEZUELA.
+        06-03.81S 011-05.86E GSF RIG 140.
+        06-19.02S 011-03.23E KIZOMBA A (NEW).
+        06-20.15S 011-18.01E PRIDE SOUTH PACIFIC.
+        06-20.92S 011-09.22E KIZOMBA B.
+        07-40.05S 011-45.08E PRIDE AFRICA.
+        07-43.00S 011-43.00E PRIDE ANGOLA.
+        35-08.86S 022-31.81E PRIDE SOUTH SEAS.
+        35-13.99S 021-29.89E ORCA.
+      FOUR MILE EXCLUSION ZONE ABOUT RIGS DUE TO PRESENCE OF UNLIT ANCHOR MARKING BUOYS.
+    navwarn_preamble:
+      id: "ID00"
+      general_area:
+        location_name:
+          language: "eng"
+          text: "SOUTH ATLANTIC OCEAN"
+      locality:
+        location_name:
+          language: "eng"
+          text: "ANGOLA, CONGO, IVORY COAST AND NAMIBIA"
+      message_series_identifier:
+        agency_responsible_for_production: "ZAXX"
+        nationality: "ZA"
+        name_of_series: "NAVAREA VII"
+        series_number: "117"
+        warning_type: "(4) NAVAREA navigational warning"
+        year: "2021"
+      navwarn_title:
+        language: "eng"
+        text: "RIG LIST"
+      publication_time: "20210622T140000Z"
+      navwarn_type_general: "Offshore infrastructure"
+      int_service: true
+    navwarn_preamble_content:
+      header_role: "ID00"
+      the_warning_part_role: "ID01, ID02, ID03, ID04, ID05, ID06, ID07, ID08, ID09, ID10"
+    area_affected:
+      impacts_role: "ID01, ID02, ID03, ID04, ID05, ID06, ID07, ID08, ID09, ID10"
+      affects_role: "ID11, ID12, ID13, ID14, ID15, ID16, ID17, ID18, ID19, ID20"
+    navwarn_parts:
+      # PRIDECAPINDA
+      - id: "ID01"
+        feature_name:
+          name_usage: "(1) default name"
+          language: "eng"
+          name: "PRIDE CAPINDA"
+        warning_information:
+          information:
+            language: "eng"
+            text: "EXCLUSION ZONE DUE TO PRESENCE OF UNLIT ANCHOR MARKING BUOYS"
+          navwarn_type_details: "drilling site operations"
+        geometry:
+          - "Point 05-08.58S 011-55.15E"
+        restriction: "(8) entry restricted"
+      # PRIDE VENEZUELA
+      - id: "ID02"
+        feature_name:
+          name_usage: "(1) default name"
+          language: "eng"
+          name: "PRIDE VENEZUELA"
+        warning_information:
+          information:
+            language: "eng"
+            text: "EXCLUSION ZONE DUE TO PRESENCE OF UNLIT ANCHOR MARKING BUOYS"
+          navwarn_type_details: "drilling site operations"
+        geometry:
+          - "Point 05-33.08S 011-27.08E"
+        restriction: "(8) entry restricted"
+      # GSF RIG 140
+      - id: "ID03"
+        feature_name:
+          name_usage: "(1) default name"
+          language: "eng"
+          name: "GSF RIG 140"
+        warning_information:
+          information:
+            language: "eng"
+            text: "EXCLUSION ZONE DUE TO PRESENCE OF UNLIT ANCHOR MARKING BUOYS"
+          navwarn_type_details: "drilling site operations"
+        geometry:
+          - "Point 06-03.81S 011-05.86E"
+        restriction: "(8) entry restricted"
+      # KIZOMBA A (NEW)
+      - id: "ID04"
+        feature_name:
+          name_usage: "(1) default name"
+          language: "eng"
+          name: "KIZOMBA A (NEW)"
+        warning_information:
+          information:
+            language: "eng"
+            text: "EXCLUSION ZONE DUE TO PRESENCE OF UNLIT ANCHOR MARKING BUOYS"
+          navwarn_type_details: "drilling site operations"
+        geometry:
+         - "Point 06-19.02S 011-03.23E"
+        restriction: "(8) entry restricted"
+      # PRIDE SOUTH PACIFIC
+      - id: "ID05"
+        feature_name:
+          name_usage: "(1) default name"
+          language: "eng"
+          name: "PRIDE SOUTH PACIFIC"
+        warning_information:
+          information:
+            language: "eng"
+            text: "EXCLUSION ZONE DUE TO PRESENCE OF UNLIT ANCHOR MARKING BUOYS"
+          navwarn_type_details: "drilling site operations"
+        geometry:
+          - "Point 06-20.15S 011-18.01E"
+        restriction: "(8) entry restricted"
+      # KIZOMBA B
+      - id: "ID06"
+        feature_name:
+          name_usage: "(1) default name"
+          language: "eng"
+          name: "KIZOMBA B"
+        warning_information:
+          information:
+            language: "eng"
+            text: "EXCLUSION ZONE DUE TO PRESENCE OF UNLIT ANCHOR MARKING BUOYS"
+          navwarn_type_details: "drilling site operations"
+        geometry:
+          - "Point 06-20.92S 011-09.22E"
+        restriction: "(8) entry restricted"
+      # PRIDEAFRICA
+      - id: "ID07"
+        feature_name:
+          name_usage: "(1) default name"
+          language: "eng"
+          name: "PRIDEAFRICA"
+        warning_information:
+          information:
+            language: "eng"
+            text: "EXCLUSION ZONE DUE TO PRESENCE OF UNLIT ANCHOR MARKING BUOYS"
+          navwarn_type_details: "drilling site operations"
+        geometry:
+          - "Point 07-40.05S 011-45.08E"
+        restriction: "(8) entry restricted"
+      # PRIDEANGOLA
+      - id: "ID08"
+        feature_name:
+          name_usage: "(1) default name"
+          language: "eng"
+          name: "PRIDEANGOLA"
+        warning_information:
+          information:
+            language: "eng"
+            text: "EXCLUSION ZONE DUE TO PRESENCE OF UNLIT ANCHOR MARKING BUOYS"
+          navwarn_type_details: "drilling site operations"
+        geometry:
+          - "Point 07-43.00S 011-43.00E"
+        restriction: "(8) entry restricted"
+      # PRIDE SOUTH SEAS
+      - id: "ID09"
+        feature_name:
+          name_usage: "(1) default name"
+          language: "eng"
+          name: "PRIDE SOUTH SEAS"
+        warning_information:
+          information:
+            language: "eng"
+            text: "EXCLUSION ZONE DUE TO PRESENCE OF UNLIT ANCHOR MARKING BUOYS"
+          navwarn_type_details: "drilling site operations"
+        geometry:
+          - "Point 35-08.86S 022-31.81E"
+        restriction: "(8) entry restricted"
+      # ORCA
+      - id: "ID10"
+        feature_name:
+          name_usage: "(1) default name"
+          language: "eng"
+          name: "ORCA"
+        warning_information:
+          information:
+            language: "eng"
+            text: "EXCLUSION ZONE DUE TO PRESENCE OF UNLIT ANCHOR MARKING BUOYS"
+          navwarn_type_details: "drilling site operations"
+        geometry:
+          - "Point 35-13.99S 021-29.89E"
+        restriction: "(8) entry restricted"
+    navwarn_area_affected:
+      # Area affected for PRIDECAPINDA
+      - id: "ID11"
+        geometry:
+          - "Circle by centerpoint radius 4NM 05-08.58S 011-55.15E"
+      # Area affected for PRIDE VENEZUELA
+      - id: "ID12"
+        geometry:
+          - "Circle by centerpoint radius 4NM 05-33.08S 011-27.08E"
+      # Area affected for GSF RIG 140
+      - id: "ID13"
+        geometry:
+          - "Circle by centerpoint radius 4NM 06-03.81S 011-05.86E"
+      # Area affected for KIZOMBA A (NEW)
+      - id: "ID14"
+        geometry:
+          - "Circle by centerpoint radius 4NM 06-19.02S 011-03.23E"
+      # Area affected for PRIDE SOUTH PACIFIC
+      - id: "ID15"
+        geometry:
+          - "Circle by centerpoint radius 4NM 06-20.15S 011-18.01E"
+      # Area affected for KIZOMBA B
+      - id: "ID16"
+        geometry:
+          - "Circle by centerpoint radius 4NM 06-20.92S 011-09.22E"
+      # Area affected for PRIDEAFRICA
+      - id: "ID17"
+        geometry:
+          - "Circle by centerpoint radius 4NM 07-40.05S 011-45.08E"
+      # Area affected for PRIDEANGOLA
+      - id: "ID18"
+        geometry:
+          - "Circle by centerpoint radius 4NM 07-43.00S 011-43.00E"
+      # Area affected for PRIDE SOUTH SEAS
+      - id: "ID19"
+        geometry:
+          - "Circle by centerpoint radius 4NM 35-08.86S 022-31.81E"
+      # Area affected for ORCA
+      - id: "ID20"
+        geometry:
+          - "Circle by centerpoint radius 4NM 35-13.99S 021-29.89E"
+
+  - cls_num: "3.11.3"
+    title: "Example 3 -- Platform Established"
+    message: |
+      NAVAREA VI 116/21
+      URUGUAY.
+      MONTEVIDEO.
+      CHART _________ (INT ___________ ).
+      PLATFORM M4/25 ESTABLISHED IN 35-00N 056-20W.
+    navwarn_preamble:
+      id: "ID00"
+      general_area:
+        location_name:
+          language: "eng"
+          text: "URUGUAY"
+      locality:
+        location_name:
+          language: "eng"
+          text: "MONTEVIDEO."
+      message_series_identifier:
+        agency_responsible_for_production: "ARXX"
+        nationality: "AR"
+        name_of_series: "NAVAREA VI"
+        series_number: "116"
+        warning_type: "(4) NAVAREA Navigational Warning"
+        year: "2021"
+      publication_time: "20210201T000001Z"
+      navwarn_type_general: "Offshore infrastructure"
+      int_service: true
+    navwarn_preamble_content:
+      header_role: "ID00"
+      the_warning_part_role: "ID01"
+    area_affected:
+      impacts_role: "ID01"
+      affects_role: "ID02"
+    navwarn_parts:
+      - id: "ID01"
+        fixed_date_range:
+          - date_start: "20210201"
+            time_of_day_start: "000001Z"
+        warning_information:
+          information:
+            language: "eng"
+            text: "PLATFORM M4/25 ESTABLISHED"
+          navwarn_type_details: "offshore rigs or platform changes"
+        geometry:
+          - "Point 35-00N 056-20W"
+        restriction: "8=entry restricted"
+    navwarn_area_affected:
+      - id: "ID02"
+        geometry:
+          - "Circle by center point radius 0.5NM 35-00N 056-20W"

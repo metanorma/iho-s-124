@@ -1,0 +1,82 @@
+---
+navigational_warnings:
+  - cls_num: "3.14.1"
+    title: "Example 1 -- ECDIS Anomalies"
+    message: |
+      NAVAREA XVII 82/22
+      ARTIC OCEAN
+      DISPLAY ANOMALIES IN SOME ECDIS.
+      SOME ELECTRONIC CHART DISPLAY AND INFORMATION SYSTEMS (ECDIS) MAY EXHIBIT OPERATING ANOMALIES. THE INTERNATIONAL MARITIME ORGANIZATION'S CIRCULAR MSC.1/circ.1503/rev1 (HTTP://WWW.IMO.ORG/OURWORK/CIRCULARS/PAGES/IMODOCS.ASPX (REGISTRATION REQUIRED)) LISTS IDENTIFIED ANOMALIES, THEIR CHARACTERISTICS AND REMEDIAL ADVICE. MARINERS ARE REMINDED THAT THEY SHOULD ACCESS THE INTERNATIONAL HYDROGRAPHIC ORGANIZATION (IHO) DATA PRESENTATION AND PERFORMANCE CHECK (DPPC) DATASET (http://www.iho.int/srv1/index.php?option=com)) AND ENSURE THAT ALL INSTALLED ECDIS UNITS ARE CHECKED.
+    note: The bounding box for this Navigational Warning would need to include the entire NAVAREA in this case.
+    navwarn_preamble:
+      id: "ID00"
+      general_area:
+        location_name:
+          language: "eng"
+          text: "ARTIC OCEAN"
+      message_series_identifier:
+        agency_responsible_for_production: "CAXX"
+        nationality: "CA"
+        name_of_series: "NAVAREA XIV"
+        series_number: "82"
+        warning_type: "(4) NAVAREA navigational warnings"
+        year: "2022"
+      publication_time: "20221201T224000Z"
+      navwarn_type_general: "ECDIS operating anomalies including data issues"
+      int_service: true
+    navwarn_preamble_content:
+      header_role: "ID00"
+      the_warning_part_role: "ID01"
+    navwarn_parts:
+      - id: "ID01"
+        warning_information:
+          information:
+            language: "eng"
+            text: "DISPLAY ANOMALIES IN SOME ECDIS. SOME ELECTRONIC CHART DISPLAY AND INFORMATION SYSTEMS (ECDIS) MAY EXHIBIT OPERATING ANOMALIES. THE INTERNATIONAL MARITIME ORGANIZATION'S CIRCULAR MSC.1/circ.1503/rev1 (http://www.imo.org/OURWORK/CIRCULARS/PAGES/IMODOCS.ASPX[HTTP://WWW.IMO.ORG/OURWORK/CIRCULARS/PAGES/IMODOCS.ASPX] (REGISTRATION REQUIRED)) LISTS IDENTIFIED ANOMALIES, THEIR CHARACTERISTICS AND REMEDIAL ADVICE. MARINERS ARE REMINDED THAT THEY SHOULD ACCESS THE INTERNATIONAL HYDROGRAPHIC ORGANIZATION (IHO) DATA PRESENTATION AND PERFORMANCE CHECK (DPPC) DATASET (http://www.iho.int/srv1/index.php?option=com)) AND ENSURE THAT ALL INSTALLED ECDIS UNITS ARE CHECKED."
+
+  - cls_num: "3.14.2"
+    title: "Example 2 -- ENC Anomaly"
+    message: |
+      NAVAREA XVIII 94/22
+      CANADIAN ARCTIC
+      SIMPSON STRAIT
+      ETA ISLAND
+      CHART CHS 7736 / ENC CA473317THE CHARTED ORIENTATION OF THE RANGE LINE FOR SIMPSON STRAIT #6 RANGE (WEST-FACING RANGE MARKS ON ETA ISLAND) IS IN ERROR. THE CORRECT VISUAL RANGE LINE PASSES 94 METRES SOUTH OF THE ADVERTISED POSITION OF SIMPSON STRAIT BUOY #11 ON HEADINGS 289/109 DEGREES TRUE.
+    navwarn_preamble:
+      id: "ID00"
+      general_area:
+        location_name:
+          language: "eng"
+          text: "CANADIAN ARTIC"
+      locality:
+        location_name:
+          language: "eng"
+          text: "SIMPSON STRAIT"
+      message_series_identifier:
+        agency_responsible_for_production: "CAXX"
+        nationality: "CA"
+        name_of_series: "NAVAREA XVIII"
+        series_number: "94"
+        warning_type: "(4) NAVAREA navigational warning"
+        year: "2022"
+      affected_chart_publications:
+        chart_affected: "CHS 7736"
+        language: "eng"
+      publication_time: "20220610T000100Z"
+      navwarn_type_general: "ECDIS operating anomalies including official data issues"
+      int_service: true
+    navwarn_preamble_content:
+      header_role: "ID00"
+      the_warning_part_role: "ID01"
+    navwarn_parts:
+      - id: "ID01"
+        feature_name:
+          name_usage: "(1) default name display"
+          language: "eng"
+          name: "RANGE LINE FOR SIMPSON STRAIT #6 RANGE"
+        warning_information:
+          information:
+            language: "eng"
+            text: "CHART CHS 7736 / ENC CA473317THE CHARTED ORIENTATION OF THE RANGE LINE FOR SIMPSON STRAIT #6 RANGE (WEST-FACING RANGE MARKS ON ETA ISLAND) IS IN ERROR. THE CORRECT VISUAL RANGE LINE PASSES 94 METRES SOUTH OF THE ADVERTISED POSITION OF SIMPSON STRAIT BUOY #11 ON HEADINGS 289/109 DEGREES TRUE."
+        geometry:
+          - "POLYGON (SURFACE): Bounding box of the limits of CHS 7736"

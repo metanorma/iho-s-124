@@ -1,0 +1,17 @@
+[.preface]
+== metanorma-extension
+
+=== document history
+
+[source,yaml]
+----
+- date:
+  - type: updated
+    value: 2025-03
+  edition: 2.0.0
+  contributor:
+  - organization:
+      name: IHO CL xx-2025
+  amend:
+    - description: "Role: WWNWS SC Chair"
+----

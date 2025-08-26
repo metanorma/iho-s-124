@@ -1,0 +1,252 @@
+---
+navigational_warnings:
+  - cls_num: "3.1.1"
+    title: "Example 1 -- Buoy Missing"
+    message: |
+      NAVAREA I 570/21
+      IRISH SEA.
+      NORTHERN IRELAND.
+      CHART _______ (INT _______).
+      HELLYHAUNTER LIGHTBUOY
+      50-00.30N 006-02.00W MISSING
+    note: This Buoy has a nominal range of 3 NM
+    navwarn_preamble:
+      id: "ID00"
+      general_area:
+        location_name:
+          language: "eng"
+          text: "Irish Sea"
+      locality:
+        location_name:
+          language: "eng"
+          text: "Northern Ireland"
+      message_series_identifier:
+        agency_responsible_for_production: "GBXX"
+        nationality: "GB"
+        name_of_series: "NAVAREA I"
+        series_number: "570"
+        warning_type: "(4) NAVAREA navigational warning"
+        year: "21"
+      publication_time: "20210101T000000Z"
+      navwarn_type_general: "aids to navigation change"
+      int_service: true
+    navwarn_preamble_content:
+      header_role: "ID00"
+      the_warning_part_role: "ID01"
+    area_affected:
+      impacts_role: "ID01"
+      affects_role: "ID02"
+    navwarn_parts:
+      - id: "ID01"
+        feature_name:
+          language: "eng"
+          name: "HELLYHAUNTER LIGHT BUOY"
+        warning_information:
+          information:
+            language: "eng"
+          navwarn_type_details: "buoy missing"
+        geometry:
+          - "Point 31-21.20N 010-07.40E"
+    navwarn_area_affected:
+      - id: "ID02"
+        geometry:
+          - "Circle by centerpoint 3 NM radius 50-00.30N 006-02.00W"
+
+  - cls_num: "3.1.2"
+    title: "Example 2 -- Light Unreliable"
+    message: |
+      NAVAREA III 451/21
+      WESTERN MEDITERRANEAN SEA.
+      TUNISIA-NORTH COAST.
+      CHART _______ (INT _______).
+      CANIS LIGHT 31-21.20N 010-07.40E UNRELIABLE.
+    note: Canis light has a nominal range of 12 NM
+    navwarn_preamble:
+      id: "ID00"
+      general_area:
+        location_name:
+          language: "eng"
+          text: "Western Mediterranean Sea"
+      locality:
+        location_name:
+          language: "eng"
+          text: "Tunisia-North Coast"
+      message_series_identifier:
+        agency_responsible_for_production: "ESXX"
+        nationality: "ES"
+        name_of_series: "NAVAREA III"
+        series_number: "451"
+        warning_type: "(4) NAVAREA navigational warning"
+        year: "21"
+      publication_time: "20210101T000000Z"
+      navwarn_type_general: "aids to navigation change"
+      int_service: true
+    navwarn_preamble_content:
+      header_role: "ID00"
+      the_warning_part_role: "ID01"
+    area_affected:
+      impacts_role: "ID01"
+      affects_role: "ID02"
+    navwarn_parts:
+      - id: "ID01"
+        feature_name:
+          name_usage: "false"
+          language: "eng"
+          name: "CANIS LIGHT"
+        warning_information:
+          information:
+            language: "eng"
+          navwarn_type_details: "light unreliable"
+        geometry:
+          - "Point 31-21.20N 010-07.40E"
+    navwarn_area_affected:
+      - id: "ID02"
+        geometry:
+          - "Circle by centerpoint 12 NM radius 31-21.20N 010-07.40E"
+
+  - cls_num: "3.1.3"
+    title: "Example 3 -- Fog Signal Out of Service"
+    message: |
+      NAVAREA I 1279/21
+      ENGLAND-EAST COAST.
+      RACE BANK WIND FARM.
+      CHART _______ (INT _______).
+      FOG SIGNALS INOPERATIVE AT TURBINES IN
+        A. 53-14.90N 000-48.90E.
+        B. 53-17.80N 000-46.30E.
+        C. 53-21.10N 000-49.10E.
+    navwarn_preamble:
+      id: "ID00"
+      general_area:
+        location_name:
+          language: "eng"
+          text: "England -- East Coast"
+      locality:
+        location_name:
+          language: "eng"
+          text: "Race Bank Wind Farm"
+      message_series_identifier:
+        agency_responsible_for_production: "UKXX"
+        nationality: "GB"
+        name_of_series: "NAVAREA I"
+        series_number: "1279"
+        warning_type: "(4) NAVAREA navigational warning"
+        year: "21"
+      publication_time: "20210101T000000Z"
+      navwarn_type_general: "aids to navigation change"
+      int_service: true
+    navwarn_preamble_content:
+      header_role: "ID00"
+      the_warning_part_role: "ID01"
+    navwarn_parts:
+      - id: "ID01"
+        warning_information:
+          information:
+            language: "eng"
+          navwarn_type_details: "fog signal out of service"
+        geometry:
+          - "Point 53-14.90N 000-48.90E"
+          - "Point 53-17.80N 000-46.30E"
+          - "Point 53-21.10N 000-49.10E"
+
+  - cls_num: "3.1.4"
+    title: "Example 4 -- RACON temporary Removal"
+    message: |
+      NAVAREA V 678/22
+      WESTERN SOUTH ATLANTIC.
+      BRAZIL-SOUTH COAST.
+      CHART _______ (INT _______).
+      1. RACON AT TRAMANDAI LIGHT 30-00.50S 050-08.2W INOPERATIVE UNTIL 29 MAR 2022.
+      2. CANCEL THIS MSG 30 MAR 2022.
+    note: Tramandai racon has a range of 25 miles
+    navwarn_preamble:
+      id: "ID00"
+      general_area:
+        location_name:
+          language: "eng"
+          text: "Western South Atlantic"
+      locality:
+        location_name:
+          language: "eng"
+          text: "Brazil-South Coast"
+      message_series_identifier:
+        agency_responsible_for_production: "BRXX"
+        nationality: "BR"
+        name_of_series: "NAVAREA V"
+        series_number: "678"
+        warning_type: "(4) NAVAREA navigational warning"
+        year: "22"
+      cancellation_date: "20220330T000000Z"
+      publication_time: "20220101T000000Z"
+      navwarn_type_general: "aids to navigation change"
+      int_service: true
+    navwarn_preamble_content:
+      header_role: "ID00"
+      the_warning_part_role: "ID01"
+    area_affected:
+      impacts_role: "ID01"
+      affects_role: "ID02"
+    navwarn_parts:
+      - id: "ID01"
+        feature_name:
+          language: "eng"
+          name: "TRAMANDAI LIGHT"
+        fixed_date_range:
+          - date_end: "20222300"
+            date_start: "20220101"
+            time_of_day_end: "000000Z"
+            time_of_day_start: "000000Z"
+        warning_information:
+          information:
+            language: "eng"
+            text: "unreliable until 29 Mar 2022."
+          navwarn_type_details: "RACON out of service"
+        geometry:
+          - "Point 30-00.50S 050-08.2W"
+    navwarn_area_affected:
+      - id: "ID02"
+        geometry:
+          - "Circle by centerpoint 25 NM radius 30-00.50S 050-08.2W"
+
+  - cls_num: "3.1.5"
+    title: "Example 5 -- DGPS Station Removal"
+    message: |
+      NAVAREA Iv 608/19
+      GULF OF MEXICO.
+      TEXAS.
+      CHART _______ (INT _______).
+      ANGLETON DGPS STATION 29-18.10N 095-29.00W PERMANENTLY DISCONTINUED.
+    navwarn_preamble:
+      id: "ID00"
+      general_area:
+        location_name:
+          language: "eng"
+          text: "Gulf of Mexico"
+      locality:
+        location_name:
+          language: "eng"
+          text: "Texas"
+      message_series_identifier:
+        agency_responsible_for_production: "USXX"
+        nationality: "US"
+        name_of_series: "NAVAREA IV"
+        series_number: "608"
+        warning_type: "(4) NAVAREA navigational warning"
+        year: "19"
+      publication_time: "20190101T000000Z"
+      navwarn_type_general: "aids to navigation change"
+      int_service: true
+    navwarn_preamble_content:
+      header_role: "ID00"
+      the_warning_part_role: "ID01"
+    navwarn_parts:
+      - id: "ID01"
+        feature_name:
+          language: "eng"
+          name: "ANGLETON DGPS STATION"
+        warning_information:
+          information:
+            language: "eng"
+          navwarn_type_details: "DGPS station removal"
+        geometry:
+          - "Point 29-18.10N 095-29.00W"

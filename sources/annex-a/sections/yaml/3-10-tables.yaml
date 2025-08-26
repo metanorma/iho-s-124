@@ -1,0 +1,208 @@
+---
+navigational_warnings:
+  - cls_num: "3.10.1"
+    title: "Example 1 -- Scientific Mooring"
+    message: |
+      NAVAREA II 251/22
+      BAY OF BISCAY.
+      SPAIN.
+      CHART _________ (INT ___________ ).
+      1. SCIENTIFIC MOORINGS ESTABLISHED UNTIL 010001 UTC MAR 2022 BY M/V ATALANTE IN:
+        A. 46-06.00N 006-47.00W.
+        B. 44-10.00N 002-10.00W.
+      2. CANCEL THIS MSG 010100 UTC MAR 2022.
+    navwarn_preamble:
+      id: "ID00"
+      general_area:
+        location_name:
+          language: "eng"
+          text: "Bay of Biscay"
+      locality:
+        location_name:
+          language: "eng"
+          text: "Spain"
+      message_series_identifier:
+        agency_responsible_for_production: "FRXX"
+        nationality: "FR"
+        name_of_series: "NAVAREA II"
+        series_number: "251"
+        warning_type: "(4) NAVAREA Navigational Warning"
+        year: "2022"
+      cancellation_date: "20220301T010000Z"
+      publication_time: "20220201T000001Z"
+      navwarn_type_general: "Scientific Instruments Change"
+      int_service: true
+    navwarn_preamble_content:
+      header_role: "ID00"
+      the_warning_part_role: "ID01"
+    area_affected:
+      impacts_role: "ID01"
+      affects_role: "ID02"
+    navwarn_parts:
+      - id: "ID01"
+        fixed_date_range:
+          - date_end: "20220301"
+            time_of_day_end: "000100Z"
+        warning_information:
+          information:
+            language: "eng"
+            text: "established by M/V ATALANTE"
+          navwarn_type_details: "scientific moorings"
+        geometry:
+          - "Point 46-06.00N 006-47.00W."
+          - "Point 44-10.00N 002-10.00W."
+    navwarn_area_affected:
+      - id: "ID02"
+        geometry:
+          - "Circle by center point radium 2 NM 46-06.00N 006-47.00W."
+          - "Circle by center point radium 2 NM 44-10.00N 002-10.00W."
+
+  - cls_num: "3.10.2"
+    title: "Example 2 -- Tide Gauge"
+    message: |
+      NAVAREA X 180/21
+      ARAFURA SEA.
+      AUSTRALIA-NORTH COAST.
+      CHART _________ (INT ___________ ).
+      TIDE GAUGE IN 10-31.30S 141-12.70E UNRELIABLE.
+    navwarn_preamble:
+      id: "ID00"
+      general_area:
+        location_name:
+          language: "eng"
+          text: "ARAFURA SEA"
+      locality:
+        location_name:
+          language: "eng"
+          text: "AUSTRALIA-NORTH COAST"
+      message_series_identifier:
+        agency_responsible_for_production: "AUXX"
+        nationality: "AU"
+        name_of_series: "NAVAREA X"
+        series_number: "180"
+        warning_type: "(4) NAVAREA Navigational Warning"
+        year: "2021"
+      publication_time: "20210201T000001Z"
+      navwarn_type_general: "Scientific Instruments Change"
+      int_service: true
+    navwarn_preamble_content:
+      header_role: "ID00"
+      the_warning_part_role: "ID01"
+    area_affected:
+      impacts_role: "ID01"
+      affects_role: "ID02"
+    navwarn_parts:
+      - id: "ID01"
+        fixed_date_range:
+          - date_start: "20210201"
+            time_of_day_start: "000001Z"
+        warning_information:
+          information:
+            language: "eng"
+            text: "established by GAUGE UNRELIABLE"
+          navwarn_type_details: "tide gauge change"
+        geometry:
+          - "Point 10-31.3S 141-12.7E"
+    navwarn_area_affected:
+      - id: "ID02"
+        geometry:
+          - "Circle by center point radium 2 NM 0-31.3S 141-12.7E"
+
+  - cls_num: "3.10.3"
+    title: "Example 3 -- Scientific Buoy"
+    message: |
+      NAVAREA IV 333/21
+      NORTH ATLANTIC OCEAN.
+      GRAND BANKS OF NEWFOUNDLAND.
+      CHART _______ (INT _______).
+      DART BUOY ESTABLISHED 44-04.58N 055-12.80W.
+    navwarn_preamble:
+      id: "ID00"
+      general_area:
+        location_name:
+          language: "eng"
+          text: "NORTH ATLANTIC OCEAN"
+      locality:
+        location_name:
+          language: "eng"
+          text: "GRAND BANKS OF NEWFOUNDLAND"
+      message_series_identifier:
+        agency_responsible_for_production: "USXX"
+        nationality: "US"
+        name_of_series: "NAVAREA IV"
+        series_number: "333"
+        warning_type: "(4) NAVAREA Navigational Warning"
+        year: "2021"
+      publication_time: "20210201T000001Z"
+      navwarn_type_general: "aids to navigation changes"
+      int_service: true
+    navwarn_preamble_content:
+      header_role: "ID00"
+      the_warning_part_role: "ID01"
+    area_affected:
+      impacts_role: "ID01"
+      affects_role: "ID02"
+    navwarn_parts:
+      - id: "ID01"
+        fixed_date_range:
+          - date_start: "20210201"
+            time_of_day_start: "000001Z"
+        warning_information:
+          information:
+            language: "eng"
+            text: "established by DART BUOY"
+          navwarn_type_details: "buoy establishment"
+        geometry:
+          - "Point 44-04.58N 055-12.80W"
+    navwarn_area_affected:
+      - id: "ID02"
+        geometry:
+          - "Circle by center point radius 5NM 44-04.58N 055-12.80W"
+
+  - cls_num: "3.10.4"
+    title: "Example 4 -- Acoustic Recorder"
+    message: |
+      NAVAREA XVII 55/19
+      IONIAN SEA.
+      CHART _________ (INT ___________ ).
+      1. ACOUSTIC SEABED INSTRUMENTS DEPLOYED FROM 231500 UTC TO 242000 UTC MAR 2019 IN:
+        A. 44-41.46N 063-37.71W.
+        B. 44-41.46N 063-38.38W.
+        C. 44-41.32N 063-38.04W.
+      2. CANCEL THIS MSG 242100 MAR 2019.
+    navwarn_preamble:
+      id: "ID00"
+      general_area:
+        location_name:
+          language: "eng"
+          text: "IONIAN SEA."
+      message_series_identifier:
+        agency_responsible_for_production: "CAXX"
+        nationality: "CA"
+        name_of_series: "NAVAREA XVII"
+        series_number: "55"
+        warning_type: "(4) NAVAREA Navigational Warning"
+        year: "2019"
+      cancellation_date: "20190324T210000Z"
+      publication_time: "20190322T000001Z"
+      navwarn_type_general: "scientific instruments change"
+      int_service: true
+    navwarn_preamble_content:
+      header_role: "ID00"
+      the_warning_part_role: "ID01"
+    navwarn_parts:
+      - id: "ID01"
+        fixed_date_range:
+          - date_end: "20190324"
+            date_start: "20190323"
+            time_of_day_end: "200000Z"
+            time_of_day_start: "150000Z"
+        warning_information:
+          information:
+            language: "eng"
+            text: "established by SEABED INSTRUMENT DEPLOYED"
+          navwarn_type_details: "acoustic recorder"
+        geometry:
+          - "Point 44-41.46N 063-37.71W."
+          - "Point 44-41.46N 063-38.38W."
+          - "Point 44-41.32N 063-38.04W."

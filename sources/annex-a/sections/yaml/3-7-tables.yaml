@@ -1,0 +1,215 @@
+---
+navigational_warnings:
+  - cls_num: "3.7.1"
+    title: "Example 1 - Shoal"
+    message: |
+      NAVAREA XVII 83/21
+      CANADIAN ARCTIC.
+      VICTORIA STRAIT.
+      CHART __________ (INT ____________ ).
+      27.8 METRE SHOAL LOCATED IN 68-58.95N 101-08.32W.
+    navwarn_preamble:
+      id: "ID00"
+      general_area:
+        location_name:
+          language: "eng"
+          text: "CANADIAN ARTIC"
+      locality:
+        location_name:
+          language: "eng"
+          text: "VICTORIA STRAIT"
+      message_series_identifier:
+        agency_responsible_for_production: "CAXX"
+        nationality: "CA"
+        name_of_series: "NAVAREA XVII"
+        series_number: "83"
+        warning_type: "(4) NAVAREA navigational warning"
+        year: "21"
+      publication_time: "20211101T000100Z"
+      navwarn_type_general: "newly discovered dangers"
+      int_service: true
+    navwarn_preamble_content:
+      header_role: "ID00"
+      the_warning_part_role: "ID01"
+    navwarn_parts:
+      - id: "ID01"
+        warning_information:
+          information:
+            language: "eng"
+          navwarn_type_details: "shallow depth confirmed"
+        geometry:
+          - "Point 68-58.95N 101-08.32W"
+
+  - cls_num: "3.7.2"
+    title: "Example 2 -- Shallow depth reported"
+    message: |
+      NAVAREA V 372/21
+      NORTH ATLANTIC OCEAN.
+      OFF SAO SEBASTIAO.
+      CHART __________ (INT ____________ ).
+      DEPTHS REPORTED:
+        A. 15 METRES IN 24-00.75S 045-41.75W.
+        B. 15 METRES IN 24-01.50S 045-23.90W.
+    navwarn_preamble:
+      id: "ID00"
+      general_area:
+        location_name:
+          language: "eng"
+          text: "NORTH ATLANTIC OCEAN"
+      locality:
+        location_name:
+          language: "eng"
+          text: "OFF SAO SEBASTIAO"
+      message_series_identifier:
+        agency_responsible_for_production: "BRXX"
+        nationality: "BR"
+        name_of_series: "NAVAREA V"
+        series_number: "372"
+        warning_type: "(4) NAVAREA navigational warning"
+        year: "21"
+      publication_time: "20211101T000100Z"
+      navwarn_type_general: "newly discovered dangers"
+      int_service: true
+    navwarn_preamble_content:
+      header_role: "ID00"
+      the_warning_part_role: "ID01, ID02"
+    navwarn_parts:
+      - id: "ID01"
+        warning_information:
+          information:
+            language: "eng"
+            text: "15 Metres"
+          navwarn_type_details: "shallow depth reported"
+        geometry:
+          - "Point (Reported) 24-00.75S 045-41.75W"
+      - id: "ID02"
+        warning_information:
+          information:
+            language: "eng"
+            text: "15 Metres"
+          navwarn_type_details: "shallow depth reported"
+        geometry:
+          - "Point (reported) 24-01.50S 045-23.90W"
+
+  - cls_num: "3.7.3"
+    title: "Example 3 -- Uncharted Rock"
+    message: |
+      NAVAREA X 290/21
+      EASTERN INDIAN OCEAN.
+      AUSTRALIA-NORTHWEST COAST.
+      CHART __________ (INT ____________ ).
+      UNCHARTED ROCK REPORTED IN 16-53.06S 122-03.78E.
+    navwarn_preamble:
+      id: "ID00"
+      general_area:
+        location_name:
+          language: "eng"
+          text: "EASTERN INDIAN OCEAN"
+      locality:
+        location_name:
+          language: "eng"
+          text: "AUSTRALIA-NORTHWEST COAST"
+      message_series_identifier:
+        agency_responsible_for_production: "AUXX"
+        nationality: "AU"
+        name_of_series: "NAVAREA X"
+        series_number: "290"
+        warning_type: "(4) NAVAREA navigational warning"
+        year: "21"
+      publication_time: "20211101T000100Z"
+      navwarn_type_general: "newly discovered dangers"
+      int_service: true
+    navwarn_preamble_content:
+      header_role: "ID00"
+      the_warning_part_role: "ID01"
+    navwarn_parts:
+      - id: "ID01"
+        warning_information:
+          information:
+            language: "eng"
+          navwarn_type_details: "uncharted rock"
+        geometry:
+          - "Point (Reported) 16-53.06S 122-03.78E"
+
+  - cls_num: "3.7.4"
+    title: "Example 4 -- Submerged Object"
+    message: |
+      NAVAREA XIII 11/21
+      KARA SEA.
+      ZALIV CHIKHACHYOVA.
+      CHART __________ (INT ____________ ).
+      UNDERWATER OBSTRUCTION LOCATED IN 59-29.25N 140-54.76W.
+    navwarn_preamble:
+      id: "ID00"
+      general_area:
+        location_name:
+          language: "eng"
+          text: "KARA SEA"
+      locality:
+        location_name:
+          language: "eng"
+          text: "ZALIV CHIKHACHOYOVA"
+      message_series_identifier:
+        agency_responsible_for_production: "RUXX"
+        nationality: "RU"
+        name_of_series: "NAVAREA XIII"
+        series_number: "11"
+        warning_type: "(4) NAVAREA navigational warning"
+        year: "21"
+      publication_time: "20211101T000100Z"
+      navwarn_type_general: "newly discovered dangers"
+      int_service: true
+    navwarn_preamble_content:
+      header_role: "ID00"
+      the_warning_part_role: "ID01"
+    navwarn_parts:
+      - id: "ID01"
+        warning_information:
+          information:
+            language: "eng"
+            text: "underwater obstruction located"
+          navwarn_type_details: "submerged object"
+        geometry:
+          - "Point 59-29.25N 140-54.76W"
+
+  - cls_num: "3.7.5"
+    title: "Example 5 -- Less Water than Charted"
+    message: |
+      NAVAREA XVI 98/21.
+      PERU.
+      BAHIA DEL CALLAO.
+      CHART __________ (INT ____________ ).
+      LESS WATER THAN CHARTED REPORTED
+      11-59.89S 077-17.50W.
+    navwarn_preamble:
+      id: "ID00"
+      general_area:
+        location_name:
+          language: "eng"
+          text: "PERU"
+      locality:
+        location_name:
+          language: "eng"
+          text: "BAHIA DEL CALLAO"
+      message_series_identifier:
+        agency_responsible_for_production: "PRXX"
+        nationality: "PR"
+        name_of_series: "NAVAREA XVI"
+        series_number: "98"
+        warning_type: "(4) NAVAREA navigational warning"
+        year: "21"
+      publication_time: "20211101T000100Z"
+      navwarn_type_general: "Dangerous natural phenomena"
+      int_service: true
+    navwarn_preamble_content:
+      header_role: "ID00"
+      the_warning_part_role: "ID01"
+    navwarn_parts:
+      - id: "ID01"
+        warning_information:
+          information:
+            language: "eng"
+            text: "Less Water than Charted"
+          navwarn_type_details: "low water level"
+        geometry:
+          - "Point (Reported) 11-59.89S 077-17.50W"
