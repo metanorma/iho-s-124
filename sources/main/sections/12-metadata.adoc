@@ -1,0 +1,1266 @@
+[[cls-12]]
+== Metadata
+
+[[cls-12.1]]
+=== Introduction
+
+The S-124 metadata description is a subset of the metadata described in
+<<S100,part=17>>, which is a profile of the <<ISO19115>> standard. The S-124 metadata
+model restricts the <<S100>> metadata model to its core elements;
+S100_ExchangeCatalogue, S100_DatasetDiscoveryMetadata,
+S100_CatalogueDiscoveryMetadata and S100_SupportFileDiscoveryMetadata. Moreover, the
+S100_DatasetDiscoveryMetadata is further restricted to remove attributes that are not
+relevant to a Navigational Warning service. <<fig-13-1>> below shows the details of
+the S-124 metadata model and the details are further explained in the tables in the
+subsequent sections.
+
+[[fig-13-1]]
+.Overview of S-124 discovery metadata
+image::img10.png[]
+
+[[cls-12.2]]
+=== Exchange Set Catalogue and Dataset metadata
+
+The tables in this section provide a detailed textual description of the encoding of
+the S-124 Exchange Set Catalogue.
+
+[underline]#S100_ExchangeCatalogue# -- Exchange Set metadata contains metadata about
+the contents of the Exchange Set and metadata about the data distributor.
+
+[underline]#S100_DatasetDiscoveryMetadata# -- Dataset metadata describe information
+about a dataset. It facilitates the management and exploitation of data and is an
+important requirement for understanding the characteristics of a dataset. Discovery
+metadata can help users determine whether a product or service is fit for purpose and
+from where these have been obtained.
+
+[underline]#S100_CatalogueDiscoveryMetadata# -- Catalogue metadata assists in
+distributing feature and portrayal catalogues for the proper reading and portrayal of
+S-124 datasets.
+
+[underline]#S100_SupportFileDiscoveryMetadata# -- Support file metadata describe
+information about a data resource. It facilitates the management and exploitation of
+data and is an important requirement for understanding the characteristics of a data
+resource. In S-124 only language packs are considered support files.
+
+[%landscape]
+<<<
+
+[[cls-12.2.1]]
+==== S100_ExchangeCatalogue
+
+Each Exchange Set has a single S100_ExchangeCatalogue which contains meta information
+for the data and support files in the Exchange Set.
+
+.S100_ExchangeCatalogue
+[cols="a,a,a,a,a,a",options=header]
+|===
+| Role Name | Name | Description | Mult | Type | Remarks
+
+| Class
+| S100_ExchangeCatalogue
+| An Exchange Catalogue contains the discovery metadata about the exchange datasets and support files
+| -
+| -
+| -
+
+| Attribute
+| identifier
+| Uniquely identifies this Exchange Catalogue
+| 0..1
+| S100_ExchangeCatalogueIdentifier
+|
+
+| Attribute
+| contact
+| Details about the issuer of this Exchange Catalogue
+| 0..1
+| S100_CataloguePointOfContact
+|
+
+| Attribute
+| productSpecification
+| Details about the Product Specifications used for the datasets contained in the Exchange Catalogue
+| 0..*
+| S100_ProductSpecification
+|
+
+| Attribute
+| defaultLocale
+| Default language and character set used for all metadata records in this Exchange Catalogue
+| 0..1
+| PT_Locale
+| Default is English and UTF-8
+
+| Attribute
+| otherLocale
+| Other languages and character sets used for the localized metadata records in this Exchange Catalogue
+| 0..*
+| PT_Locale
+| Required if any localized entries are present in the Exchange Catalogue
+
+| Attribute
+| exchangeCatalogueDescription
+| Description of what the Exchange Catalogue contains
+| 0..1
+| CharacterString
+|
+
+| Attribute
+| exchangeCatalogueComment
+| Any additional Information
+| 0..1
+| CharacterString
+|
+
+| Attribute
+| certificates
+| Signed public key certificates referred to by digital signatures in the Exchange Set
+| 0..*
+| S100_SE_CertificateContainerType
+| Content defined in <<S100,part=15>>. All certificates used, except the SA root certificate (installed separately by the implementing system) shall be included
+
+| Attribute
+| dataServerIdentifier
+| Identifies the data server for the permit
+| 0..1
+| CharacterString
+|
+
+| Role
+| datasetDiscoveryMetadata
+| Exchange Catalogues may include or reference discovery metadata for the datasets in the Exchange Set
+| 0..*
+| Aggregation S100_DatasetDiscoveryMetadata
+|
+
+| Role
+| catalogueDiscoveryMetadata
+| Metadata for Catalogue
+| 0..*
+| Aggregation S100_CatalogueDiscoveryMetadata
+| Metadata for the Feature, Portrayal and Interoperability Catalogues, if any
+
+| Role
+| supportFileDiscoveryMetadata
+| Exchange Catalogues may include or reference discovery metadata for the support files in the Exchange Set
+| 0..*
+| Aggregation S100_SupportFileDiscoveryMetadata
+|
+|===
+
+[[cls-12.2.1.1]]
+===== S100_ExchangeCatalogueIdentifier
+
+[cols="a,a,a,a,a,a",options=header]
+|===
+| Role Name | Name | Description | Mult | Type | Remarks
+
+| Class
+| S100_ExchangeCatalogueIdentifier
+| An identifier for an Exchange Catalogue.
+| -
+| -
+| The concatenation of identifier, editionNumber and dateTime form the unique name
+
+| Attribute
+| identifier
+| Uniquely identifies this Exchange Catalogue
+| 1
+| CharacterString
+| `<S100XC:identifier>US_101_20200101_120101_01</S100XC:identifier>`
+
+| Attribute
+| dateTime
+| Creation date and time of the Exchange Catalogue, including time zone
+| 1
+| DateTime
+| Format: yyyy-mm-ddThh:mm:ssZ
+|===
+
+[[cls-12.2.1.2]]
+===== S100_CataloguePointofContact
+
+.S100_CataloguePointofContact
+[cols="a,a,a,a,a,a",options=header]
+|===
+| Role Name | Name | Description | Mult | Type | Remarks
+
+| Class
+| S100_CataloguePointOfContact
+| Contact details of the issuer of this Exchange Catalogue
+| -
+| -
+| -
+
+| Attribute
+| organization
+| The organization distributing this Exchange Catalogue
+| 1
+| CharacterString
+| This could be an individual producer, value added reseller, etc
+
+| Attribute
+| phone
+| The phone number of the organization
+| 0..1
+| CI_Telephone
+|
+
+| Attribute
+| address
+| The address of the organization
+| 0..1
+| CI_Address
+|
+|===
+
+[[cls-12.2.2]]
+==== S100_DatasetDiscoveryMetadata
+
+.S100_DatasetDiscoveryMetadata
+[cols="a,a,a,a,a,a",options=header]
+|===
+| Role Name | Name | Description | Mult | Type | Remarks
+
+| Class
+| S100_DatasetDiscoveryMetadata | Metadata about the individual datasets in the Exchange Catalogue
+| -
+| -
+| -
+
+| Attribute
+| fileName
+| Dataset file name
+| 1
+| URI
+| See <<S100,clause="1-4.6">> for how to use including how to capture the path of the file
+
+| Attribute
+| description
+| Short description giving the area or location covered by the dataset
+| 0..1
+| CharacterString
+| If used, content of this attribute must match the content of the generalArea and locality attributes of the dataset NavwarnPreamble
+
+| Attribute
+| datasetID
+| Dataset ID expressed as a Marine Resource Name
+| 0..1
+| URN
+| The URN must be an MRN and if used match the value of interoperabilityIdentifier in the messageSeriesIdentifier
+
+| Attribute
+| compressionFlag
+| Indicates if the resource is compressed
+| 1
+| Boolean
+| _True_ indicates a compressed dataset resource
+
+_False_ indicates an uncompressed dataset resource
+
+| Attribute
+| dataProtection
+| Indicates if the data is encrypted
+| 1
+| Boolean
+| _True_ indicates an encrypted dataset resource
+
+_False_ indicates an unencrypted dataset resourceMust be set to _False_
+
+| Attribute
+| digitalSignatureReference
+| Specifies the algorithm used to compute digitalSignatureValue
+| 1
+| S100_SE_DigitalSignatureReference(see <<S100,part=15>>)
+|
+
+| Attribute
+| digitalSignatureValue
+| Value derived from the digital signature
+| 1..*
+| S100_SE_DigitalSignature(see <<S100,part=15>>)
+| The value resulting from application of digitalSignatureReferenceImplemented as the digital signature format specified in <<S100,part=15>>
+
+| Attribute
+| copyright
+| Indicates if the dataset is copyrighted
+| 1
+| Boolean
+| _True_ indicates the resource is copyrighted
+
+_False_ Indicates the resource is not copyrighted
+
+| Attribute
+| classification
+| Indicates the security classification of the dataset
+| 0..1
+| Class MD_SecurityConstraints>MD_ClassificationCode (codelist)
+| . unclassified
+
+. restricted
+
+. confidential
+
+. secret
+
+. top secret
+
+. sensitive but unclassified
+
+. for official use only
+
+. protected
+
+. limited distribution
+
+| Attribute
+| purpose
+| The purpose for which the dataset has been issued
+| 0..1
+| S100_Purpose
+| Only values permitted are 'newDataset' or 'cancellation'.
+
+| Attribute
+| notForNavigation
+| Indicates the dataset is not intended to be used for navigation
+| 1
+| Boolean
+| _True_ indicates the dataset is not intended to be used for navigation
+
+_False_ indicates the dataset is intended to be used for navigation
+
+| Attribute
+| specificUsage
+| The use for which the dataset is intended
+| 0..1
+| MD_USAGE>specificUsage (character string)
+| Must always be 'Navigational Warning Service'
+
+| Attribute
+| issueDate
+| Date on which the data was made available by the Data Producer
+| 1
+| Date
+|
+
+| Attribute
+| issueTime
+| Time of day at which the data was made available by the Data Producer
+| 0..1
+| Time
+| The S-100 datatype Time
+
+| Attribute
+| boundingBox
+| The extent of the dataset limits
+| 1
+| EX_GeographicBoundingBox
+| Used to give the extent of the NAVWARN information
+
+| Attribute
+| temporalExtent
+| Specification of the temporal extent of the dataset
+| 0..1
+| S100_TemporalExtent
+| The temporal extent is encoded as the date/time of the earliest and latest data records (in coverage datasets) or date/time ranges (in vector datasets)
+
+This attribute is only used when a NAVWARN have a known expiry date and time. When used the values must align with the publicationTime and cancellationDate attributes of the dataset NavwarnPreamble
+
+| Attribute
+| productSpecification
+| The Product Specification used to create this dataset
+| 1
+| S100_ProductSpecification
+|
+
+| Attribute
+| producingAgency
+| Agency responsible for producing the data
+| 1
+| CI_Responsibility>CI_Organisation
+|
+
+| Attribute
+| producerCode
+| The official IHO Producer Code from <<S62>>
+| 0..1
+| CharacterString
+|
+
+| Attribute
+| encodingFormat
+| The encoding format of the dataset
+| 1
+| S100_EncodingFormat
+| Must be value 2 (GML)
+
+| Attribute
+| comment
+| Any additional information
+| 0..1
+| CharacterString
+|
+
+| Attribute
+| defaultLocale
+| Default language and character set used in the dataset
+| 0..1
+| PT_Locale
+| In absence of defaultLocale the language is English, UTF-8
+
+| Attribute
+| otherLocale
+| Other languages and character sets used in the dataset
+| 0..*
+| PT_Locale
+|
+
+| Attribute
+| metadataPointOfContact
+| Point of contact for metadata
+| 0..1
+| CI_Responsibility>CI_Individual or
+
+CI_Responsibility>CI_Organisation
+| Only if metadataPointOfContact is different to producingAgency
+
+| Attribute
+| metadataDateStamp
+| Date stamp for metadata
+| 0..1
+| Date
+| May or may not be the issue date
+|===
+
+[[cls-12.2.2.1]]
+===== S100_Purpose
+
+[cols="a,a,a,a,a",options=header]
+|===
+| Role Name | Name | Description | Code | Remarks
+
+| Enumeration
+| S100_Purpose
+| The purpose of the dataset
+| -
+|
+
+| Value
+| newDataset
+| Brand new dataset
+| 1
+| No data has previously been produced for this area
+
+| Value
+| newEdition
+| New edition of the dataset or Catalogue
+| 2
+| Includes new information which has not been previously distributed by updates
+
+| Value
+| update
+| Dataset update
+| 3
+| Changing some information in an existing dataset
+
+| Value
+| reissue
+| Dataset that has been re-issued
+| 4
+| Includes all the updates applied to the original dataset up to the date of the re-issue. A re-issue does not contain any new information additional to that previously issued by updates
+
+| Value
+| cancellation
+| Dataset or Catalogue that has been cancelled
+| 5
+| Indicates the dataset or Catalogue should no longer be used and can be deleted
+
+| Value
+| delta
+| Dataset difference
+| 6
+| Reserved for future use
+|===
+
+[[cls-12.2.2.2]]
+===== S100_TemporalExtent
+
+.S100_TemporalExtent
+[cols="a,a,a,a,a,a",options=header]
+|===
+| Role Name | Name | Description | Mult | Type | Remarks
+
+| Class
+| S100_TemporalExtent
+| Temporal extent
+| -
+|
+| At least one of the timeInstantBegin and timeInstantEnd attributes must be populated; if both are known, both must be populated. The absence of either begin or end indicates indefinite validity in the corresponding direction, limited by the issue date/time or the cancellation or supersession of the dataset
+
+| Attribute
+| timeInstantBegin
+| The instant at which the temporal extent begins
+| 0..1
+| DateTime
+|
+
+| Attribute
+| timeInstantEnd
+| The instant at which the temporal extent ends
+| 0..1
+| DateTime
+|
+|===
+
+[example]
+====
+An S-124 dataset warning about scheduled works has the following data for
+_temporalExtent_ encoded in the dataset discovery block in the Exchange Catalogue:
+
+[source%unnumbered]
+----
+<temporalExtent>
+  <timeInstantBegin>2023-07-10T06 :00 :00Z</timeInstantBegin>
+  <timeInstantEnd>2023-07-14T18 :00 :00Z</timeInstantEnd> +
+</temporalExtent>
+----
+
+indicating that the temporal extent of the works described in the dataset is the
+period beginning at exactly 6 a.m. on 10 July 2023 (UTC) and ending at exactly 6 p.m.
+on 14 July 2023 (UTC).
+====
+
+[[cls-12.2.2.3]]
+===== S100_EncodingFormat
+
+.S100_EncodingFormat
+[cols="a,a,a,a,a"]
+|===
+| Role Name | Name | Description | Code | Remarks
+
+| Enumeration
+| S100_DataFormat
+| The encoding format
+| -
+| -
+
+| Value
+| ISO/IEC 8211
+| The ISO 8211 data format as defined in <<S100,part="10a">>
+| 1
+| -
+
+| Value
+| GML
+| The GML data format as defined in <<S100,part="10b">>
+| 2
+| -
+
+| Value
+| HDF5
+| The HDF5 data format as defined in <<S100,part=10c>>
+| 3
+| -
+
+| Value
+| undefined
+| The encoding is defined in the Product Specification
+| 100
+| Use of Product Specification specific encoding means the data product and Product Specification is not intended for an IHO S-100 compliant system
+|===
+
+[[cls-12.2.2.4]]
+===== S100_ProductSpecification
+
+.S100_ProductSpecification
+[cols="a,a,a,a,a,a",options=header]
+|===
+| Role Name | Name | Description | Mult | Type | Remarks
+
+| Class
+| S100_ProductSpecification
+| The Product Specification contains the information needed to build the specified product
+| -
+| -
+| -
+
+| Attribute
+| name
+| The name of the Product Specification used to create the datasets
+| 0..1
+| CharacterString
+| Must be Navigational Warnings
+
+| Attribute
+| version
+| The version number of the Product Specification
+| 0..1
+| CharacterString
+| Must be 1.0.0
+
+| Attribute
+| date
+| The version date of the Product Specification
+| 0..1
+| Date
+| Publication date of this document
+
+| Attribute
+| productIdentifer
+| Machine readable unique identifier of a product type
+| 1
+| CharacterString
+
+(Restricted to Product ID values from the IHO Product Specification Register, in the IHO Geospatial Information Registry)
+| Must be S-124
+
+| Attribute
+| number
+| The number used to lookup the product in the Product Specification Register of the IHO GI registry
+| 1
+| Integer
+| For IHO Product Specifications these should be taken from the IHO Product Specification Register in the IHO Geospatial Information (GI) Registry
+
+| Attribute
+| compliancyCategory
+| The level of compliance of the Product Specification to S-100
+| 0..1
+| S100_CompliancyCategory
+| Must be category 3
+|===
+
+[[cls-12.2.2.4.1]]
+====== S100_CompliancyCategory
+
+.S100_CompliancyCategory
+[cols="a,a,a,a,a",options=header]
+|===
+| Role Name | Name | Description | Code | Remarks
+
+| Enumeration
+| S100_CompliancyCategory
+|
+| -
+| -
+
+| Value
+| category1
+| IHO S-100 object model compliant
+| 1
+|
+
+| Value
+| category2
+| IHO S-100 compliant with non-standard encoding
+| 2
+|
+
+| Value
+| category3
+| IHO S-100 compliant with standard encoding
+| 3
+|
+
+| Value
+| category4
+| IHO S-100 and IMO harmonized display compliant
+| 4
+|
+|===
+
+[[cls-12.2.3]]
+==== S100_SupportFileDiscoveryMetadata
+
+[cols="a,a,a,a,a,a",options=header]
+|===
+| Role Name | Name | Description | Mult | Type | Remarks
+
+| Class
+| S100_SupportFileDiscoveryMetadata
+| Metadata about the individual support files in the Exchange Catalogue
+| -
+| -
+| -
+
+| Attribute
+| fileName
+| Name of the support file
+| 1
+| URI
+| See <<S100,clause="1-4.6">>
+
+| Attribute
+| revisionStatus
+| The purpose for which the support file has been issued
+| 1
+| S100_SupportFileRevisionStatus
+| For example new, replacement, etc
+
+| Attribute
+| editionNumber
+| The Edition number of the support file
+| 1
+| Integer
+| When a data set is initially created, the Edition number 1 is assigned to it. The Edition number is increased by 1 at each new Edition. Edition number remains the same for a re-issue
+
+| Attribute
+| issueDate
+| Date on which the data was made available by the Data Producer
+| 0..1
+| Date
+|
+
+| Attribute
+| supportFileSpecification
+| The specification used to create this file
+| 0..1
+| S100_SupportFileSpecification
+|
+
+| Attribute
+| dataType
+| The format of the support file
+| 1
+| S100_SupportFileFormat
+|
+
+| Attribute
+| otherDataTypeDescription
+| Support file format other than those listed
+| 0..1
+| CharacterString
+|
+
+| Attribute
+| comment
+| Optional comment
+| 0..1
+| CharacterString
+|
+
+| Attribute
+| compressionFlag
+| Indicates if the resource is compressed
+| 1
+| Boolean
+| _True_ indicates a compressed resource
+
+_False_ indicates an uncompressed resource
+
+| Attribute
+| digitalSignatureReference
+| Specifies the algorithm used to compute digitalSignatureValue
+| 1
+| S100_SE_DigitalSignatureReference(see <<S100,part=15>>)
+|
+
+| Attribute
+| digitalSignatureValue
+| Value derived from the digital signature
+| 1..*
+| S100_SE_DigitalSignature(see <<S100,part=15>>)
+| The value resulting from application of digitalSignatureReference
+
+Implemented as the digital signature format specified in <<S100,part=15>>
+
+| Attribute
+| defaultLocale
+| Default language and character set used in the support file
+| 0..1
+| PT_Locale
+| In absence of defaultLocale the language is English in UTF-8
+
+A support file is expected to use only one as locale. Additional support files can be created for other locales
+
+| Attribute
+| supportedResource
+| Identifier of the resource supported by this support file
+| 0..*
+| CharacterString | Conventions for identifiers are detailed in <<S100,part=15>>. S-100 allows file URI, digital signature or cryptographic hash checksums to be used.
+
+| Attribute
+| resourcePurpose
+| The purpose of the supporting resource
+| 0..1
+| S100_ResourcePurpose
+| Identifies how the supporting resource is used
+|===
+
+[[cls-12.2.3.1]]
+===== S100_SupportFileFormat
+
+.S100_SupportFileFormat
+[cols="a,a,a,a,a",options=header]
+|===
+| Role Name | Name | Description | Code | Remarks
+
+| Enumeration
+| S100_SupportFileFormat
+| The format used for the support file
+| -
+| -
+
+| Value
+| ASCII
+| UTF-8 text excluding control codes
+| 1
+| -
+
+| Value
+| JPEG2000
+| JPEG2000 format
+| 2
+| ISO 15444
+
+| Value
+| HTML
+| Hypertext Markup Language
+| 3
+|
+
+| Value
+| XML
+| Extensible Markup Language
+| 4
+|
+
+| Value
+| XSLT
+| Extensible Stylesheet Language Transformations
+| 5
+|
+
+| Value
+| VIDEO
+| Representation of moving images in unspecified format
+| 6
+|
+
+| Value
+| TIFF
+| Tagged Image File Format
+| 7
+|
+
+| Value
+| PDF/AorUA
+| Portable Document Format
+| 8
+| ISO 19005, ISO 32000
+
+Product Specification developers should take careful consideration in using PDF as a support file format. It is recommended that PDF never be used in products that will be used on a navigation system as it may impair night vision
+
+Must be PDF/A or UA
+
+| Value
+| LUA
+| Lua programming language
+| 9
+|
+
+| Value
+| other
+| Other format
+| 100
+|
+|===
+
+[[cls-12.2.3.2]]
+===== S100_SupportFileRevisionStatus
+
+.S100_SupportFileRevisionStatus
+[cols="a,a,a,a,a",options=header]
+|===
+| Role Name | Name | Description | Code | Remarks
+
+| Enumeration
+| S100_SupportFileRevisionStatus
+| The reason for inclusion of the support file in this Exchange Set
+| -
+| -
+
+| Value
+| new
+| A file which is new
+| 1
+| Signifies a new file
+
+| Value
+| replacement
+| A file which replaces an existing file
+| 2
+| Signifies a replacement for a file of the same name
+
+| Value
+| deletion
+| Deletes an existing file
+| 3
+| Signifies deletion of a file of that name
+|===
+
+[[cls-12.2.3.3]]
+===== S100_SupportFileSpecification
+
+.S100_SupportFileSpecification
+[cols="a,a,a,a,a,a",options=header]
+|===
+| Role Name | Name | Description | Mult | Type | Remarks
+
+| Class
+| S100_SupportFileSpecification
+| The standard or specification to which a support file conforms
+| -
+| -
+| -
+
+| Attribute
+| name
+| The name of the specification used to create the support file
+| 1
+| CharacterString
+|
+
+| Attribute
+| version
+| The version number of the specification
+| 0..1
+| CharacterString
+|
+
+| Attribute
+| date
+| The version date of the specification
+| 0..1
+| Date
+|
+|===
+
+[[cls-12.2.3.4]]
+===== S100_ResourcePurpose
+
+.S100_ResourcePurpose
+[cols="a,a,a,a,a"]
+|===
+| Role Name | Name | Description | Code | Remarks
+
+| Enumeration
+| S100_ResourcePurpose
+| Defines the purpose of the supporting resource
+| -
+| -
+
+| Value
+| supportFile
+| A support file
+| 1
+|
+
+| Value
+| ISOMetadata
+| Dataset metadata in ISO format
+| 2
+|
+
+| Value
+| languagePack
+| A Language pack
+| 3
+|
+
+| Value
+| GMLSchema
+| GML Application Schema
+| 4
+|
+
+| Value
+| other
+| A type of resource not otherwise described
+| 100
+|
+|===
+
+[[cls-12.2.4]]
+==== S100_CatalogueDiscoveryMetadata
+
+.S100_CatalogueDiscoveryMetadata
+[cols="a,a,a,a,a,a",options=header]
+|===
+| Role Name | Name | Description | Mult | Type | Remarks
+
+| Class
+| S100_CatalogueDiscoveryMetadata
+| Class for S-100 Catalogue metadata
+| -
+| -
+| -
+
+| Attribute
+| fileName
+| The name for the Catalogue
+| 1
+| URI
+| See <<S100,clause="1-4.6">>
+
+| Attribute
+| purpose
+| The purpose for which the Catalogue has been issued
+| 0..1
+| S100_Purpose(codelist)
+| The values must be one of the following:
+
+_2_ new edition
+
+_5_ cancellation
+
+Default is new edition
+
+| Attribute
+| editionNumber
+| The Edition number of the Catalogue
+| 1
+| Integer
+| Initially set to 1 for a given productSpecification.number
+
+Increased by 1 for each subsequent newEdition
+
+Uniquely identifies the version of the Catalogue
+
+| Attribute
+| scope
+| Subject domain of the Catalogue
+| 1
+| S100_CatalogueScope
+|
+
+| Attribute
+| versionNumber
+| The version identifier of the Catalogue
+| 1
+| CharacterString
+| Human readable version identifier
+
+| Attribute
+| issueDate
+| The issue date of the Catalogue
+| 1
+| Date
+|
+
+| Attribute
+| productSpecification
+| The Product Specification used to create this file
+| 1
+| S100_ProductSpecification
+|
+
+| Attribute
+| digitalSignatureReference
+| Specifies the algorithm used to compute digitalSignatureValue
+| 1
+| S100_SE_DigitalSignatureReference (see <<S100,part=15>>)
+|
+
+| Attribute
+| digitalSignatureValue
+| Value derived from the digital signature
+| 1..*
+| S100_SE_DigitalSignature (see <<S100,part=15>>)
+| The value resulting from application of digitalSignatureReference
+
+Implemented as the digital signature format specified in <<S100,part=15>>
+
+| Attribute
+| compressionFlag
+| Indicates if the resource is compressed
+| 1
+| Boolean
+| _True_ indicates a compressed resource
+
+_False_ indicates an uncompressed resource
+
+| Attribute
+| defaultLocale
+| Default language and character set used in the Catalogue
+| 0..1
+| PT_Locale
+| In absence of defaultLocale the language is English in UTF-8
+
+| Attribute
+| otherLocale
+| Other languages and character sets used in the Catalogue
+| 0..*
+| PT_Locale
+|
+|===
+
+[[cls-12.2.4.1]]
+===== S100_CatalogueScope
+
+.S100_CatalogueScope
+[cols="a,a,a,a,a",options=header]
+|===
+| Role Name | Name | Description | Code | Remarks
+
+| Enumeration
+| S100_CatalogueScope
+| The scope of the Catalogue
+| -
+| -
+
+| Value
+| featureCatalogue
+| S-100 Feature Catalogue
+| 1
+|
+
+| Value
+| portrayalCatalogue
+| S-100 Portrayal Catalogue
+| 2
+|
+
+| Value
+| interoperabilityCatalogue
+| S-100 Interoperability Catalogue
+| 3
+|
+|===
+
+[[cls-12.2.4.2]]
+===== PT_Locale
+
+.PT_Locale
+[cols="a,a,a,a,a,a",options=header]
+|===
+| Role Name | Name | Description | Mult | Type | Remarks
+
+| Class
+| PT_Locale
+| Description of a locale
+| -
+| -
+| From <<ISO19115-1>>
+
+| Attribute
+| language
+| Designation of the locale language
+| 1
+| LanguageCode
+| <<ISO639-2>> 3-letter language codes.
+
+| Attribute
+| country
+| Designation of the specific country of the locale language
+| 0..1
+| CountryCode
+| <<ISO3166-2>> 2-letter country codes
+
+| Attribute
+| characterEncoding
+| Designation of the character set to be used to encode the textual value of the locale
+| 1
+| MD_CharacterSetCode
+| UTF-8 is used in <<S100>>
+|===
+
+[[tab-17-2]]
+.Individuals (restriction of CI_Individual from <<ISO19115-1>>)
+[cols="a,a,a,a",options=header]
+|===
+| Name | Path | Datasets | Other resources
+
+| Name of the individual
+| CI_Individual.name
+| *C*
+
+_(documented if 'positionName'_ and _'partyIdentifier' not documented)_
+
+| *C*
+
+_(same as for dataset)_
+
+| Position of the individual in an organization | CI_Individual.positionName
+| *C*
+
+_(documented if 'name' and 'partyIdentifier' not documented)_
+| *C*
+
+_(same as for dataset)_
+
+| Contact information for the individual
+| CI_Individual > contactInfo > CI_Contact
+| *M*
+
+(see <<note2>>)
+| *M*
+
+(see <<note2>>)
+
+| Identifier for the party
+| CI_Individual.partyIdentifier
+| *C*
+
+_(documented if 'name' and 'positionName' not documented_
+| *C*
+
+_(same as for dataset)_
+|===
+
+[[tab-17-3]]
+.Organisations (restriction of CI_Organisation from <<ISO19115-1>>)
+[cols="a,a,a,a",options=header]
+|===
+| Name | Path | Datasets | Other resources
+
+| Name of the organisation
+| CI_Organisation.name
+| *C*
+
+_(documented if 'positionName' not documented -- see <<note1>>)_
+| *C*
+
+_(same as for dataset)_
+
+| Position of an individual in the organisation
+| CI_Organisation.positionName
+| *C*
+
+_(documented if 'name' not documented -- see <<note1>>)_
+| *C*
+
+_(same as for dataset)_
+
+| Contact information for the organisation
+| CI_Organisation.contactInfo > CI_Contact
+| *M*
+
+(see <<note2>>)
+| *M*
+
+(see <<note2>>)
+
+| Identifier for the party
+| CI_Organisation.partyIdentifier
+| *C*
+
+_(documented if 'name' and 'positionName' not documented_
+| *C*
+
+_(same as for dataset)_
+|===
+
+[[note1]]
+[NOTE]
+====
+S-100 restricts <<ISO19115-1>> in that documenting the 'logo' attribute of CI_Organisation is not sufficient to allow omission of both 'name' and 'positionName'.
+====
+
+[[note2]]
+[NOTE]
+====
+At least one of CI_Contact attributes phone / address / onlineResource / contactInstructions must be documented.
+====
+
+[%portrait]
+<<<

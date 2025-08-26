@@ -1,0 +1,184 @@
+== Feature Catalogue
+
+=== Introduction
+
+The Feature Catalogue describes the feature types, information types, attributes,
+attribute values, associations and roles which may be used in the product. The S-124
+Feature Catalogue is available in an XML document which conforms to the S-100 XML
+Feature Catalogue Schema and can be downloaded from the IHO Geospatial Information
+Registry website (https://registry.iho.int/). Simple attributes used in this
+specification are listed in <<tab-5-1>>.
+
+=== Feature Types
+
+Feature types contain descriptive attributes that characterize real-world entities.
+The word 'feature' may be used in one of two senses -- feature type and feature
+instance. A feature type is a class and is defined in a Feature Catalogue. A feature
+instance is a single occurrence of the feature type and represented as an object in a
+dataset. A feature instance is located by a relationship to one or more spatial
+instances. A feature instance may exist without referencing a spatial instance.
+
+==== Geographic
+
+Geographic (geo) feature types carry the descriptive characteristics of a real-world
+entity (a location or place on the surface of the Earth). In the context of
+hydrographic products, this includes the adjacent regions from the sea floor to
+elevations of landforms and structures above the Earth's surface.
+
+==== Cartographic
+
+Cartographic features contain information about the cartographic representation
+(including text) of real-world entities.
+
+==== Information Types
+
+Information types define identifiable pieces of information in a dataset that can be
+shared using information associations. They have attributes but have no geometry.
+
+=== Feature and information relationships
+
+A feature relationship links instances of one feature type with instances of the same
+or a different feature type.
+
+An information relationship links instances of feature types or information types to
+instances of information types.
+
+=== Attributes
+
+S-124 defines attributes as either simple or complex.
+
+==== Simple Attributes
+
+S-124 uses ten types of simple attributes; they are listed in the following table:
+
+[[tab-5-1]]
+.Simple feature attributes
+[cols="a,a",options=header]
+|===
+| Type | Definition
+
+| Boolean
+| A value representing binary logic. The value can be either true or false.
+
+| Enumeration
+| One of a list of predefined values
+
+| Integer (int)
+| An integer number
+
+| Text or CharacterString
+| An arbitrary-length sequence of characters including accents and special characters from a repertoire of one of the adopted character sets
+
+| Date
+| A date gives values for year, month and day according to the Gregorian Calendar. Character encoding of a date is a string which shall follow the calendar date format (complete representation, basic format) for date specified by <<ISO8601>>.
+
+[example]
+19980918 (YYYYMMDD)
+
+In XML formats, the XML Schema standard type should be used instead of the <<ISO8601>> basic representation (which is not a standard type in XML).
+
+[example]
+1998-09-18
+
+NOTE: Since S-124 uses XML formats for both datasets and metadata, the XML encoding must be used.
+
+| Time
+| A 24-hour time, it may contain a time zone. In XML formats the XML Schema standard type should be used instead of the <<ISO8601>> basic representation (which is not a standard type in XML).
+
+[example]
+====
+18:30:59Z (time in UTC);
+
+18:30:59+01:00 (local time with given offset);
+
+18:30:59 (local time without an offset to UTC).
+====
+
+NOTE: Since S-124 uses XML formats for both datasets and metadata, the XML encoding must be used.
+
+| Date and Time
+
+| A DateTime is a combination of a date and a time type. Character encoding of a DateTime shall follow <<ISO8601>> (see above). The "T" is a separator indicating that time-of-day follows.
+
+[example]
+19850412T101530 (YYYMMDDThhmmss)
+
+In XML formats, the XML Schema standard type should be used instead of the <<ISO8601>> basic representation (which is not a standard type in XML).
+
+[example]
+1985-04-12T10:15:30; 1985-04-12T10:15:30+01:00;1985-04-12T10:15:30Z
+
+NOTE: Since S-124 uses XML formats for both datasets and metadata, the XML encoding must be used.
+
+| Codelist
+| A type of flexible enumeration. A code list type is a list of literals which may be extended only in conformance with specified rules.
+
+| Truncated date
+| An S100_TruncatedDate allows a date or partial date to be given. At least one of the year/month/day components must be present. Since S-124 uses XML formats for both dataset and metadata, the XML encoding (XML type *gMonthDay*) of truncated dates must be used (i.e., the <<ISO8601>> basic format is not used in S-124).
+
+Components:
+
+YYYY Year integer between 0000 and 9999
+
+MM Month integer between 01 -- 12 (inclusive)
+
+DD Day integer between 01 and 28, 29, 30, or 31 (inclusive), consistent with year and month values if these are specified
+
+*gMonthDay* is a Gregorian date that recurs, specifically a day of the year such as the third of May. Arbitrary recurring dates are not supported by this datatype. The value space of *gMonthDay* is the set of calendar dates, as defined in <<ISO8601,section=3>>. Specifically, it is a set of one-day long, annually periodic instances.This type can be used to encode recurring instants (see <<S100,clause="3-8">>). The appropriate XML Schema type should be used. The "g" indicates a Gregorian date is utilized.
+
+[example]
+--12-17 representing 17 December of any year (conforming to the XML type *gMonthDay*)
+
+<<S100,part=10b>> provides further details about encoding in GML datasets.
+
+| URN
+| A persistent, location-independent, resource identifier that follows thesyntax and semantics for URNs specified in RFC 2141.
+
+[example]
+urn:mrn:iho:hydro:js:AnchorageArea01
+|===
+
+NOTE: the use of URN in S-124 must utilize the schema of the Maritime Resource Name
+(MRN) concept.
+
+[[cls-5.4.2]]
+==== Complex Attributes
+
+Complex attributes are aggregations of other attributes that are either simple or
+complex. The aggregation is defined by means of attribute bindings.
+
+[[fig-5-1]]
+.featureName - a complex attribute
+image::img08.png[]
+
+=== Units of Measure
+
+There is no use of a specific unit of measure in the S-124 data model. However, the
+content of text attributes that describe the nature of navigational warnings should
+make use of the following units of measure where appropriate:
+
+* Orientation is given in decimal degrees.
+* Radio frequency is given in hertz.
+* Uncertainty is given in metres.
+* Horizontal distance is given in either metres (m) or kilometres (km) or nautical
+miles (NM), as indicated by the designation.
+* Depths are given in metres.
+* Heights are given in metres.
+
+[[cls-5.6]]
+=== Geometric Representation
+
+Geometric representation is the digital description of the spatial component of an
+object as described in <<S100,part=7>> and <<ISO19107>>. This product specification
+uses three types of geometries: *GM_Point*, *GM_OrientableCurve*, and
+*GM_OrientableSurface*. *point, curve and surface.*
+
+Spatial uncertainties can be encoded using the complex attribute *spatialAccuracy*.
+For values expressed quantitatively the *horizontalPositionAccuracy* sub-complex
+attribute must be used, or qualitatively expressed values are captured using the
+*qualityOfHorizontalMeasurement* enumerated list. This modelling of spatial
+uncertainties align with that of S-101 ENCs.
+
+[[fig-5-2]]
+.Spatial Quality
+image::img09.png[]

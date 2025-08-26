@@ -1,0 +1,175 @@
+[.preface]
+== metanorma-extension
+
+=== user-css
+
+[source]
+----
+.lb { background-color: lightblue}
+----
+
+=== document history
+
+Changes to this Product Specification are coordinated by the IHO World-Wide Navigational Warning Service Sub-Committee (WWNWS-SC). New editions will be made available via the IHO web site. Maintenance of the Product Specification shall conform to IHO Technical Resolution 2/2007 (as amended).
+
+[source,yaml]
+----
+- date:
+  - type: updated
+    value:  2018-05
+  edition: 0.0.1
+  contributor:
+  - person:
+      name:
+        abbreviation: EM
+        completename: EM
+  amend:
+    - description: Initial draft
+- date:
+  - type: updated
+    value:  2018-06
+  edition: 0.0.1
+  contributor:
+  - person:
+      name:
+        abbreviation: EM
+        completename: EM
+  amend:
+    - description: Edits following SHOM comments
+- date:
+  - type: updated
+    value:  2018-10
+  edition: 0.0.2
+  contributor:
+  - person:
+      name:
+        abbreviation: EM
+        completename: EM
+  amend:
+    - description: Implementing decisions of WWNWS10
+- date:
+  - type: updated
+    value:  2019-03
+  edition: 0.0.3
+  contributor:
+  - person:
+      name:
+        abbreviation: EM
+        completename: EM
+  amend:
+    - description: Edits following CG review comments
+- date:
+  - type: updated
+    value:  2019-06
+  edition: 0.0.4
+  contributor:
+  - person:
+      name:
+        abbreviation: EM
+        completename: EM
+  amend:
+    - description: Aligning the draft to S-100 Ed 4.0.0
+- date:
+  - type: updated
+    value:  2022-10
+  edition: 0.0.5
+  contributor:
+  - person:
+      name:
+        abbreviation: EM
+        completename: EM
+  - person:
+      name:
+        abbreviation: VM
+        completename: VM
+  - person:
+      name:
+        abbreviation: YLF
+        completename: YLF
+  - person:
+      name:
+        abbreviation: EG
+        completename: EG
+  - person:
+      name:
+        abbreviation: JB
+        completename: JB
+  amend:
+    - description: Alignment with S-100 Ed 5.0.0 and implementing latest data model
+- date:
+  - type: updated
+    value:  2023-05
+  edition: 1.0.0
+  contributor:
+  - person:
+      name:
+        abbreviation: EM
+        completename: EM
+  amend:
+    - description: Application of review comments
+- date:
+  - type: updated
+    value:  2024-06
+  edition: 1.5.0
+  contributor:
+  - person:
+      name:
+        abbreviation: EM
+        completename: EM
+  amend:
+    - description: Update to S-100 Ed 5.2.0, implement guidance from S-100WG8 discussions on datasets, and application of Ed.1.0.0 comments.Harmonized with S-101 DCEG Ed 1.4.0
+- date:
+  - type: updated
+    value:  2024-10
+  edition: 2.0.0
+  contributor:
+  - person:
+      name:
+        abbreviation: EM
+        completename: EM
+  amend:
+    - description: Adjudicated comments made to 1.5.0
+- date:
+  - type: updated
+    value:  2024-11
+  edition: 2.0.0
+  contributor:
+  - person:
+      name:
+        abbreviation: JW
+        completename: JW
+  amend:
+    - description: Formatting to current IHO template
+- date:
+  - type: updated
+    value:  2024-12
+  edition: 2.0.0
+  contributor:
+  - person:
+      name:
+        abbreviation: EM
+        completename: EM
+  - person:
+      name:
+        abbreviation: ES
+        completename: ES
+  - person:
+      name:
+        abbreviation: JP
+        completename: JP
+  - person:
+      name:
+        abbreviation: SO
+        completename: SO
+  amend:
+    - description: Updating FC, XSD, DCEG and PS following comments during WWNWS-Sc endorsement stage.
+- date:
+  - type: published
+    value:  2024-03
+  edition: 2.0.0
+  contributor:
+    - organization:
+        name: IHO CL xx/2025
+  amend:
+    - description: First operational Edition of S-124.
+----

@@ -1,0 +1,126 @@
+[[cls-11]]
+== Portrayal
+
+Navigational Warnings portrayal is provided by a portrayal catalogue that includes a
+symbol set and symbol instructions for the various feature and attribute
+combinations. <<annex-d>> - Portrayal Catalogue contains the portrayal catalogue using
+the XSLT concept from <<S100,part=9>>.
+
+[[cls-11.1]]
+=== End User system portrayal requirements
+
+[[cls-11.1.1]]
+==== Portrayal requirements of the Graphical User Interface
+
+A dedicated interface is required to provide users with interaction with NAVWARN
+messages. This interface should be linked to an individual user so that the risk of
+missing information during watch handover is reduced. This interface shall, at a
+minimum, provide functionality for;
+
+. The user shall be able to tag individual messages according to the filtering
+criteria in <<cls-11.1.2>>.
+. Capability for a call listing of all NAVWARN messages in the system and sorting
+these according to: received date and time, issue date and time, warning type,
+producer and series, must be provided. Additionally, a means to list according to
+user classification should be provided.
+. Provide an indication when a new NAVWARN message is received into the System
+Database until it has been displayed or 24 hours have passed. This indication may be
+suppressed if the NAVWARN message does not meet filtering criteria set by the mariner
+(see <<cls-11.1.2>>).
+. Means shall be provided for the operator to enter criteria for filtering of
+indication of new NAVWARN messages based on time and distance from own ship,
+monitored route or planned route (see <<cls-11.1.2>>). Default setting is no
+filtering.
+. Details of the filtering options that have been enabled by user must be readily
+available for inspection and modification.
+. Means shall be provided to view the most recent message, past messages, and to view
+messages associated with selection of NAVWARN symbols in the graphical display area.
+. Listing of all NAVWARN shall include means for viewing an abbreviated view of any
+*NavwarnPart*, *warningInformation* attributes present.
+
+NOTE: It may be possible to create much of this functionality via portrayal context
+parameters, however, in this version of S-124, this is not included as further trials
+on <<S100>> portrayal are needed to assess the feasibility.
+
+NOTE: For ECDIS the functions needed to supported these portrayal requirements are
+described in <<S98,annex=C>>.
+
+[[cls-11.1.2]]
+==== Filtering Navigational Warning information
+
+S-124 Navigational Warnings datasets are intended for use in S-100 ECDIS as elements
+of an always on layer conforming to <<S98>> Level 1 interleaving when
+interoperability is on. There is a risk of clutter with this level of
+interoperability and it is therefore necessary to include filtering options for the
+user, to remove all information that is not relevant from the portrayal.
+
+NOTE: Even though a Navigational Warning is not portrayed, it must still be visible
+and discoverable in a list of NAVWARNs that can be recalled by user action at any
+time.
+
+User systems should provide filtering mechanisms for the Navigational Warning
+information.
+
+At a minimum, functionality must be included that allows the user to classify the
+relevance of a NAVWARN against the intended route as:
+
+* on chart (relevant for the route, must always be visualized); or
+* off chart (not relevant for the route, and need not be visualized); or
+* information (relevant for the route, but for information and need not be
+visualized).
+
+On chart should be the default classification for all NAVWARNs.
+
+Additional filtering functions could include options such as;
+
+* filtering on route with a buffer;
+* navigational warning topic;
+* date range of the hazard; and
+* valid time of the navigational warning.
+
+These filters could be used to assist the navigator in classifying a NAVWARN
+according to its relevance for the route.
+
+[example]
+====
+A self-cancelling dataset
+
+[pseudocode%unnumbered]
+=====
+*NavwarnPreamble*
+  *publicationTime* of 20230704T010000Z
+  *cancellationDate* of 20230711T000000Z
+*NavwarnPart*
+
+  *fixedDateRange* of 20230706T010000Z to 20230710T010000Z
+=====
+
+must be visible on navigation screen during 20230706T010000Z to 20230710T010000Z,
+unless removed by a filter set by user, and optionally visible during
+20230704T010000Z to 20230706T005959Z.
+====
+
+NOTE: It should still be possible for user to recall cancelled messages for review
+purposes.
+
+[example]
+Any dangers that are in waters too shallow for the ship get classified as off chart
+warnings, but are discoverable in the on call listing of active NAVWARNs.
+
+[[cls-11.1.3]]
+==== Cancelled datasets
+
+When the dataset is cancelled it must not be displayed on the navigation screen, but
+should be available for review in the on call listing of NAVWARNs in the navigation
+system and marked as cancelled.
+
+[[cls-11.2]]
+=== Portrayal of feature classes
+
+The *NavwarnAreaAffected* class does not have a portrayal defined since this could
+cause significant cluttering on the navigation screen. Rather, the class must be
+highlighted by the system if selected from a pick report or by other means for
+interrogation by user.
+
+When a *NavwarnPart* is not portrayed, such as when user selections mark it not to be
+visualized, any associated *TextPlacement* features must also not be portrayed.

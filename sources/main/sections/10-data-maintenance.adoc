@@ -1,0 +1,54 @@
+[[cls-10]]
+== Data Maintenance
+
+[[cls-10.1]]
+=== Introduction
+
+S-124 datasets in a series are issued as per any situation arise requiring safety
+critical information be made known to mariners. Datasets of the series are maintained
+as needed and must be done according to <<cls-9.2>>. When related to the same event,
+series dataset updates will be made by new datasets which cancel any preceding
+datasets.
+
+Data Producers must use applicable sources to maintain and update data and may
+provide a brief description of the sources that were used to produce the dataset if
+this information is relevant. It is up to the Data Producer to determine what an
+appropriate source when creating Navigational Warning datasets is. <<S53,chapter=3>>
+-- 'NAVAREA/SUB-AREA/NATIONAL COORDINATORS' RESOURCES AND RESPONSIBILITIES' gives
+further information on how to manage information streams when creating S-124
+Navigational Warnings within the WWNWS framework. Local warnings may be subject to
+national or regional guidelines.
+
+The specific production process is up to each Data Producer. The Data Producer should
+sufficiently document their individual production process for quality management
+purposes.
+
+[[cls-10.2]]
+=== Production process datasets
+
+Data Producers should follow their established production processes for maintaining
+and updating datasets. Data is produced against the DCEG and checked against the
+appropriate set of validation rules in S-158.
+
+[[cls-10.3]]
+=== Information updates
+
+The purpose of issue of the dataset is indicated in the "purpose" field of the
+dataset discovery metadata. In order to cancel a dataset or update the information
+given by a dataset, one of the methods described in <<cls-9.3>> is followed.
+
+[[cls-10.4]]
+=== Support file updates
+
+The purpose of issue is indicated in the "revisionStatus" attribute of the support
+file discovery metadata. Support files carrying the "deletion" flag in metadata must
+be removed from the system
+
+[[cls-10.5]]
+=== Feature and portrayal catalogues
+
+For each New Edition (*n*.0.0, see <<cls-1.7.5>>) of the S-124 Product Specification
+a new feature and portrayal catalogue will be released. A revision (n.*n*.0) may also
+include a new feature and/or portrayal catalogue. The system must be able to manage
+datasets and their catalogues that are created on different versions of the S-124
+Product Specification.

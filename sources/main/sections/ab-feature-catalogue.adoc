@@ -1,0 +1,23 @@
+[[annex-b]]
+[appendix,obligation=normative]
+== Feature Catalogue
+
+*Name*:: Navigational Warnings Feature Catalogue
+
+*Scope*::
+
+*Version Number*:: 2.0.0
+
+*Version Date*:: 15 November 2024
+
+*Producer*:: International Hydrographic Bureau, +
+4 quai Antoine 1er, +
+B.P. 445 +
+MC 98011 MONACO CEDEX +
+Telephone: +377 93 10 81 00 +
+Fax: + 377 93 10 81 40 +
+Email: mailto:info@iho.int[info@iho.int]
+
+*Language*:: English
+
+Human readable version is supplied as Annex B-1.

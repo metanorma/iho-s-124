@@ -1,0 +1,64 @@
+[[cls-6]]
+== Coordinate Reference System (CRS)
+
+[[cls-6-1]]
+=== Introduction
+
+A NAVWARN dataset must define one geodetic CRS and may define vertical CRS information
+for depths and elevations textually when appropriate for the warning content.
+
+[[cls-6-2]]
+=== Reference systems used in S-124
+
+The horizontal CRS must be EPSG:4326 (WGS84). The full reference to EPSG: 4326 can be
+found at https://epsg.org/home.html.
+
+*Horizontal Coordinate Reference System*:: EPSG:4326 (WGS84)
+
+*Projection*:: None
+
+*Vertical Coordinate Reference System*:: Vertical CRS for depths and elevations may be
+specified in the sub attribute *information* of the *warningInformation* complex
+attribute using amplifying text.
+
+*Temporal reference system*:: Gregorian calendar
+
+*Coordinate Reference System registry*:: http://www.epsg-registry.org/[EPSG Geodetic Parameter Registry]
+
+*Date type (according to <<ISO19115>>)*:: 002- publication
+
+*Responsible party*:: International Organisation of Oil and Gas Producers (IOGP)
+
+*URL*:: https://epsg.org/crs_4326/WGS-84.html
+
+NOTE: To match WGS84 specification, coordinate order in S-124 GML files must be
+latitude followed by longitude.
+
+[[cls-6.2.1]]
+==== Vertical Coordinate Reference System
+
+Although all coordinates in a dataset must refer to the same horizontal CRS,
+different Vertical Datums can be used for the depth or heights described in
+Navigational Warning datasets. The S-124 data must use meter for heights when
+included. The amplifying text in the sub attribute *information* of the
+*warningInformation* complex attribute may include information about heights or
+depths. When this is the case, the vertical datum used in the measurement shall be
+made clear from the text.
+
+[[cls-6.2.2]]
+==== Temporal reference system
+
+Time is measured by reference to Calendar dates and Clock time in accordance with
+<<ISO19108,clause="5.4.4">>. All instances of time in datasets conforming to S-124
+must be expressed in UTC. Time and date values must conform to the formatting
+requirements of the time and date datatypes. Where it is necessary to add temporal
+information in an attribute of text data type in a NAVAREA, sub-area or coastal
+warning, the information must always be expressed using UTC. Local warnings may also
+include temporal information in local time. Following the format of <<S53>>; the
+accepted format for a Date Time Group (DTG) in the text of a message is as follows:
+DDHHMM UTC MoMoMo YY; for example 231642 UTC JUN 14.
+
+[[cls-6.3]]
+=== Projection
+
+Navigational Warning data products are un-projected.

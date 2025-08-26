@@ -1,0 +1,446 @@
+== Overview
+
+=== Introduction
+
+This document has been produced by the IHO World-Wide Navigational Warning Service
+
+Sub-Committee (WWNWS-SC). The purpose of this document is to respond to requests to
+produce a data product that can be used in a Navigational Warning Information Overlay
+(NWIO) within an Electronic Chart Display and Information System (ECDIS). It is based
+on the IHO S-100 framework specification and the ISO 19100 series of standards. It is
+a vector product specification that is primarily intended for encoding the nature and
+extent of Navigational Warnings, for navigational purposes.
+
+S-124 is based on the guidelines set forth for navigational warnings in the Joint
+IHO/IMO/WMO Manual on Maritime Safety Information (MSI), <<S53>>. It should be noted
+that although <<S53>> covers the spectrum of MSI, S-124 focuses only on Navigational
+Warnings.
+
+S-124 has been designed to enable creation of Navigational Warning datasets for
+traditional Radio Broadcast, NAVTEX and within the international enhanced group call
+(EGC) service. This design feature aims to permit a greater sense of backwards
+compatibility, allowing production systems to share the same information in multiple
+channels for the greatest possible dispersion of critical navigational safety
+information.
+
+S-124 Navigational Warnings are intended to be used in an overlay to nautical charts
+within a navigation system.
+
+=== Scope
+
+This document describes an S-100 compliant Product Specification for Navigational
+Warnings, which will form an overlay layer for an S-100 based marine navigation
+system. It specifies the content, structure, and metadata needed for creating a fully
+compliant S-124 product and for its portrayal within an S-100 system. This Product
+Specification includes content model, encoding, Feature Catalogue, Portrayal
+Catalogue, and metadata.
+
+=== References
+
+[bibliography]
+==== Normative
+
+* [[[iala,IALA G1143]]],
+_span:title[Unique Identifiers for Maritime Resources]_,
+span:edition[3.0].
+span:organization[International Association of Marine Aids to Navigation and Lighthouse Authorities],
+span:date[2021-06].
+
+* [[[ISO639-2,ISO 639-2]]]
+
+* [[[ISO3166-1,ISO 3166-1]]]
+
+* [[[m3,M-3]]],
+_span:title[Resolutions of the International Hydrographic Organization, IHO Publication M-3]_,
+span:edition[2],
+span:date[2010]
+span:note[(updated April 2022)].
+
+* [[[S53,IHO S-53]]]
+
+* [[[S62,IHO S-62]]]
+
+* [[[S97,IHO S-97]]]
+
+* [[[S98,IHO S-98]]],
+_span:title[Data Product Interoperability in S-100 Navigation Systems]_,
+span:edition[1.0.0],
+span:date[2022-05]
+
+* [[[S100,IHO S-100]]]
+
+* [[[S157,nofetch(IHO S-157:124)]]],
+_span:title[Validation Checks for S-124]_
+
+[bibliography]
+==== Informative
+
+* [[[ISO8601,ISO 8601:2004]]]
+
+* [[[ISO19103,ISO 19103]]]
+
+* [[[ISO19103-2,nofetch(ISO 19103-2:2005)]]],
+_span:title[Geographic Information -- Conceptual Schema Language -- Part 2]_
+
+* [[[ISO19115-1,ISO 19115-1]]]
+
+* [[[ISO19115-3,ISO/TS 19115-3]]]
+
+* [[[ISO19117,ISO 19117:2012]]]
+
+* [[[ISO19131,ISO 19131]]]
+
+* [[[ISO19157,ISO 19157:2013]]]
+
+* [[[S101,IHO S-101]]]
+
+* [[[IEC63173-2,IEC 63173-2:2022]]]
+
+* [[[ISO19115,hidden(ISO 19115 (all parts))]]]
+
+* [[[S57,hidden(IHO S-57)]]]
+
+* [[[ISO3166-2,hidden(ISO 3166-2)]]]
+
+* [[[ISO19107,hidden(ISO 19107)]]]
+
+* [[[ISO19108,hidden(ISO 19108)]]]
+
+* [[[ISO10646-1,hidden(ISO/IEC 10646-1)]]]
+
+* [[[ISO19101,ISO 19101]]]
+
+* [[[ISO19110,ISO 19110]]]
+
+* [[[ISO19109,ISO 19109]]]
+
+=== Terms, Definitions and Abbreviations
+
+==== Use of language
+
+Within this document:
+
+* "Must" indicates a mandatory requirement.
+* "Should" indicates an optional requirement, that is the recommended process to be
+followed, but is not mandatory.
+* "May" means "allowed to" or "could possibly", and is not mandatory.
+
+[heading=terms and definitions]
+==== Terms and Definitions
+
+The S-100 framework is based on the ISO 19100 series of geographic standards. The
+terms and definitions provided here are used to standardize the nomenclature found
+within that framework, whenever possible. They are taken from the references cited in
+clause 2.1. Modifications have been made when necessary.
+
+===== application
+
+Manipulation and processing of data in support of user requirements
+
+[.source]
+<<ISO19101>>
+
+===== data product
+
+A {{dataset,options="noref"}} or {{dataset series,options="noref"}} that conforms to a {{data product specification,options="noref"}}
+
+===== data product specification
+
+Detailed description of a {{dataset,options="noref"}} or {{dataset series,options="noref"}} together with additional
+information that will enable it to be created, supplied to and used by another party
+
+NOTE: A data product specification provides a description of the universe of
+discourse and a specification for mapping the universe of discourse to a dataset. It
+may be used for production, sales, end-use or other purpose.
+
+===== dataset
+
+Identifiable collection of data
+
+[.source]
+<<ISO19115>>
+
+NOTE: A dataset may be a smaller grouping of data which, though limited by some
+constraint such as spatial extent or feature type, is located physically within a
+larger dataset. Theoretically, a dataset may be as small as a single feature or
+feature attribute contained within a larger dataset. A hardcopy map or chart may be
+considered a dataset.
+
+===== dataset series
+
+Collection of {{dataset,datasets,options="noref"}} sharing the same product specification
+
+[.source]
+<<ISO19115>>
+
+Distinction: series
+
+===== domain
+
+Well-defined set
+
+[.source]
+<<ISO19103>>
+
+NOTE: Well-defined means that the definition is both necessary and sufficient, as
+everything that satisfies the definition is in the set and everything that does not
+satisfy the definition is necessarily outside the set.
+
+===== exchange set
+
+Datasets may be grouped into exchange sets. Each exchange set consists of one or more
+datasets with an associated XML metadata file and a single Exchange Catalogue XML file
+containing metadata. It may also include one or more support files.
+
+===== feature
+
+Abstraction of real world phenomena
+
+[.source]
+<<ISO19101>>
+
+NOTE: A feature may occur as a type or an instance. Feature type or feature instance
+shall be used when only one is meant.
+
+===== feature association
+
+Relationship that links instances of one {{feature,options="noref"}} type with instances of the same
+or a different {{feature,options="noref"}} type
+
+[.source]
+<<ISO19110>>
+
+NOTE: A feature association may occur as a type or an instance. Feature association
+type or feature association instance is used when only one is meant.
+
+NOTE: Feature associations include aggregation of features.
+
+===== feature attribute
+
+Characteristic of a {{feature,options="noref"}}
+
+[.source]
+<<ISO19101>>
+
+NOTE: A feature attribute may occur as a type or an instance. Feature attribute type
+or feature attribute instance is used when only one is meant.
+
+NOTE: A feature attribute type has a name, a data type and a domain associated to it.
+A feature attribute for a feature instance has an attribute value taken from the
+domain.
+
+===== geographic data
+
+Data with implicit or explicit reference to a location relative to the Earth
+
+[.source]
+<<ISO19109>>
+
+NOTE: Geographic information is also used as a term for information concerning
+phenomena implicitly or explicitly associated with a location relative to the Earth.
+
+===== in-force bulletin
+
+A list of serial numbers of those NAVAREA, Sub-area or coastal warnings in force
+issued and broadcast by the NAVAREA Coordinator, Sub-area Coordinator or National
+Coordinator
+
+NOTE: S-124 also includes local warnings in-force bulletin.
+
+===== metadata
+
+Data about data
+
+[.source]
+<<ISO19115>>
+
+===== model
+
+Abstraction of some aspects of reality
+
+[.source]
+<<ISO19109>>
+
+===== navigational warning
+
+Navigational warning means a message containing urgent information relevant to safe
+navigation broadcast to ships in accordance with the provisions of the International
+Convention for the Safety of Life at Sea, 1974, as amended
+
+===== portrayal
+
+Presentation of information to humans
+
+[.source]
+<<ISO19117>>
+
+===== quality
+
+Totality of characteristics of a product that bear on its ability to satisfy stated
+and implied needs
+
+[.source]
+<<ISO19101>>
+
+===== series
+
+A series is a numbered sequence of navigational warnings of the same type (NAVAREA,
+sub-area, coastal or local) issued by an authority acting as official production
+agency. Rem: <<S53>> identifies NAVAREA coordinator, sub-Area coordinator, national
+coordinator for coastal warnings. As local warnings are out of the scope of <<S53>>,
+the term of "coordinators" is not used for local warnings
+
+==== Abbreviations
+
+This product specification adopts the following convention for symbols and abbreviated
+terms:
+
+DCEG:: Data Classification and Encoding Guide
+ECDIS:: Electronic Chart Display and Information Systems
+ENC:: Electronic Navigational Chart
+GMDSS:: Global Maritime Distress and Safety System
+GML:: Geography Markup Language
+IHO:: International Hydrographic Organization
+ISO:: International Organization for Standardization
+MRN:: Maritime Resource Name
+NAVWARN:: Navigational Warning
+NWIO:: Navigational Warning Information Overlay
+UML:: Unified Modelling Language
+URI:: Uniformed Resource Identifier
+URL:: Uniform Resource Locator
+URN:: Uniform Resource Name
+WWNWS:: World-Wide Navigational Warning Service, the internationally and nationally
+coordinated service for the promulgation of navigational warnings, part of the
+maritime safety information service of the GMDSS
+WWNWS-SC:: IHO World-Wide Navigational Warning Service Sub-Committee
+www:: World Wide Web
+WGS:: World Geodetic System
+XML:: Extensible Markup Language
+XSLT:: eXtensible Stylesheet Language Transformations
+
+=== General data product description
+
+NOTE: This information contains general information about the data product.
+
+*Title*:: Navigational Warnings Product Specification.
+
+*Abstract*:: This specification is developed for creating datasets containing
+navigational warning information primarily targeting use in ECDIS. Navigational
+warning means a message containing urgent information relevant to safe navigation
+broadcast to ships in accordance with the provisions of the International Convention
+for the Safety of Life at Sea,1974, as amended (<<S53,clause="2.2.1.23">>). Use of
+Navigational Warning datasets in other systems than ECDIS is permitted.
+
+*Content*:: A dataset conforming to this specification will contain all relevant
+information of an individual Navigational Warning. Datasets of a series are delivered
+by means of an exchange set. Additionally, there will be relevant metadata about data
+quality, production authority, and publication date.
+
+*Spatial Extent*::
+
+*Description*::: Global coverage of maritime areas.
+
+*East Bounding Longitude*::: stem:[180"unitsml(deg)"]
+
+*West Bounding Longitude*::: stem:[-180"unitsml(deg)"]
+
+*North Bounding Latitude*::: stem:[90"unitsml(deg)"]
+
+*South Bounding Latitude*::: stem:[-90"unitsml(deg)"]
+
+*Purpose*:: The purpose of this document is to respond to requests to produce a data
+product that can be used as a Navigational Warning Information Overlay (NWIO) within
+an Electronic Chart Display and Information System (ECDIS). It is based on the IHO
+S-100 framework specification and the ISO 19100 series of standards. It is a vector
+product specification that is primarily intended for encoding the extent and nature of
+Navigational Warnings, for navigational purposes.
+
+=== Data Product Specification metadata
+
+This information uniquely identifies this Product Specification and provides
+information about its creation and maintenance. For further information on dataset
+metadata see the metadata clause.
+
+*Title*:: Navigational Warnings Product Specification
+
+*S-100 Version*:: 5.2.0
+
+*S-124 Version*:: 2.0.0
+
+*Date*:: March 2025
+
+*Language*:: English
+
+*Classification*:: Unclassified
+
+*Contact*:: International Hydrographic Bureau, +
+4 Quai Antoine 1er +
+B.P. 445 +
+MC 98011 MONACO CEDEX +
+Telephone: +377 93 10 81 00 +
+Fax: +377 93 10 81 40 +
+Email: mailto:info@iho.int[info@iho.int]
+
+*URL*:: http://www.iho.int/[www.iho.int]
+
+*Identifier*:: S-124
+
+*Maintenance*:: Changes to the Product Specification S-124 are coordinated by the IHO
+World Wide Navigational Warning Service Sub-Committee, and are made available via the
+IHO web site. Maintenance of the Product Specification must conform to IHO Resolution
+2/2007, as amended.
+
+*Compliancy Category*:: category4
+
+=== IHO Product Specification maintenance
+
+==== Introduction
+
+Changes to S-124 will be released by the IHO as a New Edition, revision, or
+clarification.
+
+==== New Edition
+
+_New Editions_ of S-124 introduce significant changes. _New Editions_ enable new
+concepts, such as the ability to support new functions or applications, or the
+introduction of new constructs or data types. _New Editions_ are likely to have a
+significant impact on either existing users or future users of S-124. All cumulative
+_revisions_ and _clarifications_ must be included with the release of approved New
+Editions.
+
+==== Revision
+
+_Revisions_ are defined as substantive semantic changes to S-124. Typically,
+_revisions_ will change S-124 to correct factual errors; or introduce necessary
+changes that have become evident as a result of practical experience or changing
+circumstances. A _revision_ must not be classified as a clarification. _Revisions_
+could have an impact on either existing users or future users of S-124. All cumulative
+_clarifications_ must be included with the release of approved revisions.
+
+Changes in a _revision_ are minor and ensure backward compatibility with the previous
+versions within the same Edition. Newer revisions, for example, introduce new features
+and attributes. Within the same Edition, a dataset of one version could always be
+processed with a later version of the Feature and Portrayal Catalogues.
+
+In most cases a new Feature Catalogue or Portrayal Catalogue will result in a
+_revision_ of S-124.
+
+==== Clarification
+
+_Clarifications_ are defined as non-substantive changes to S-124. Typically,
+_clarifications_: remove ambiguity; correct grammatical and spelling errors; amend or
+update cross references; and insert improved graphics. A _clarification_ must not
+cause any substantive semantic change to S-124.
+
+Changes in a _clarification_ are minor and ensure backward compatibility with the
+previous versions.
+
+[[cls-1.7.5]]
+==== Version Numbers
+
+The associated version control numbering to identify changes (n) to this specification
+must be as follows:
+
+* New Editions denoted as *n*.0.0
+* Revisions denoted as n.*n*.0
+* Clarifications denoted as n.n.*n*

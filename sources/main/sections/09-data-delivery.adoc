@@ -1,0 +1,170 @@
+[[cls-9]]
+== Data Delivery
+
+[[cls-9.1]]
+=== Data Product Delivery Information
+
+This data product specification defines GML as the primary format in which S-124 data
+products are delivered. See <<S100,part=10b>> and the S-124 GML schema documentation
+for a complete description of the data records, fields and subfields defined in the
+encoding.
+
+[[cls-9.2]]
+=== Dataset loading
+
+[[cls-9.2.1]]
+==== Use of S-124 in ECDIS
+
+In ECDIS all valid S-124 datasets must always be loaded. Validity is indicated by the
+*cancellationDate* attribute in the *NavwarnPreamble* class, and any point in time
+prior to this time value the dataset is valid. If the *cancellationDate* attribute is
+empty this means the dataset is valid until cancelled by a new dataset. Validity is
+terminated if a cancellation dataset is issued before the *cancellationDate* of a
+dataset.
+
+Validity is also indicated by the NAVWARN being present in the latest in-force
+bulletin. Any dataset prior to and not found in the latest in-force bulletin must be
+considered not valid.
+
+[[cls-9.2.2]]
+==== In-force bulletin
+
+If the in-force bulletin contains one or more NAVWARNs that are not present in the
+system, an indication should be given.
+
+[[cls-9.3]]
+=== Dataset cancellation
+
+S-124 Datasets may be cancelled in one of four ways:
+
+* Populating the *cancellationDate* attribute in the dataset and the *temporalExtent*
+in the metadata (see <<cls-12.2.2>>), and that date has passed. The user system
+should mark the dataset cancelled; or
+* Sending a cancellation dataset which contains only one instance of a References
+information type with the *referenceType* attribute set to 1 (cancellation), and the
+*messageReference* with the identifier(s) of the dataset(s) to be cancelled, as well
+as including a fileless cancellation (see <<S100,clause="17-4.4.1">>) of the dataset
+being cancelled; or
+* Sending a new dataset with updated information and one or more References
+information type with the *referenceType* attribute set to 1 (cancellation), and the
+*messageReference* with the identifier(s) of the previous dataset(s) to be cancelled,
+as well as including a fileless cancellation (see <<S100,clause="17-4.4.1">>) of the
+dataset being cancelled; or
+* Marking as cancelled any S-124 dataset in a user system that is prior to and not
+present on the most recent in-force bulletin.
+
+NOTE: The in-force list should not actively be used as a means to cancel S-124
+datasets, its role in dataset cancellation should only be as a failsafe in the event
+that a service interruption has caused the user system to miss one or more datasets
+that cancels earlier information.
+
+[[cls-9.4]]
+=== Updating datasets
+
+S-124 does not support delta changes to issued S-124 datasets. In order to update the
+information provided in S-124 datasets, a new dataset which cancel the previous
+information (see <<cls-8.1.2>>) and contain updated information must be issued and
+applied to the user system.
+
+[[cls-9.5]]
+=== Exchange Set
+
+Datasets which conform to this product specification must be delivered as a component
+of an Exchange Set which complies with <<S100,part=17>>. The S-100 Exchange Set
+structure is set up to facilitate machine reading of the datasets, and this is in
+part done with metadata. This metadata is comprised of metadata about the overall
+Exchange Catalogue; metadata about each of the datasets contained in the Catalogue;
+and metadata about the support files that make up the package. Not all metadata is
+mandatory in all Exchange Sets and details about this is given below.
+
+An S-124 Exchange Set should consist of one or more S-124 datasets with an associated
+XML metadata file and a single Exchange Catalogue XML file containing metadata. It
+may also include one or more support files. The S-124 Exchange Set structure is the
+same as that described in <<S100>>.
+
+NOTE: S-124 does not specify the usage of ISO Metadata File.
+
+The rules governing the presence and roles of the Exchange Set components are given
+below.
+
+. Every Exchange Set must contain an Exchange Catalogue.
+. Dataset discovery metadata (*S100_DatasetDiscoveryMetadata*) must be provided in
+the Exchange Catalogue for each S-124 dataset in the Exchange Set.
+. Catalogue metadata (*S100_CatalogueDiscoveryMetadata*) must be provided in the
+Exchange Catalogue for any feature and portrayal catalogues included in the Exchange
+Set.
+.. S-124 allows Exchange Sets to include only support files that are language packs
+(*S100_SupportFile*).
++
+--
+NOTE: The inclusion of language packs in Exchange Sets is optional.
+--
+. Language packs are described in <<S100,part=18>> and provide translations of
+feature catalogues.
+. A signature file for the Exchange Catalogue must also be included in the Exchange
+Set (*S100_CatalogueSignature*).
+
+It is important to align the Exchange Set creation workflow with the data integrity
+and security provisions outlined in <<S100,part=15>>. <<S100,part=15>> defines the
+requirements and process for creation and verification of digital signature values
+and production of compressed/encrypted datasets.
+
+To maximize the usability of the navigational warning information contained in S-124
+Exchange Sets, encryption and compression should be avoided.
+
+[[cls-9.6]]
+=== Dataset size
+
+S-124 datasets must not exceed 50KB. The limit was chosen following tests that
+revealed that all examples tested can fit within the limit. S-124 datasets should be
+kept small so as to aid in reducing any costs with transmission of the information.
+
+[[cls-9.7]]
+=== Dataset naming convention
+
+All dataset files will have unique world-wide file identifiers. The file identifier
+of the dataset should not be used to describe the physical content of the file. The
+dataset file metadata that accompanies the file will inform the user of the name and
+purpose of the file (new, new with cancellation, new self-cancelling, new with
+cancellation and self-cancelling, and in-force bulletin).
+
+The dataset files must be named according to the specifications given in
+<<S100,clause="17-4.3">>.
+
+[[cls-9.8]]
+=== Exchange Set structure
+
+The Exchange Catalogue acts as the table of contents for the Exchange Set. The
+catalogue file of the Exchange Set must be named CATALOG.XML. No other file in the
+Exchange Set may be named CATALOG.XML. The content of the Exchange Catalogue file is
+described in <<cls-12>>.
+
+The structure of an S-124 exchange set must be according to the structure found in
+<<S100,clause="17-4.2">>.
+
+[[cls-9.9]]
+=== Service delivery
+
+[[cls-9.9.1]]
+==== Technical service
+
+S-124 does not specify the technical means by which services distributing S-124 must
+utilize. The mechanism utilized should be specified in an e-navigation technical
+service conforming to IALA G1128 and which elaborates on how users can discover and
+access the NAVWARN service.
+
+[[cls-9.9.2]]
+==== SECOM
+
+A draft specification for how to set up an e-navigation technical service compatible
+with the <<IEC63173-2>> framework is available at
+https://digital-maritime-consultancy.github.io/mrr-portal/[Maritime Resource Registry
+Portal (digital-maritime-consultancy.github.io)] using the MRN identifier
+"urn:mrn:iho:techsvc:spec:navwarn".
+
+[[cls-9.9.3]]
+==== Push broadcast systems
+
+This version of S-124 does not consider the implications of using push broadcast
+systems (for example NAVDAT and VDES) in detail, but it is assumed that it is usable
+by any files based system.

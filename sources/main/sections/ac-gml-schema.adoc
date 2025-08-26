@@ -1,0 +1,7 @@
+[[annex-c]]
+[appendix,obligation=normative]
+== GML Schema
+
+This data format conforms to the profile described in <<S100,part=10b>>, which is
+based on GML. The schema is contained in the schema files and references S-100
+components where appropriate.
