@@ -1,0 +1,35 @@
+directives:
+  - documents-inline
+  - recompile-xml: true
+  #- coverpage: index.html
+output_folder: collection
+bibdata:
+  title:
+    type: title-main
+    language: en
+    content: IHO S-124
+  type: collection
+  docid:
+    type: iho
+    id: IHO S-124
+  edition: "2.0.0"
+  date:
+    - type: created
+      value: "03-2025"
+  copyright:
+    owner:
+      name: International Hydrographic Organization
+      abbreviation: IHO
+    from: "2025"
+format:
+  - xml
+  - presentation
+  - pdf
+  - html
+  - doc
+manifest:
+  docref:
+  - file: sources/main/document.adoc
+    identifier: S-124
+  - file: sources/annex-a/document.adoc
+    identifier: S-124 Annex A
