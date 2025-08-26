@@ -1,0 +1,284 @@
+== General
+
+=== Use of the DCEG
+
+The S-124 Data Classification and Encoding Guide describes how data describing
+the real-world Maritime Safety Information should be captured using the types
+defined in the S-124 Data Content and Structure (see
+<<S124,clause=4>>). It provides the encoding rules and
+guidance required to create S-124 Navigational Warnings. This standard is
+specifically concerned with Navigational Warnings as described in the Joint
+IMO/IHO/Manual on Maritime Safety Information, IHO Publication S-53. Within
+this DECG encoding guidance is given by encoding a S-53 navigational warning
+into the full S-124 Data Model (see <<S124,figure="4-2">>).
+
+[[fig-A-2-1]]
+.A S-53 Navigational Warning
+[cols="a,a",options=header]
+|===
+| Message element | Example 1 -- Buoy Missing
+
+| . Message series identifier
+.8+|
+[source%unnumbered]
+----
+NAVAREA I 570/21
+IRISH SEA.
+NORTHERN IRELAND.
+CHART ________ (INT _______ ).
+HELLYHAUNTER LIGHTBUOY
+50-00.30N 006-02.00W MISSING
+----
+| [start=2]
+. General area
+| [start=3]
+. Locality
+| [start=4]
+. Chart number
+| [start=5]
+. Key subject
+| [start=6]
+. Geographical position
+| [start=7]
+. Amplifying remarks
+| [start=8]
+. Cancellation details
+|===
+
+=== The Full S-124 Data Model
+
+For ease of the Maritime Safety Information Provider a tabular version of the
+full S-124 Data Model (see <<S124,figure="4-2">>), has been
+provided.
+
+[[fig-A-2-2]]
+.The full S-124 Data Model in tabular form
+[cols="3a,3a,1a,1a,1a,2a",options="noheader"]
+|===
+.17+h| *NAVWARNPreamble (ID00){blank}footnote:[Must be associated with at least of References or NavwarnPart.]*
+.3+h| *generalArea*
+2+| localityIdentifier
+2+|
+2.2+| *locationName*
+2+| language:
+2+| text:
+
+.3+| locality
+2+| localityIdentifier
+2+|
+2.2+| *locationName*
+2+| language:
+2+| text:
+
+| *messageSeriesIdentifier*
+4+| *agencyResponsibleForProduction*:
+
+nationality:
+
+*nameOfSeries*:
+
+interoperabilityidentifier:
+
+*nameOfSeries*:
+
+*warningType*
+
+*year*:
+
+.5+| AffectedChartPublications
+3+| chartAffected:
+| chartNumber:
+
+chartPlanNumber:
+
+editionDate:
+
+lastNoticeDate:
+4+| chartPublicationIdentifier:
+4+| internationalChartAffected:
+4+| language:
+4+| publicationsAffected:
+| navwarnTitle
+4+| language:
+
+text:
+| cancellationDate
+4+|
+| *publicationTime*
+4+|
+| *navwarnTypeGeneral:*
+4+|
+| *intService:*
+4+|
+
+.2+| NAVWARNPreambleContent
+| header (role)
+4+|
+| theWarningPart (role)
+4+|
+
+.2+| NAVWARWNReferences
+| theWarning(role)
+4+|
+| theReferences (role)
+4+|
+
+.2+| TextAssociation
+| identifies (role)
+4+|
+| positions (role)
+4+|
+
+.2+| AreaAffected
+| impacts (role)
+4+|
+| affects (role)
+4+|
+
+.8+| NAVWARNPart (ID01)
+| featureName
+4+| language:
+
+name:
+
+nameUsage:
+
+| featureReference
+4+| AtoNNumber:
+
+interoperabilityIdentifier:
+
+| fixedDateRange{blank}footnote:[timeOfDayStart can only be present if dateStart is also present. timeOfDayEnd can only be present if dateEnd is also present.]
+4+| dateEnd:
+
+dateStart:
+
+timeofDayEnd:
+
+timeofdayStart:
+.3+| *warningInformation{blank}footnote:[If using the NAVWARNPart, warningInformation is mandatory. warningInformation must contain at least one attribute, either information or NavwarnTypeDetails.]*
+.2+| information:
+3+| Language:
+3+| Text:
+4+| NavwarnTypeDetails:
+| geometry
+4+|
+| restriction
+4+|
+
+| NAVWARNAreaAffected
+| *geometry*
+4+|
+
+.6+| TextPlacement
+| *geometry*
+4+|
+| scaleMinimum
+4+|
+
+| *Text*
+4+|
+| *textOffsestBearing*
+4+|
+| *textOffsetDistance*
+4+|
+| *textRotation*
+4+|
+
+.3+| References
+| *messageSeriesIdentifier*
+4+| *agencyResponsibleForProduction*:
+
+nationality:
+
+*nameOfSeries*:
+
+interoperabilityidentifier:
+
+*nameOfSeries*:
+
+*warningType*
+
+*year*:
+| *noMessageOnHand{blank}footnote:[If noMessageOnHand=true, then messageSeriesIdentifier is prohibitied. If noMessageOnHand=false, then message series Identifier is mandatory.]*
+4+|
+| *referenceCategory*
+4+|
+|===
+
+=== S-124 Navigational Warning Encoding
+
+All encoding examples contained within the DCEG have maximized fields as much
+as practicable. Additionally, all empty fields have been removed from the
+encoding example. Lastly, any notes concerning the example, such as the range
+of an Aid to Navigation, will be noted following the example.
+
+[[fig-A-2-3]]
+.The S-53 Navigational Warning as contained in <<fig-A-2-1>> as an S-124 dataset in tabular form.
+[cols="a,a,a,a,a",options="noheader"]
+|===
+.10+| *NAVWARNPreamble (ID00)*
+.3+| *generalArea*
+2+| localityIdentifier
+|
+2.2+| *locationName*
+| language: eng
+| text: Irish Sea
+.3+| locality
+2+| localityIdentifier
+|
+2.2+| *locationName*
+| language: eng
+| text: Northern Ireland
+| *messageSeriesIdentifier*
+3+| *agencyResponsibleForProduction*: GBXX
+
+nationality: GB
+
+*nameOfSeries*: NAVAREA I
+
+interoperabilityidentifier:
+
+*nameOfSeries*: 570
+
+*warningType*: (4) NAVAREA navigational warning
+
+*year*: 21
+| *publicationTime*
+3+| 20210101T000000Z
+| *navwarnTypeGeneral*:
+3+| aids to navigation change
+| *intService*:
+3+| true
+
+.2+| NAVWARNPreambleContent
+| header (role)
+3+| ID00
+| theWarningPart (role)
+3+| ID01
+
+.2+| AreaAffected
+| impacts (role)
+3+| ID01
+| affects (role)
+3+| ID02
+
+.5+| NAVWARNPart (ID01)
+| featureName
+3+| language: eng
+
+name: HELLYHAUNTER LIGHT BUOY
+
+nameUsage:
+.3+| *warningInformation*
+.2+| information:
+2+| language: eng
+2+| text:
+3+| NavwarnTypeDetails: buoy missing
+| geometry
+3+| Point 31-21.20N 010-07.40E
+
+| NAVAWARNAreaAffected (ID02)
+| geometry
+3+| Circle by centerpoint 3 NM radius 50-00.30N 006-02.00W
+|===

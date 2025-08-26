@@ -1,0 +1,49 @@
+---
+navigational_warnings:
+  - cls_num: "3.18.1"
+    title: "Example 1 -- Security Requirement"
+    message: |
+      NAVAREA I 88/22
+      FRANCE-NORTH COAST
+      SECURITY ANNOUNCEMENT.
+      REF: ISPS CODE - SECURITY LEVELS IN FRENCH TERRITORIAL WATERS IN THE BAIE DE SEINE AND IN LE HAVRE HARBOUR UPGRADED TO SECURITY LEVEL 3. ALL SHIPS ARE PROHIBITED TO ENTER BAIE DE SEINE AND LE HAVRE HARBOUR.
+    note: Bounding box of of baie de seine and le havre harbour required
+    navwarn_preamble:
+      id: "ID00"
+      general_area:
+        location_name:
+          language: "eng"
+          text: "FRANCE-NORTH COAST"
+      message_series_identifier:
+        agency_responsible_for_production: "UKXX"
+        nationality: "UK"
+        name_of_series: "NAVAREA I"
+        series_number: "88"
+        warning_type: "(4) NAVAREA navigational warnings"
+        year: "2022"
+      publication_time: "20220201T050000Z"
+      navwarn_type_general: "Security information change"
+      int_service: true
+    navwarn_preamble_content:
+      header_role: "ID00"
+      the_warning_part_role: "ID01"
+    navwarn_references:
+      the_warning_role: "ID00"
+    area_affected:
+      impacts_role: "ID01"
+      affects_role: "ID02"
+    navwarn_parts:
+      - id: "ID01"
+        feature_name:
+          language: "eng"
+          name: "BAIE DE SEINE AND LE HAVRE HARBOUR"
+        warning_information:
+          information:
+            language: "eng"
+            text: "SECURITY ANNOUNCEMENT. REF: ISPS CODE - SECURITY LEVELS IN FRENCH TERRITORIAL WATERS IN THE BAIE DE SEINE AND IN LE HAVRE HARBOUR UPGRADED TO SECURITY LEVEL 3. ALL SHIPS ARE PROHIBITED TO ENTER BAIE DE SEINE AND LE HAVRE HARBOUR."
+          navwarn_type_details: "maritime security level changes"
+        restriction: "(7) entry prohibited"
+    navwarn_area_affected:
+      - id: "ID02"
+        geometry:
+          - "POLYGON (SURFACE): Bounding box of the BAIE DE SEINE and LE HAVRE HARBOUR area"

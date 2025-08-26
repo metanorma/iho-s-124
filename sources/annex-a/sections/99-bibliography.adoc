@@ -1,0 +1,7 @@
+[bibliography]
+== Bibliography
+
+* [[[S124,dropid(repo:(current-metanorma-collection/S-124))]]],
+span:title[S-124 -- Navigational Warnings Product Specification],
+span:edition[2.0.0],
+span:organization[International Hydrographic Organization]

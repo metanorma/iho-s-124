@@ -1,0 +1,29 @@
+= Navigational Warnings Product Specification -- Annex A: Data Classification and Encoding Guide
+:series: S
+:docnumber: 124
+:doctype: specification
+:edition: 2.0.0
+:language: en
+:published-date: 2025-03-01
+:copyright-year: 2025
+:status: in-force
+:committee: hssc
+:workgroup: tsmad
+:committee_2: hssc
+:workgroup_2: s100
+:mn-document-class: iho
+:mn-output-extensions: xml,html,doc,pdf,rxl
+:local-cache-only:
+:data-uri-image:
+:imagesdir: images
+:toclevels: 3
+
+include::sections/00-doc-history.adoc[]
+
+include::sections/01-overview.adoc[]
+
+include::sections/02-general.adoc[]
+
+include::sections/03-s53-examples.adoc[]
+
+include::sections/99-bibliography.adoc[]

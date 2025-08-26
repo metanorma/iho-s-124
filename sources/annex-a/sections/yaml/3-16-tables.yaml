@@ -1,0 +1,118 @@
+---
+navigational_warnings:
+  - cls_num: "3.16.1"
+    title: "Example 1 -- Tsunami (General)"
+    message: |
+      NAVAREA XI 0251/21
+      PACIFIC OCEAN.
+      PHILLIPINES.
+      TSUNAMI WARNING.
+      EARTHQUAKE, MAGNITUDE 7.2, OCCURRED
+      AT 111746 UTC AUG 2021 IN 06-30N 126-48E.
+      TSUNAMI WAVES ARE POSSIBLE WHICH COULD CAUSE
+      DAMAGE TO THE COASTS AND ISLANDS OF THE PHILLIPINES.
+      VESSELS IN VICINITY OF COASTAL AREAS
+      ARE ADVISED TO USE CAUTION.
+    note: General bounding box required for area with uncertain geometry
+    navwarn_preamble:
+      id: "ID00"
+      general_area:
+        location_name:
+          language: "eng"
+          text: "PACIFIC OCEAN"
+      locality:
+        location_name:
+          language: "eng"
+          text: "PHILLIPINES"
+      message_series_identifier:
+        agency_responsible_for_production: "JPXX"
+        nationality: "JP"
+        name_of_series: "NAVAREA XI"
+        series_number: "251"
+        warning_type: "(4) NAVAREA navigational warning"
+        year: "2021"
+      publication_time: "20210811T184600Z"
+      navwarn_type_general: "Dangerous natural phenomena"
+      int_service: true
+    navwarn_preamble_content:
+      header_role: "ID00"
+      the_warning_part_role: "ID01"
+    area_affected:
+      impacts_role: "ID01"
+      affects_role: "ID02"
+    navwarn_parts:
+      - id: "ID01"
+        feature_name:
+          language: "eng"
+          name: "Phillipines"
+        fixed_date_range:
+          - date_start: "20210811"
+            time_of_day_start: "174600Z"
+        warning_information:
+          information:
+            language: "eng"
+            text: "EARTHQUAKE, MAGNITUDE 7.2, OCCURRED AT 111746 UTC.TSUNAMI WAVES ARE POSSIBLE WHICH COULD CAUSEDAMAGE TO THE COASTS AND ISLANDS OF THE PHILLIPINES.VESSELS IN VICINITY OF COASTAL AREAS ARE ADVISED TO USE CAUTION."
+          navwarn_type_details: "tsunami warning"
+        geometry:
+          - "Point 06-30N 126-48E."
+    navwarn_area_affected:
+      - id: "ID02"
+        geometry:
+          - "Polygon: General Bounding box of the phillipines coats and islands"
+
+  - cls_num: "3.16.2"
+    title: "Example 2 -- Tsunami (Earthquake)"
+    message: |
+      NAVAREA XII 365/21
+      ALASKA COASTAL AREAS.
+      TSUNAMI WARNING.
+      EARTHQUAKE WITH MAGNITUDE OF 8.2 HAS OCCURRED
+      IN VICINITY 55-18N 157-48W AT 290616Z JUL 2021.
+      A TSUNAMI HAS BEEN GENERATED WHICH COULD CAUSE
+      DAMAGE TO COASTS OF SOUTH ALASKA, THE ALASKA
+      PENINSULA AND THE ALEUTIAN ISLANDS.
+      TSUNAMI WAVE HEIGHTS CANNOT BE PREDICTED AND MAY BE A SERIES OF WAVES WHICH COULD BE DANGEROUS FOR SEVERAL HOURS AFTER THE INITIAL WAVE ARRIVAL.
+    note: Several hours added 5 hours to the fixedDateRange
+    navwarn_preamble:
+      id: "ID00"
+      general_area:
+        location_name:
+          language: "eng"
+          text: "ALASKA COASTAL AREAS"
+      message_series_identifier:
+        agency_responsible_for_production: "USXX"
+        nationality: "US"
+        name_of_series: "NAVAREA XII"
+        series_number: "365"
+        warning_type: "(4) NAVAREA navigational warning"
+        year: "2021"
+      publication_time: "20210729T061600Z"
+      navwarn_type_general: "Dangerous natural phenomena"
+      int_service: true
+    navwarn_preamble_content:
+      header_role: "ID00"
+      the_warning_part_role: "ID01"
+    area_affected:
+      impacts_role: "ID01"
+      affects_role: "ID02"
+    navwarn_parts:
+      - id: "ID01"
+        feature_name:
+          language: "eng"
+          name: "ALASKA COAST"
+        fixed_date_range:
+          - date_end: "20210729"
+            date_start: "20210729"
+            time_of_day_end: "111600Z"
+            time_of_day_start: "061600Z"
+        warning_information:
+          information:
+            language: "eng"
+            text: "EARTHQUAKE WITH MAGNITUDE OF 8.2 HAS OCCURRED AT 290616Z JUL 2021. A TSUNAMI HAS BEEN GENERATED WHICH COULD CAUSE DAMAGE TO COASTS OF SOUTH ALASKA, THE ALASKA PENINSULA AND THE ALEUTIAN ISLANDS. TSUNAMI WAVE HEIGHTS CANNOT BE PREDICTED AND MAY BE A SERIES OF WAVES WHICH COULD BE DANGEROUS FOR SEVERAL HOURS AFTER THE INITIAL WAVE ARRIVAL."
+          navwarn_type_details: "tsunami warning"
+        geometry:
+          - "Point 55-18N 157-48W"
+    navwarn_area_affected:
+      - id: "ID02"
+        geometry:
+          - "Polygon: General Bounding box of the south alaskian coast and ALEUTIAN ISLANDS"

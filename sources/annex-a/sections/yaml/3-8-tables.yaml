@@ -1,0 +1,219 @@
+---
+navigational_warnings:
+  - cls_num: "3.8.1"
+    title: "Example 1 -- TSS Closure"
+    message: |
+      NAVAREA XIX 15/22
+      BARENTS SEA
+      1. DUE TO ROCKET LAUNCHING THE USE OF THE FOLLOWING TRAFFIC SEPARATION SCHEME AND RECOMMENDED ROUTE ARE TEMPORARILY SUSPENDED FROM 191400 TO 221400 UTC FEB 2022:
+        A. TSS OFF VARDOE AND TSS OFF SLETTNES
+        B. RECOMMENDED ROUTE BETWEEN TSS OFF VARDOE AND TSS OFF SLETTNES
+      2. CANCEL NAVAREA XIX 14/22
+      3. CANCEL THIS MESSAGE 221400 UTC FEB 2022
+    navwarn_preamble:
+      id: "ID00"
+      general_area:
+        location_name:
+          language: "eng"
+          text: "Barents Sea"
+      message_series_identifier:
+        agency_responsible_for_production: "NOXX"
+        nationality: "NO"
+        name_of_series: "NAVAREA XIX"
+        series_number: "15"
+        warning_type: "(4) NAVAREA navigational warning"
+        year: "2022"
+      cancellation_date: "20220222T140000Z"
+      publication_time: "20220216T140000Z"
+      navwarn_type_general: "Routing change"
+      int_service: true
+    navwarn_preamble_content:
+      header_role: "ID00"
+      the_warning_part_role: "ID01, ID02, ID03"
+    navwarn_references:
+      the_warning_role: "ID00"
+      the_references_role: "ID04"
+    navwarn_parts:
+      - id: "ID01"
+        feature_name:
+          name: "TSS OFF VARDOE"
+        fixed_date_range:
+          - date_end: "20220222"
+            date_start: "20220219"
+            time_of_day_end: "140000Z"
+            time_of_day_start: "140000Z"
+        warning_information:
+          information:
+            language: "eng"
+            text: "DUE TO ROCKET LAUNCHING THE USE OF THE FOLLOWING TRAFFIC SEPARATION SCHEME AND RECOMMENDED ROUTE ARE TEMPORARILY SUSPENDED"
+          navwarn_type_details: "waterway recommended or not recommended for shipping"
+        geometry:
+          - "Polygon surface: 70-33.75N 031-45.45E, 70-48.9N 31-57.4E, 70-41.9N 031-44.4E, 70-47.1N 031-24.6E"
+      - id: "ID02"
+        feature_name:
+          name: "TSS OFF SLETTNES"
+        fixed_date_range:
+          - date_end: "20220222"
+            date_start: "20220219"
+            time_of_day_end: "140000Z"
+            time_of_day_start: "140000Z"
+        warning_information:
+          information:
+            language: "eng"
+            text: "DUE TO ROCKET LAUNCHING THE USE OF THE FOLLOWING TRAFFIC SEPARATION SCHEME AND RECOMMENDED ROUTE ARE TEMPORARILY SUSPENDED"
+          navwarn_type_details: "waterway recommended or not recommended for shipping"
+        geometry:
+          - "Polygon surface: 70-59.1N 017-32.1E, 071-03.6N 018-48.3E, 71-06.6N 019-07.9E, 70-59.1N 019-18.4E, 70-56.9N 19-01.5E, 70-52.9N 018-48.2E."
+      - id: "ID03"
+        feature_name:
+          name: "RECOMMENDED ROUTE BETWEEN TSS OFF VARDOE AND TSS OFF SLETTNES"
+        fixed_date_range:
+          - date_end: "20220222"
+            date_start: "20220219"
+            time_of_day_end: "140000Z"
+            time_of_day_start: "140000Z"
+        warning_information:
+          information:
+            language: "eng"
+            text: "DUE TO ROCKET LAUNCHING THE USE OF THE FOLLOWING TRAFFIC SEPARATION SCHEME AND RECOMMENDED ROUTE ARE TEMPORARILY SUSPENDED"
+          navwarn_type_details: "waterway recommended or not recommended for shipping"
+        geometry:
+          - "Curve (line) 71-02-9N 19-13.3E, 71-29.6N 22-19.5E, 71-42.2N 025-50.6E, 071-25.5N 029-04.7E, 70-50.1N 031-33.9E."
+    references:
+      - id: "ID04"
+        message_series_identifier:
+          agency_responsible_for_production: "NOXX"
+          nationality: "NO"
+          name_of_series: "NAVAREA XIX"
+          series_number: "14"
+          warning_type: "(4) NAVAREA navigational warning"
+          year: "2022"
+        no_message_on_hand: false
+        reference_category: "Warning cancellation = 1"
+
+  - cls_num: "3.8.2"
+    title: "Example 2 -- Compulsory Pilotage"
+    message: |
+      NAVAREA X 234/22
+      AUSTRALIA NORTH COAST.
+      TORRES STRAIT.
+      CHART _______ (INT _______).
+      COMPULSORY TORRES STRAIT PILOTAGE 10-32S 143-01E. MASTERS OF SHIPS 70 METRES IN LENGTH OVERALL OR GREATER, AND ALL LOADED OIL, CHEMICAL TANKERS OR LIQUEFIED GAS CARRIERS ARE ADVISED THAT AUSTRALIAN LAW HAS BEEN AMENDED TO REQUIRE A LICENSED PILOT TO BE ENGAGED WHEN NAVIGATING THE TORRES STRAIT. ALL SHIPS WILL BE AUTOMATICALLY CHECKED FOR COMPLIANCE AND THE FAILURE TO EMBARK A LICENSED PILOT MAY RESULT IN PROSECUTION. MASTERS OF SHIPS SHOULD ENSURE CONTACT IS MADE IN A TIMELY MANNER WITH A PILOTAGE PROVIDER TO GUARANTEE A LICENSED PILOT IS BOOKED. THE FOLLOWING ARE THE CONTACT DETAILS OF THE TWO COMPANIES THAT CAN PROVIDE LICENSED PILOTS: AUSTRALIAN REEF PILOTS PTY LTD. -- OPERATIONS@REEFPILOTS.COM.AU. TORRES PILOTS PTY LTD - OPERATIONS@TORRESPILOTS.COM.AU.
+    navwarn_preamble:
+      id: "ID00"
+      general_area:
+        location_name:
+          language: "eng"
+          text: "Australia North Coast"
+      locality:
+        location_name:
+          language: "eng"
+          text: "Toreres Strait"
+      message_series_identifier:
+        agency_responsible_for_production: "AUXX"
+        nationality: "AU"
+        name_of_series: "NAVAREA X"
+        series_number: "234"
+        warning_type: "(4) NAVAREA navigational warning"
+        year: "22"
+      publication_time: "2022101T000100Z"
+      navwarn_type_general: "Routeing change"
+      int_service: true
+    navwarn_preamble_content:
+      header_role: "ID00"
+      the_warning_part_role: "ID01"
+    navwarn_parts:
+      - id: "ID01"
+        warning_information:
+          information:
+            language: "eng"
+            text: "COMPULSORY TORRES STRAIT PILOTAGE MASTERS OF SHIPS 70 METRES IN LENGTH OVERALL OR GREATER, AND ALL LOADED OIL, CHEMICAL TANKERS OR LIQUEFIED GAS CARRIERS ARE ADVISED THAT AUSTRALIAN LAWHAS BEEN AMENDED TO REQUIRE A LICENSED PILOT TO BE ENGAGED WHEN NAVIGATING THE TORRES STRAIT. ALL SHIPS WILL BE AUTOMATICALLY CHECKED FOR COMPLIANCE AND THE FAILURE TO EMBARK A LICENSED PILOT MAY RESULT IN PROSECUTION. MASTERS OF SHIPS SHOULD ENSURE CONTACT IS MADE IN A TIMELY MANNER WITH A PILOTAGE PROVIDER TO GUARANTEE A LICENSED PILOT IS BOOKED. THE FOLLOWING ARE THE CONTACT DETAILS OF THE TWO COMPANIES THAT CAN PROVIDE LICENSED PILOTS: AUSTRALIAN REEF PILOTS PTY LTD. -- OPERATIONS@REEFPILOTS.COM.AU. TORRES PILOTS PTY LTD - OPERATIONS@TORRESPILOTS.COM.AU."
+          navwarn_type_details: "new or amended regulation"
+        geometry:
+          - "Point 10-32S 143-01E."
+
+  - cls_num: "3.8.3"
+    title: "Example 3 -- Port Closure"
+    message: |
+      NAVAREA IV 785/21.
+      GULF OF MEXICO
+      DUE TO PASSAGE OF HURRICANE IDA:
+      1. THE FOLLOWING PORT(S) ARE CLOSED:
+        A. PORT OF BATON ROUGE 30-27N 091-11W.
+        B. PORT OF NEW ORLEANS 29-57N 090-03W.
+      2. THE FOLLOWING PORT(S) ARE OPEN WITH RESTRICTIONS:
+        A. PASCAGOULA 30-21N 088-34W.
+        B. PENSACOLA 30-24N 087-13W.
+      3. THE FOLLOWING PORT(S) HAVE RE-OPENED:
+        A. MOBILE 30-41N 088-07W.
+      4. CURRENT PORT INFORMATION CAN BE FOUND AT HOMEPORT.USCG.MIL USING TH-E PORT DIRECTORY TAB.
+      5. CANCEL NAVAREA IV 780/21.
+    navwarn_preamble:
+      id: "ID00"
+      general_area:
+        location_name:
+          language: "eng"
+          text: "GULF OF MEXICO"
+      message_series_identifier:
+        agency_responsible_for_production: "USXX"
+        nationality: "US"
+        name_of_series: "NAVAREA IV"
+        series_number: "785"
+        warning_type: "(4) NAVAREA Navigational Warnings"
+        year: "21"
+      publication_time: "20210101T000100Z"
+      navwarn_type_general: "Routeing change"
+      int_service: true
+    navwarn_preamble_content:
+      header_role: "ID00"
+      the_warning_part_role: "ID01, ID02, ID03, ID04"
+    navwarn_references:
+      the_warning_role: "ID00"
+      the_references_role: "ID05"
+    navwarn_parts:
+      - id: "ID01"
+        fixed_date_range:
+          - date_start: "20210101"
+            time_of_day_start: "000100Z"
+        warning_information:
+          information:
+            language: "eng"
+            text: "THE FOLLOWING PORTS ARE CLOSED. CURRENT PORT INFORMATION CAN BEFOUND AT HOMEPORT.USCG.MIL USING TH-E PORT DIRECTORY TAB."
+          navwarn_type_details: "opening or closing of harbour"
+        geometry:
+          - "Point 30-27N 091-11W."
+          - "Point 29-57N 090-03W."
+      - id: "ID02"
+        fixed_date_range:
+          - date_start: "20210101"
+            time_of_day_start: "000100Z"
+        warning_information:
+          information:
+            language: "eng"
+            text: "THE FOLLOWING PORTS ARE OPEN WITH RESTRICTIONS. CURRENT PORT INFORMATION CAN BEFOUND AT HOMEPORT.USCG.MIL USING TH-E PORT DIRECTORY TAB."
+          navwarn_type_details: "opening or closing of harbour"
+        geometry:
+          - "Point 30-21N 088-34W."
+          - "Point 30-24N 087-13W."
+      - id: "ID03"
+        fixed_date_range:
+          - date_start: "20210101"
+            time_of_day_start: "000100Z"
+        warning_information:
+          information:
+            language: "eng"
+            text: "THE FOLLOWING PORTS HAVE REOPENED. CURRENT PORT INFORMATION CAN BEFOUND AT HOMEPORT.USCG.MIL USING TH-E PORT DIRECTORY TAB."
+          navwarn_type_details: "opening or closing of harbour"
+        geometry:
+          - "Point 30-41N 088-07W."
+    references:
+      - id:
+        message_series_identifier:
+          agency_responsible_for_production: "USXX"
+          nationality: "US"
+          name_of_series: "NAVAREA IV"
+          series_number: "780"
+          warning_type: "(4) NAVAREA Navigational Warnings"
+          year: "2021"
+        no_message_on_hand: false
+        reference_category: "Warning cancellation = 1"

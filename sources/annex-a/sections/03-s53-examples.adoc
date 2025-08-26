@@ -1,0 +1,152 @@
+== S-53 Examples Encoded as S-124 Navigational Warning Data
+
+=== Casualties to lights, fog signals, buoys and other aids to navigation affecting main shipping lanes
+
+[yaml2text,sections/yaml/3-1-tables.yaml,nav]
+----
+include::navwarn-table-template.adoc[]
+----
+
+[[cls-A-3.2]]
+=== The presence of dangerous wrecks in or near main shipping lanes and, if relevant, their marking
+
+[yaml2text,sections/yaml/3-2-tables.yaml,nav]
+----
+include::navwarn-table-template.adoc[]
+----
+
+[[cls-A.3.3]]
+=== Establishment of major new aids to navigation or significant changes to existing ones, when such establishment or change might be misleading to shipping
+
+[yaml2text,sections/yaml/3-3-tables.yaml,nav]
+----
+include::navwarn-table-template.adoc[]
+----
+
+[[cls-A-3.4]]
+=== The presence of large unwieldy tows in congested waters
+
+[yaml2text,sections/yaml/3-4-tables.yaml,nav]
+----
+include::navwarn-table-template.adoc[]
+----
+
+[[cls-A-3.5]]
+=== Drifting hazards (including derelict ships, ice, mines, containers, other large items etc.)
+
+[yaml2text,sections/yaml/3-5-tables.yaml,nav]
+----
+include::navwarn-table-template.adoc[]
+----
+
+[[cls-A-3.6]]
+=== Areas where search and rescue (SAR) and anti-pollution operations are being carried out (for avoidance of such areas)
+
+[yaml2text,sections/yaml/3-6-tables.yaml,nav]
+----
+include::navwarn-table-template.adoc[]
+----
+
+[[cls-A-3.7]]
+=== The presence of newly discovered rocks, shoals, reefs and wrecks likely to constitute a danger to shipping, and, if relevant, their marking
+
+[yaml2text,sections/yaml/3-7-tables.yaml,nav]
+----
+include::navwarn-table-template.adoc[]
+----
+
+[[cls-A-3.8]]
+=== Unexpected alteration or suspension of established routes
+
+[yaml2text,sections/yaml/3-8-tables.yaml,nav]
+----
+include::navwarn-table-template.adoc[]
+----
+
+[[cls-A-3.9]]
+=== Cable or pipe-laying activities, seismic survey, the towing of large submerged objects for research or exploration purposes, the employment of manned or unmanned submersibles, or other underwater operations constituting potential dangers in or near shipping lanes
+
+[yaml2text,sections/yaml/3-9-tables.yaml,nav]
+----
+include::navwarn-table-template.adoc[]
+----
+
+[[cls-A-3.10]]
+=== The establishment of research or scientific instruments in or near shipping lanes
+
+[yaml2text,sections/yaml/3-10-tables.yaml,nav]
+----
+include::navwarn-table-template.adoc[]
+----
+
+[[cls-A-3.11]]
+=== The establishment of offshore structures in or near shipping lanes
+
+[yaml2text,sections/yaml/3-11-tables.yaml,nav]
+----
+include::navwarn-table-template.adoc[]
+----
+
+[[cls-A-3.12]]
+=== Significant malfunctioning of radio-navigation services and shore-based maritime safety information radio or satellite services
+
+[yaml2text,sections/yaml/3-12-tables.yaml,nav]
+----
+include::navwarn-table-template.adoc[]
+----
+
+[[cls-A-3.13]]
+=== Information concerning events which might affect the safety of shipping, sometimes over wide areas, e.g. naval exercises, missile firings, space missions, nuclear tests, ordnance dumping zones, etc.
+
+[yaml2text,sections/yaml/3-13-tables.yaml,nav]
+----
+include::navwarn-table-template.adoc[]
+----
+
+[[cls-A-3.14]]
+=== Operating anomalies identified within ECDIS including ENC issues
+
+[yaml2text,sections/yaml/3-14-tables.yaml,nav]
+----
+include::navwarn-table-template.adoc[]
+----
+
+[[cls-A-3.15]]
+=== Acts of piracy and armed conflict against ships
+
+[yaml2text,sections/yaml/3-15-tables.yaml,nav]
+----
+include::navwarn-table-template.adoc[]
+----
+
+[[cls-A-3.16]]
+=== Tsunamis and other natural phenomena, such as abnormal changes to sea level
+
+[yaml2text,sections/yaml/3-16-tables.yaml,nav]
+----
+include::navwarn-table-template.adoc[]
+----
+
+[[cls-A-3.17]]
+=== World Health Organization (WHO) health advisory information
+
+[yaml2text,sections/yaml/3-17-tables.yaml,nav]
+----
+include::navwarn-table-template.adoc[]
+----
+
+[[cls-A-3.18]]
+=== Security Related Requirements
+
+[yaml2text,sections/yaml/3-18-tables.yaml,nav]
+----
+include::navwarn-table-template.adoc[]
+----
+
+[[cls-A-3.19]]
+=== Miscellaneous
+
+[yaml2text,sections/yaml/3-19-tables.yaml,nav]
+----
+include::navwarn-table-template.adoc[]
+----

@@ -1,0 +1,163 @@
+---
+navigational_warnings:
+  - cls_num: "3.6.1"
+    title: "Example 1 -- Search and Rescue Operations"
+    message: |
+      NAVAREA XVI 25/22
+      PAITA BAY.
+      PERU.
+      CHART _________ (INT ___________ ).
+      1. SAR OPERATION IN PROGRESS IN AREA BOUND BY
+      05-27.32S 081-44.45W, 05-22.53S 081-27.95W,
+      05-49.57S 081-16.57W, 05-55.43S 081-32.42W.
+      2. ALL VESSELS NOT UNDER INSTRUCTION OF THE
+      SAR MISSION TO KEEP A WIDE BERTH.
+    navwarn_preamble:
+      id: "ID00"
+      general_area:
+        location_name:
+          language: "eng"
+          text: "PAITA BAY"
+      locality:
+        location_name:
+          language: "eng"
+          text: "PERU"
+      message_series_identifier:
+        agency_responsible_for_production: "PEXX"
+        nationality: "PE"
+        name_of_series: "NAVAREA XV"
+        series_number: "25"
+        warning_type: "(4) NAVAREA navigational warning"
+        year: "22"
+      publication_time: "20220826T000100Z"
+      navwarn_type_general: "Special operations"
+      int_service: true
+    navwarn_preamble_content:
+      header_role: "ID00"
+      the_warning_part_role: "ID01"
+    navwarn_parts:
+      - id: "ID01"
+        fixed_date_range:
+          - date_start: "20220826"
+            time_of_day_start: "000100Z"
+        warning_information:
+          information:
+            language: "eng"
+            text: "ALL VESSELS NOT UNDER INSTRUCTION OF THE SAR MISSION TO KEEP A WIDE BIRTGH"
+          navwarn_type_details: "SAR operation"
+        geometry:
+          - "Polygon Surface 05-27.32S 081-44.45W, 05-22.53S 081-27.95W, 05-49.57S 081-16.57W, 05-55.43S 081-32.42W."
+
+  - cls_num: "3.6.2"
+    title: "Example 2 -- Search and Rescue Exercises"
+    message: |
+      NAVAREA II 417/21
+      MOROCCO.
+      OFF CASABLANCA.
+      1. SEARCH AND RESCUE EXERCISE IN PROGRESS UNTIL 041600 UTC NOV 2021 IN AREA BOUND BY
+      33-57.00N 008-03.03W, 34-04.80N 007-47.00W,
+      33-46.50N 007-36.00W, 33-39.00N 007-52.00W.
+      2. CANCEL THIS MSG 041700 UTC NOV 2021.
+    navwarn_preamble:
+      id: "ID00"
+      general_area:
+        location_name:
+          language: "eng"
+          text: "MOROCCO"
+      locality:
+        location_name:
+          language: "eng"
+          text: "OFF CASABLANCA"
+      message_series_identifier:
+        agency_responsible_for_production: "FRXX"
+        nationality: "FR"
+        name_of_series: "NAVAREA II"
+        series_number: "417"
+        warning_type: "(4) NAVAREA navigational warning"
+        year: "21"
+      publication_time: "20211101T000100Z"
+      cancellation_date: "20211104T170000Z"
+      navwarn_type_general: "Special operations"
+      int_service: true
+    navwarn_preamble_content:
+      header_role: "ID00"
+      the_warning_part_role: "ID01"
+    navwarn_parts:
+      - id: "ID01"
+        fixed_date_range:
+          - date_end: "20211104"
+            date_start: "2021101"
+            time_of_day_end: "160000Z"
+            time_of_day_start: "000100Z"
+        warning_information:
+          information:
+            language: "eng"
+          navwarn_type_details: "SAR exercise"
+        geometry:
+          - "Polygon Surface 33-57.00N 008-03.03W, 34-04.80N 007-47.00W, 33-46.50N 007-36.00W, 33-39.00N 007-52.00W."
+
+  - cls_num: "3.6.3"
+    title: "Example 3 -- Anti-Pollution Operations"
+    message: |
+      NAVAREA XII 574/22
+      EASTERN NORTH PACIFIC.
+      1. THE OCEAN CLEANUP SYSTEM OPERATIONS IN PROGRESS
+      BY M/V MAERSK TRADER AND M/V MAERSK TENDER
+      TOWING 800 METER BARRIER MARKED WITH WHITE
+      LIGHTS AND RADAR REFLECTORS
+      IN 35-14.00N 140-19.00W AT 170815Z AUG 2022.
+      TWO MILE BERTH REQUESTED.
+      2. CANCEL NAVAREA XII 570/22.
+    navwarn_preamble:
+      id: "ID00"
+      general_area:
+        location_name:
+          language: "eng"
+          text: "EASTERN NORTH PACIFIC"
+      message_series_identifier:
+        agency_responsible_for_production: "USXX"
+        nationality: "US"
+        name_of_series: "NAVAREA XII"
+        series_number: "574"
+        warning_type: "(4) NAVAREA navigational warning"
+        year: "22"
+      cancellation_date: "20220829T230000Z"
+      publication_time: "20220826T000100Z"
+      navwarn_type_general: "special operations"
+      int_service: true
+    navwarn_preamble_content:
+      header_role: "ID00"
+      the_warning_part_role: "ID01"
+    area_affected:
+      impacts_role: "ID01"
+      affects_role: "ID02"
+    navwarn_references:
+      the_warning_role: "ID00"
+      the_references_role: "ID03"
+    navwarn_parts:
+      - id: "ID01"
+        fixed_date_range:
+          - date_start: "20220817"
+            time_of_day_start: "081500Z"
+        warning_information:
+          information:
+            language: "eng"
+            text: "OCEAN CLEANUP SYSTEM OPERATIONS IN PROGRESS BY M/V MAERSK TRADER AND M/V MAERSK TENDERTOWING 800 METER BARRIER MARKED WITH WHITE LIGHTS AND RADAR REFLECTORS at 170815Z AUG 2022"
+          navwarn_type_details: "anti pollution exercise"
+        geometry:
+          - "Point 35-14.00N 140-19.00W"
+    navwarn_area_affected:
+      - id: "ID02"
+        geometry:
+          - "Circle by centerpoint 2 NM radius 35-14.00N 140-19.00W"
+    references:
+      - id: "ID03"
+        message_series_identifier:
+          agency_responsible_for_production: "USXX"
+          nationality: "US"
+          name_of_series: "NAVAREA XII"
+          series_number: "570"
+          warning_type: "(4) NAVAREA navigational warning"
+          year: "22"
+        no_message_on_hand: false
+        reference_category: "(1) warning cancellation"

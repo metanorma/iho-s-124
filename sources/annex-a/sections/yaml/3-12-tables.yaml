@@ -1,0 +1,133 @@
+---
+navigational_warnings:
+  - cls_num: "3.12.1"
+    title: "Example 1 -- VHF Services Off Air"
+    message: |
+      NAVAREA I 116/22
+      GMDSS.
+      MRCC SHETLAND
+      VHF R/T AND DSC SERVICES TO DUNNET HEAD SITE,
+      58-40.3N 003-22.6W OFF AIR.
+    navwarn_preamble:
+      id: "ID00"
+      general_area:
+        location_name:
+          language: "eng"
+          text: "GMDSS"
+      locality:
+        location_name:
+          language: "eng"
+          text: "MRCC Shetland"
+      message_series_identifier:
+        nationality: "UK"
+        name_of_series: "NAVAREA I"
+        agency_responsible_for_production: "UKHO"
+        series_number: "116"
+        warning_type: "(4) NAVAREA navigational warning"
+        year: "22"
+      publication_time: "20220101T000000Z"
+      navwarn_type_general: "communication or broadcast service change"
+      int_service: true
+    navwarn_preamble_content:
+      header_role: "ID00"
+      the_warning_part_role: "ID01"
+    navwarn_parts:
+      - id: "ID01"
+        warning_information:
+          information:
+            language: "eng"
+            text: "VHF R/T and DSC services to Dunet head site, off air."
+          navwarn_type_details: "VHF service change"
+        geometry:
+          - "58-40.3N 003-22.6W"
+
+  - cls_num: "3.12.2"
+    title: "Example 2 -- MF Services Off Air"
+    message: |
+      NAVAREA I 169/22
+      GMDSS.
+      MRCC STORNOWAY.
+      MF R/T AND DSC SERVICES FROM BUTT OF LEWIS SITE,
+      58-27.7N 006-13.9W, OFF AIR.
+    navwarn_preamble:
+      id: "ID00"
+      general_area:
+        location_name:
+          language: "eng"
+          text: "GMDSS"
+      locality:
+        location_name:
+          language: "eng"
+          text: "MRCC Shetland"
+      message_series_identifier:
+        nationality: "UK"
+        name_of_series: "NAVAREA I"
+        agency_responsible_for_production: "UKHO"
+        series_number: "169"
+        warning_type: "(4) NAVAREA navigational warning"
+        year: "22"
+      publication_time: "20220101T000000Z"
+      navwarn_type_general: "communication or broadcast service change"
+      int_service: true
+    navwarn_preamble_content:
+      header_role: "ID00"
+      the_warning_part_role: "ID01"
+    navwarn_parts:
+      - id: "ID01"
+        warning_information:
+          information:
+            language: "eng"
+            text: "MF R/T AND DSC SERVICES FROM BUTT OF LEWIS SITE OFF AIR."
+          navwarn_type_details: "MF service"
+        geometry:
+          - "58-27.7N 006-13.9W"
+
+  - cls_num: "3.12.3"
+    title: "Example 3 -- NAVTEX Off Air"
+    message: |
+      NAVAREA I 53/22
+      GMDSS
+      1.NAVTEX STATION CULLERCOATS (G), 55-04N 001-28W,
+      OFF AIR DAILY BETWEEN 0900 AND 1530 UTC ON 12 TO 13 JAN 2022.
+      2. CANCEL THIS MESSAGE 131630 UTC JAN 2022.
+    navwarn_preamble:
+      id: "ID00"
+      general_area:
+        location_name:
+          language: "eng"
+          text: "GMDSS"
+      message_series_identifier:
+        nationality: "UK"
+        name_of_series: "NAVAREA I"
+        agency_responsible_for_production: "UKHO"
+        series_number: "53"
+        warning_type: "(4) NAVAREA navigational warning"
+        year: "22"
+      publication_time: "20220111T000000Z"
+      navwarn_type_general: "communication or broadcast service change"
+      int_service: true
+      cancellation_date: "20220113T163000Z"
+    navwarn_preamble_content:
+      header_role: "ID00"
+      the_warning_part_role: "ID01"
+    navwarn_parts:
+      - id: "ID01"
+        feature_name:
+          language: "eng"
+          name: "Cullercoats"
+        fixed_date_range:
+          - date_end: "20220112"
+            date_start: "20220112"
+            time_of_day_end: "153000Z"
+            time_of_day_start: "090000Z"
+          - date_end: "20220113"
+            date_start: "20220113"
+            time_of_day_end: "153000Z"
+            time_of_day_start: "090000Z"
+        warning_information:
+          information:
+            language: "eng"
+            text: "NAVTEX STATION OFF AIR"
+          navwarn_type_details: "NAVTEX service change"
+        geometry:
+          - "55-04N 001-28W"

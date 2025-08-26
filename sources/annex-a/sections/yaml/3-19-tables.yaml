@@ -1,0 +1,344 @@
+---
+navigational_warnings:
+  - cls_num: "3.19.1"
+    title: "Example 1 - In-Force Bulletin"
+    message: |
+      NAVAREA II 085/22
+      1. NAVAREA II WARNINGS IN FORCE AT 271630 UTC FEB 22:
+      2021 SERIES: 251, 476,
+      2022 SERIES: 020, 027, 040, 041, 046, 057, 066, 069, 071, 073, 079, 080, 082, 083, 085.
+      2. ONLY THOSE LESS THAN 42 DAYS OLD ARE DAILY BROADCAST ON SAFETY NET AT 04H30 AND 16H30 UTC.
+      3. THE COMPLETE TEXTS OF ALL IN-FORCE NAVAREA II WARNINGS ARE AVAILABLE FROM THE SHOM WEBSITE AT: DIFFUSION.SHOM.FR
+      4. ALTERNATIVELY, THESE MAY BE REQUESTED BY E-MAIL AT: COORD.NAVAREA2@SHOM.FR
+      5. CANCEL NAVAREA II 067/22.
+    navwarn_preamble:
+      id: "ID00"
+      general_area:
+        location_name:
+          language: "eng"
+          text: "NAVAREA II"
+      message_series_identifier:
+        agency_responsible_for_production: "FRXX"
+        nationality: "FR"
+        name_of_series: "NAVAREA II"
+        series_number: "85"
+        warning_type: "(9) NAVAREA in force bulletin"
+        year: "22"
+      publication_time: "20220101T000000Z"
+      int_service: true
+    navwarn_preamble_content:
+      header_role: "ID00"
+      the_warning_part_role: "ID01"
+    navwarn_references:
+      the_warning_role: "ID01"
+      the_references_role: "ID02, ID03, ID04, ID05, ID06, ID07, ID08, ID09, ID10, ID11, ID12, ID13, ID14, ID15, ID16, ID17, ID18, ID19, ID20, ID21"
+    navwarn_parts:
+      - id: "ID01"
+        warning_information:
+          information:
+            language: "eng"
+            text: |
+              {blank}+
+              [start=1]
+              . NAVAREA II WARNINGS IN FORCE AT 271630 UTC FEB 22: 2021 SERIES: 251, 476, 2022 SERIES: 020, 027, 040, 041, 046, 057, 066, 069, 071, 073, 079, 080, 082, 083, 085.
+              . ONLY THOSE LESS THAN 42 DAYS OLD ARE DAILY BROADCAST ON SAFETYNET AT 04H30 AND 16H30 UTC.
+              . THE COMPLETE TEXTS OF ALL IN-FORCE NAVAREA II WARNINGS ARE AVAILABLE FROM THE SHOM WEBSITE AT: DIFFUSION.SHOM.FR
+              . ALTERNATIVELY, THESE MAY BE REQUESTED BY E-MAIL AT: COORD.NAVAREA2@SHOM.FR
+              . CANCEL NAVAREA II 067/22.
+        geometry:
+          - "Bounding Box of the entire NAVAREA"
+        text_justification: true
+    references:
+      - id: "ID02"
+        no_message_on_hand: false
+        reference_category: "In force (5)"
+        message_series_identifier:
+          agency_responsible_for_production: "FR"
+          nationality: "FR"
+          name_of_series: "NAVAREA II"
+          series_number: "85"
+          warning_type: "(9) NAVAREA in force bulletin"
+          year: "22"
+      - id: "ID03"
+        no_message_on_hand: false
+        reference_category: "In force (5)"
+        message_series_identifier:
+          agency_responsible_for_production: "FR"
+          nationality: "FR"
+          name_of_series: "NAVAREA II"
+          series_number: "83"
+          warning_type: "(4) NAVAREA navigational warning"
+          year: "22"
+      - id: "ID04"
+        no_message_on_hand: false
+        reference_category: "In force (5)"
+        message_series_identifier:
+          agency_responsible_for_production: "FR"
+          nationality: "FR"
+          name_of_series: "NAVAREA II"
+          series_number: "82"
+          warning_type: "(4) NAVAREA navigational warning"
+          year: "22"
+      - id: "ID05"
+        no_message_on_hand: false
+        reference_category: "In force (5)"
+        message_series_identifier:
+          agency_responsible_for_production: "FR"
+          nationality: "FR"
+          name_of_series: "NAVAREA II"
+          series_number: "80"
+          warning_type: "(4) NAVAREA navigational warning"
+          year: "22"
+      - id: "ID06"
+        no_message_on_hand: false
+        reference_category: "In force (5)"
+        message_series_identifier:
+          agency_responsible_for_production: "FR"
+          nationality: "FR"
+          name_of_series: "NAVAREA II"
+          series_number: "79"
+          warning_type: "(4) NAVAREA navigational warning"
+          year: "22"
+      - id: "ID07"
+        no_message_on_hand: false
+        reference_category: "In force (5)"
+        message_series_identifier:
+          agency_responsible_for_production: "FR"
+          nationality: "FR"
+          name_of_series: "NAVAREA II"
+          series_number: "73"
+          warning_type: "(4) NAVAREA navigational warning"
+          year: "22"
+      - id: "ID08"
+        no_message_on_hand: false
+        reference_category: "In force (5)"
+        message_series_identifier:
+          agency_responsible_for_production: "FR"
+          nationality: "FR"
+          name_of_series: "NAVAREA II"
+          series_number: "71"
+          warning_type: "(4) NAVAREA navigational warning"
+          year: "22"
+      - id: "ID09"
+        no_message_on_hand: false
+        reference_category: "In force (5)"
+        message_series_identifier:
+          agency_responsible_for_production: "FR"
+          nationality: "FR"
+          name_of_series: "NAVAREA II"
+          series_number: "69"
+          warning_type: "(4) NAVAREA navigational warning"
+          year: "22"
+      - id: "ID10"
+        no_message_on_hand: false
+        reference_category: "In force (5)"
+        message_series_identifier:
+          agency_responsible_for_production: "FR"
+          nationality: "FR"
+          name_of_series: "NAVAREA II"
+          series_number: "66"
+          warning_type: "(4) NAVAREA navigational warning"
+          year: "22"
+      - id: "ID11"
+        no_message_on_hand: false
+        reference_category: "In force (5)"
+        message_series_identifier:
+          agency_responsible_for_production: "FR"
+          nationality: "FR"
+          name_of_series: "NAVAREA II"
+          series_number: "57"
+          warning_type: "(4) NAVAREA navigational warning"
+          year: "22"
+      - id: "ID12"
+        no_message_on_hand: false
+        reference_category: "In force (5)"
+        message_series_identifier:
+          agency_responsible_for_production: "FR"
+          nationality: "FR"
+          name_of_series: "NAVAREA II"
+          series_number: "46"
+          warning_type: "(4) NAVAREA navigational warning"
+          year: "22"
+      - id: "ID13"
+        no_message_on_hand: false
+        reference_category: "In force (5)"
+        message_series_identifier:
+          agency_responsible_for_production: "FR"
+          nationality: "FR"
+          name_of_series: "NAVAREA II"
+          series_number: "41"
+          warning_type: "(4) NAVAREA navigational warning"
+          year: "22"
+      - id: "ID14"
+        no_message_on_hand: false
+        reference_category: "In force (5)"
+        message_series_identifier:
+          agency_responsible_for_production: "FR"
+          nationality: "FR"
+          name_of_series: "NAVAREA II"
+          series_number: "40"
+          warning_type: "(4) NAVAREA navigational warning"
+          year: "22"
+      - id: "ID15"
+        no_message_on_hand: false
+        reference_category: "In force (5)"
+        message_series_identifier:
+          agency_responsible_for_production: "FR"
+          nationality: "FR"
+          name_of_series: "NAVAREA II"
+          series_number: "27"
+          warning_type: "(4) NAVAREA navigational warning"
+          year: "22"
+      - id: "ID16"
+        no_message_on_hand: false
+        reference_category: "In force (5)"
+        message_series_identifier:
+          agency_responsible_for_production: "FR"
+          nationality: "FR"
+          name_of_series: "NAVAREA II"
+          series_number: "20"
+          warning_type: "(4) NAVAREA navigational warning"
+          year: "22"
+      - id: "ID17"
+        no_message_on_hand: false
+        reference_category: "In force (5)"
+        message_series_identifier:
+          agency_responsible_for_production: "FR"
+          nationality: "FR"
+          name_of_series: "NAVAREA II"
+          series_number: "476"
+          warning_type: "(4) NAVAREA navigational warning"
+          year: "21"
+      - id: "ID19"
+        no_message_on_hand: false
+        reference_category: "In force (5)"
+        message_series_identifier:
+          agency_responsible_for_production: "FR"
+          nationality: "FR"
+          name_of_series: "NAVAREA II"
+          series_number: "251"
+          warning_type: "(4) NAVAREA navigational warning"
+          year: "21"
+      - id: "ID20"
+        no_message_on_hand: false
+        reference_category: "Cancellation (1)"
+        message_series_identifier:
+          agency_responsible_for_production: "FR"
+          nationality: "FR"
+          name_of_series: "NAVAREA II"
+          series_number: "67"
+          warning_type: "(4) NAVAREA navigational warning"
+          year: "22"
+
+  - cls_num: "3.19.2"
+    title: "Example 2 - No Warning Message"
+    message: |
+      NAVAREA XIII
+      SELF CANCELLING. NO NAVAREA XIII WARNINGS TO BROADCAST AT 282130 UTC JAN 22.
+    navwarn_preamble:
+      id: "ID00"
+      message_series_identifier:
+        agency_responsible_for_production: "RUXX"
+        nationality: "RU"
+        name_of_series: "NAVAREA XIII"
+        warning_type: "(5) NAVAREA no warning"
+      cancellation_date: "20220128T213000Z"
+      publication_time: "20220128T213000Z"
+      navwarn_type_general: true
+      int_service: true
+    navwarn_references:
+      the_warning_role: "ID00"
+      the_references_role: "ID01"
+    references:
+      - id: "ID01"
+        message_series_identifier:
+          agency_responsible_for_production: "RUXX"
+          nationality: "RU"
+          name_of_series: "NAVAREA XIII"
+          warning_type: "(5) NAVAREA no warning"
+        no_message_on_hand: true
+
+  - cls_num: "3.19.3"
+    title: "Example 3 - Cancellation Message"
+    message: |
+      NAVAREA VII 126/22
+      CANCEL NAVAREA VII 100/22 AND THIS MSG, BAIXO RIBEIRO LIGHT, NORMAL CONDITIONS RESTORED.
+    navwarn_preamble:
+      id: "ID00"
+      message_series_identifier:
+        agency_responsible_for_production: "ZAXX"
+        nationality: "ZA"
+        name_of_series: "NAVAREA VII"
+        series_number: "126"
+        warning_type: "(4) NAVAREA navigational warning"
+        year: "2022"
+      cancellation_date: "20220622T183500Z"
+      publication_time: "20220622T183500Z"
+      int_service: true
+    navwarn_preamble_content:
+      header_role: "ID00"
+      the_warning_part_role: "ID01"
+    navwarn_references:
+      the_warning_role: "ID00"
+      the_references_role: "ID02"
+    navwarn_parts:
+      - id: "ID01"
+        warning_information:
+          information:
+            language: "eng"
+            text: "BAIXO RIBEIRO LIGHT, NORMAL CONDITIONS RESTORED."
+    references:
+      - id: "ID02"
+        no_message_on_hand: false
+        reference_category: "(1) Warning cancellation"
+        message_series_identifier:
+          agency_responsible_for_production: "ZAXX"
+          nationality: "ZA"
+          name_of_series: "NAVAREA VII"
+          series_number: "100"
+          warning_type: "(4) NAVAREA navigational warning"
+          year: "2022"
+
+  - cls_num: "3.19.4"
+    title: "Example 4 - Space Weather"
+    message: |
+      NAVAREA IV 43/22.
+      SPACE WEATHER.
+      1. STRONG SOLAR RADIATION STORM IN PROGRESS UNTIL 081000 UTC MAR 2022. RADIO AND SATELLITE NAVIGATION SERVICES MAY BE AFFECTED.
+      2. CANCEL THIS MSG 081100 UTC MAR 2022.
+    navwarn_preamble:
+      id: "ID00"
+      message_series_identifier:
+        agency_responsible_for_production: "USXX"
+        nationality: "US"
+        name_of_series: "NAVAREA IV"
+        series_number: "43"
+        warning_type: "(4) NAVAREA navigational warning"
+        year: "2022"
+      cancellation_date: "20220308T110000Z"
+      publication_time: "20220305T020000Z"
+      navwarn_type_general: "Other hazards"
+      int_service: true
+    navwarn_preamble_content:
+      header_role: "ID00"
+      the_warning_part_role: "ID01"
+    area_affected:
+      impacts_role: "ID01"
+      affects_role: "ID02"
+    navwarn_parts:
+      - id: "ID01"
+        fixed_date_range:
+          - date_end: "20220308"
+            date_start: "20220305"
+            time_of_day_end: "110000Z"
+            time_of_day_start: "020000Z"
+        warning_information:
+          information:
+            language: "eng"
+            text: "STRONG SOLAR RADIATION STORM IN PROGRESS. RADIO AND SATELLITE NAVIGATION SERVICES MAY BE AFFECTED."
+          navwarn_type_details: |
+            "other" space weather
+    navwarn_area_affected:
+      - id: "ID02"
+        geometry:
+          - "POLYGON (SURFACE): Bounding box to include the entirety of NAVAREA IV"

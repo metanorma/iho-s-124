@@ -1,0 +1,245 @@
+{% for nw in nav.navigational_warnings %}
+[[cls-A-{{ nw.cls_num }}]]
+==== {{ nw.title }}
+
+.{{ nw.title }}
+[cols="1a,3a",options=header]
+|===
+| Message element | {{ nw.title }}
+| . Message series identifier
+.8+| 
+[source%unnumbered]
+-----
+{{ nw.message }}
+-----
+| [start=2]
+. General area
+| [start=3]
+. Locality
+| [start=4]
+. Chart number
+| [start=5]
+. Key subject
+| [start=6]
+. Geographical position
+| [start=7]
+. Amplifying remarks
+| [start=8]
+. Cancellation details
+|===
+
+[%unnumbered,cols="a,a,a,a,a",options=noheader]
+|===
+{% assign p = nw.navwarn_preamble %}
+
+{% assign preamble_rows = 7 %}
+{% if p.locality %}
+{% assign preamble_rows = preamble_rows | plus: 3 %}
+{% endif %}
+{% if p.cancellation_date %}
+{% assign preamble_rows = preamble_rows | plus: 1 %}
+{% endif %}
+{% if p.navwarn_title %}
+{% assign preamble_rows = preamble_rows | plus: 1 %}
+{% endif %}
+{% if p.affected_chart_publications %}
+{% assign preamble_rows = preamble_rows | plus: 5 %}
+{% endif %}
+.{{ preamble_rows }}+| *NAVWARNPreamble ({{ p.id }})*
+
+.3+| *generalArea*
+2+| localityIdentifier
+|
+2.2+| *locationName*
+| language: {{ p.general_area.location_name.language }}
+| text: {{ p.general_area.location_name.text }}
+
+{% if p.locality %}
+.3+| locality
+2+| localityIdentifier
+|
+2.2+| *locationName*
+| language: {{ p.locality.location_name.language }}
+| text: {{ p.locality.location_name.text }}
+{% endif %}
+
+| *messageSeriesIdentifier*
+3+| *agencyResponsibleForProduction*: {{ p.message_series_identifier.agency_responsible_for_production }}
+
+nationality: {{ p.message_series_identifier.nationality }}
+
+*nameOfSeries*: {{ p.message_series_identifier.name_of_series }}
+
+interoperabilityidentifier:
+
+*nameOfSeries*: {{ p.message_series_identifier.series_number }}
+
+*warningType*: {{ p.message_series_identifier.warning_type }}
+
+*year*: {{ p.message_series_identifier.year }}
+
+{% if p.affected_chart_publications %}
+.5+| affectedChartPublications
+2+| chartAffected: {{ p.affected_chart_publications.chart_affected }}
+| chartNumber:
+
+chartPlanNumber:
+
+editionDate:
+
+lastNoticeDate:
+3+| chartPublicationIdentifier:
+3+| internationalChartAffected:
+3+| language: {{ p.affected_chart_publications.language }}
+3+| publicationsAffected:
+{% endif %}
+
+{% if p.cancellation_date %}
+| *cancellationDate*
+3+| {{ p.cancellation_date }}
+{% endif %}
+
+{% if p.navwarn_title %}
+| navwarnTitle
+3+| language: {{ p.navwarn_title.language }}
+
+text: {{ p.navwarn_title.text }}
+{% endif %}
+
+| *publicationTime*
+3+| {{ p.publication_time }}
+
+| *navwarnTypeGeneral*:
+3+| {{ p.navwarn_type_general }}
+
+| *intService*:
+3+| {{ p.int_service }}
+
+{% assign c = nw.navwarn_preamble_content %}
+.2+| NAVWARNPreambleContent
+| header (role)
+3+| {{ c.header_role }}
+| theWarningPart (role)
+3+| {{ c.the_warning_part_role }}
+
+{% if nw.navwarn_references %}
+.2+| NAVWARNReferences
+| theWarning (role)
+3+| {{ nw.navwarn_references.the_warning_role }}
+| theReferences (role)
+3+| {{ nw.navwarn_references.the_references_role }}
+{% endif %}
+
+{% assign a = nw.area_affected %}
+{% if a %}
+.2+| AreaAffected
+| impacts (role)
+3+| {{ a.impacts_role }}
+| affects (role)
+3+| {{ a.affects_role }}
+{% endif %}
+
+{% for part in nw.navwarn_parts %}
+{% assign row_count = 3 | plus: part.fixed_date_range.size %}
+{% assign row_count = row_count | plus: part.geometry.size %}
+{% if part.feature_reference %}
+{% assign row_count = row_count | plus: 1 %}
+{% endif %}
+{% if part.restriction %}
+{% assign row_count = row_count | plus: 1 %}
+{% endif %}
+{% if part.feature_name %}
+{% assign row_count = row_count | plus: 1 %}
+{% endif %}
+.{{ row_count }}+| NAVWARNPart ({{ part.id }})
+
+{% if part.feature_name %}
+| featureName
+3+| language: {{ part.feature_name.language }}
+
+name: {{ part.feature_name.name }}
+
+nameUsage: {{ part.feature_name.name_usage }}
+{% endif %}
+
+{% for fdr in part.fixed_date_range %}
+| fixedDateRange
+3+| dateEnd: {{ fdr.date_end }}
+
+dateStart: {{ fdr.date_start }}
+
+timeofDayEnd: {{ fdr.time_of_day_end }}
+
+timeofDayStart: {{ fdr.time_of_day_start }}
+{% endfor %}
+
+{% if part.feature_reference %}
+| featureReference
+3+|
+{% if part.feature_reference.aton_number %}
+AtoNNumber: {{ part.feature_reference.aton_number }}
+{% endif %}
+
+FeatureIdentifier: {{ part.feature_reference.feature_identifier }}
+
+{% if part.feature_reference.enc_feature_reference %}
+ENCFeatureReference: {{ part.feature_reference.enc_feature_reference }}
+{% endif %}
+{% endif %}
+
+.3+| *warningInformation*
+.2+| information:
+2+| language: {{ part.warning_information.information.language }}
+2+| text: {{ part.warning_information.information.text }}
+3+| navwarnTypeDetails: {{ part.warning_information.navwarn_type_details }}
+
+{% for geo in part.geometry %}
+| geometry
+3+| {{ geo }}
+{% endfor %}
+
+{% if part.restriction %}
+| restriction
+3+| {{ part.restriction }}
+{% endif %}
+{% endfor %}
+
+{% for area in nw.navwarn_area_affected %}
+.{{ area.geometry.size }}+| NAVAWARNAreaAffected ({{ area.id }})
+{% for geo in area.geometry %}
+| geometry
+3+| {{ geo }}
+{% endfor %}
+{% endfor %}
+
+{% for reference in nw.references %}
+.3+| References ({{ reference.id }})
+| messageSeriesIdentifier
+3+| agencyResponsibleForProduction: {{ reference.message_series_identifier.agency_responsible_for_production }}
+
+nationality: {{ reference.message_series_identifier.nationality }}
+
+nameOfSeries: {{ reference.message_series_identifier.name_of_series }}
+
+interoperabilityidentifier:
+
+nameOfSeries: {{ reference.message_series_identifier.series_number }}
+
+warningType: {{ reference.message_series_identifier.warning_type }}
+
+year: {{ reference.message_series_identifier.year }}
+| noMessageOnHand
+3+| {{ reference.no_message_on_hand }}
+| referenceCategory
+3+| {{ reference.reference_category }}
+{% endfor %}
+|===
+
+{% if nw.note %}
+[NOTE,keep-separate=true]
+====
+{{ nw.note }}
+====
+{% endif %}
+
+{% endfor %}

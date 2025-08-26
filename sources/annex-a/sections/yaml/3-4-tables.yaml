@@ -1,0 +1,202 @@
+---
+navigational_warnings:
+  - cls_num: "3.4.1"
+    title: "Example 1 -- Unwieldy Tow"
+    message: |
+      NAVAREA II 465/21
+      PORTUGAL TO SPAIN.
+      OFF CAPE FINISTERRE.
+      CHART _________ (INT ___________ ).
+      TOWING OPERATIONS IN PROGRESS BY TUG EEMS TOWING
+      M/V ANGON FROM LEIXOES TO VILLAGARCIA, LENGTH OF TOW
+      400 METRES ALONG LINE JOINING
+      38-22.60N 009-38.20W, 40-20.65N 010-03.88W,
+      42-12.87N 008-56.44W.
+      WIDE BERTH REQUESTED.
+    navwarn_preamble:
+      id: "ID00"
+      general_area:
+        location_name:
+          language: "eng"
+          text: "PORTUGAL TO SPAIN"
+      locality:
+        location_name:
+          language: "eng"
+          text: "OFF CAPE FINISTERRE"
+      message_series_identifier:
+        agency_responsible_for_production: "FRXX"
+        nationality: "FR"
+        name_of_series: "NAVAREA II"
+        series_number: "465"
+        warning_type: "(4) NAVAREA navigational warning"
+        year: "21"
+      publication_time: "20210101T000000Z"
+      navwarn_type_general: "Towing operations"
+      int_service: true
+    navwarn_preamble_content:
+      header_role: "ID00"
+      the_warning_part_role: "ID01"
+    navwarn_parts:
+      - id: "ID01"
+        warning_information:
+          information:
+            language: "eng"
+            text: "TUGE EEMS TOWING M/V ANGON, LENGTH OF TOW 400 METRES"
+          navwarn_type_details: "unwieldy tow"
+        geometry:
+          - "Curve 38-22.60N 009-38.20W, 40-20.65N 010-03.88W42-12.87N 008-56.44W."
+
+  - cls_num: "3.4.2"
+    title: "Example 2 -- Drill Rig Under Tow"
+    message: |
+      NAVAREA VII 342/21
+      SOUTH ATLANTIC OCEAN.
+      SOUTH AFRICA TO SENEGAL.
+      CHART _________ (INT ___________ ).
+      TUG SEA ALFA TOWING DRILL RIG PETROBRAS 2000.DEPARTS CAPE TOWN 34-52.45S 018-29.45E DESTINATION DAKAR 18-16.00S 004-28.00E. LENGTH OF TOW 500 METRES. WIDE BERTH REQUESTED
+    note: This S-53 warning does not contain enough geographic information to properly portray the trackline of this tow. These two positions are not sufficient and if shown as a curve would go through land. In this example positions were added to the curve to approximate the trackline.
+    navwarn_preamble:
+      id: "ID00"
+      general_area:
+        location_name:
+          language: "eng"
+          text: "SOUTH ATLANTIC OCEAN"
+      locality:
+        location_name:
+          language: "eng"
+          text: "SOUTH AFRICA TO SENEGAL"
+      message_series_identifier:
+        agency_responsible_for_production: "ZAXX"
+        nationality: "ZA"
+        name_of_series: "NAVAREA VII"
+        series_number: "342"
+        warning_type: "(4) NAVAREA navigational warning"
+        year: "21"
+      publication_time: "20210101T000000Z"
+      navwarn_type_general: "Towing operations"
+      int_service: true
+    navwarn_preamble_content:
+      header_role: "ID00"
+      the_warning_part_role: "ID01"
+    navwarn_parts:
+      - id: "ID01"
+        warning_information:
+          information:
+            language: "eng"
+            text: "TUGE SEA ALFA TOWING DRILL RIG PETROBRAS 200. LENGTH OF TOW 500 METRES."
+          navwarn_type_details: "drill ring under tow"
+        geometry:
+          - "Curve 34-52.45S 018-29.45E, 3-50.03N 17-14.53W, 42-12.87N 008-56.44W."
+
+  - cls_num: "3.4.3"
+    title: "Example 3 -- Drill Rig Under Tow with Trackline"
+    message: |
+      NAVAREA XIII 54/21
+      SEA OF JAPAN.
+      PROLIV LAPERUZA AND SAKHALIN NORTH EAST COAST.
+      CHART _________ (INT ___________ ).
+      TUG TOWING DRILLING RIG PA-B 04 ON 18 JUN 2021 ALONG
+      LINE JOINING
+      34-58.10N 128-48.35E, 52-55.90N 143-29.95E,
+      45-43.00N 141-58.02E, 45-45.00N 142-30.00E,
+      45-49.00N 143-19.00E, 45-55.00N 143-40.00E,
+      52-52.00N 143-39.53E.
+      LENGTH OF TOW 1000 METRES SPEED 4.2 KNOTS.
+      ONE MILE BERTH REQUESTED.
+    navwarn_preamble:
+      id: "ID00"
+      general_area:
+        location_name:
+          language: "eng"
+          text: "SEA OF JAPAN"
+      locality:
+        location_name:
+          language: "eng"
+          text: "PROLIV LAPERUZA AND SAKHALIN NORTH EAST COAST."
+      message_series_identifier:
+        agency_responsible_for_production: "RUXX"
+        nationality: "RU"
+        name_of_series: "NAVAREA XIII"
+        series_number: "51"
+        warning_type: "(4) NAVAREA navigational warning"
+        year: "21"
+      publication_time: "20210101T000000Z"
+      navwarn_type_general: "Towing operations"
+      int_service: true
+    navwarn_preamble_content:
+      header_role: "ID00"
+      the_warning_part_role: "ID01"
+    area_affected:
+      impacts_role: "ID01"
+      affects_role: "ID02"
+    navwarn_parts:
+      - id: "ID01"
+        warning_information:
+          information:
+            language: "eng"
+            text: "TUG TOWING DRILLING RIG PA-B 04"
+          navwarn_type_details: "drill ring under tow"
+        geometry:
+          - "Curve 34-58.10N 128-48.35E, 52-55.90N 143-29.95E,45-43.00N 141-58.02E, 45-45.00N 142-30.00E,45-49.00N 143-19.00E, 45-55.00N 143-40.00E,52-52.00N 143-39.53E."
+        fixed_date_range:
+          - date_start: "20210618"
+            time_of_day_start: "000001Z"
+    navwarn_area_affected:
+      - id: "ID02"
+        geometry:
+          - "One Mile Radius from curve 34-58.10N 128-48.35E, 52-55.90N 143-29.95E,45-43.00N 141-58.02E, 45-45.00N 142-30.00E,45-49.00N 143-19.00E, 45-55.00N 143-40.00E,52-52.00N 143-39.53E."
+
+  - cls_num: "3.4.4"
+    title: "Example 4 -- Tow with positional update"
+    message: |
+      NAVAREA I 219/21 ENGLISH CHANNEL.
+      DOVER STRAIT AND AT WEST HINDER TSS.
+            CHART _________ (INT ___________ ).
+      1. ALP DEFENDER TOWING MV SPIEGELGRACHT FROM LYME BAY, ENGLAND TO ZEEBRUGGE, BELGIUM IN VICINITY OF LINE JOINING
+      50-10.1N 002-22.0W, 50-01.6N 002-17.1W,
+      50-27.8N 000-58.9E, 50-40.1N 001-20.9E,
+      50-54.1N 001-29.1E, 51-06.9N 001-47.7E,
+      51-22.0N 002-29.9E, 51-22.0N 002-40.7E,
+      51-25.3N 002-48.7E.
+      LENGTH OF TOW 800 METRES.
+      2. ALP DEFENDER IN 50-40.1N 001-20.9E AT 020200 UTC DEC 2021.
+    navwarn_preamble:
+      id: "ID00"
+      general_area:
+        location_name:
+          language: "eng"
+          text: "ENGLISH CHANNEL"
+      locality:
+        location_name:
+          language: "eng"
+          text: "DOVER STRAIT AND AT WEST HINDER TSS"
+      message_series_identifier:
+        agency_responsible_for_production: "UKXX"
+        nationality: "UK"
+        name_of_series: "NAVAREA I"
+        series_number: "219"
+        warning_type: "(4) NAVAREA navigational warning"
+        year: "21"
+      publication_time: "20210101T000000Z"
+      navwarn_type_general: "Towing operations"
+      int_service: true
+    navwarn_preamble_content:
+      header_role: "ID00"
+      the_warning_part_role: "ID01, ID02"
+    navwarn_parts:
+      - id: "ID01"
+        warning_information:
+          information:
+            language: "eng"
+            text: "ALP DEFENDER TOWING MV SPIEGELGRACHT"
+          navwarn_type_details: "drill ring under tow"
+        geometry:
+          - "Curve 50-10.1N 002-22.0W, 50-01.6N 002-17.1W,50-27.8N 000-58.9E, 50-40.1N 001-20.9E,50-54.1N 001-29.1E, 51-06.9N 001-47.7E,51-22.0N 002-29.9E, 51-22.0N 002-40.7E,51-25.3N 002-48.7E."
+      - id: "ID02"
+        warning_information:
+          information:
+            language: "eng"
+            text: "ALP Defender at 020200 UTC DEC 2021"
+          navwarn_type_details: "drill ring under tow"
+        geometry:
+          - "Point 50-40.1N 001-20.9E"

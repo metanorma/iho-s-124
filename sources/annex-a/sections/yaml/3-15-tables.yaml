@@ -1,0 +1,187 @@
+---
+navigational_warnings:
+  - cls_num: "3.15.1"
+    title: "Example 1 -- Armed Robbery"
+    message: |
+      NAVAREA XVI 306/22
+      PERU.
+      CALLAO ANCHORAGE.
+      ARMED ROBBERY.
+      1. M/V AT ANCHOR BOARDED BY SEVEN ARMED ROBBERS
+      IN 12-01.05S 077-11.37W AT 280710 UTC JAN 2022.
+      ROBBERS ATTACKED CREW, STOLE SHIP PROPERTY
+      AND ESCAPED. VESSELS ARE ADVISED TO KEEP CLEAR
+      OF THIS POSITION AND TO EXERCISE EXTREME CAUTION.
+      REPORTS TO IMB PIRACY REPORTING CENTER,
+      PHONE: 603 2031 0014, 603 2078 5763,
+      FAX: 603 2078 5769,
+      E-MAIL: IMBKL@ICC-CCS.ORG, PIRACY@ICC-CCS.ORG.
+      2. CANCEL THIS MSG 040710 UTC FEB 2022.
+    note: 5NM radius for area to be avoided
+    navwarn_preamble:
+      id: "ID00"
+      general_area:
+        location_name:
+          language: "eng"
+          text: "PERU"
+      locality:
+        location_name:
+          language: "eng"
+          text: "CALLAO ANCHORAGE"
+      message_series_identifier:
+        agency_responsible_for_production: "PEXX"
+        nationality: "PE"
+        name_of_series: "NAVAREA XVI"
+        series_number: "306"
+        warning_type: "(4) NAVAREA navigational warnings"
+        year: "2022"
+      cancellation_date: "20220204T071000Z"
+      publication_time: "20220204T051000Z"
+      navwarn_type_general: "Piracy or robbery"
+      int_service: true
+    navwarn_preamble_content:
+      header_role: "ID00"
+      the_warning_part_role: "ID01"
+    area_affected:
+      impacts_role: "ID02"
+      affects_role: "ID01"
+    navwarn_parts:
+      - id: "ID01"
+        fixed_date_range:
+          - date_start: "20220128"
+            time_of_day_start: "071000Z"
+        warning_information:
+          information:
+            language: "eng"
+            text: "M/V AT ANCHOR BOARDED BY SEVEN ARMED ROBBERS AT 280710 UTC JAN 2022. ROBBERS ATTACKED CREW, STOLE SHIP PROPERTY AND ESCAPED. VESSELS ARE ADVISED TO KEEP CLEAR OF THIS POSITION AND TO EXERCISE EXTREME CAUTION.REPORTS TO IMB PIRACY REPORTING CENTER, PHONE: 603 2031 0014, 603 2078 5763, FAX: 603 2078 5769, E-MAIL: IMBKL@ICC-CCS.ORG, PIRACY@ICC-CCS.ORG."
+        geometry:
+          - "Point: 12-01.05S 077-11.37W"
+        restriction: "(14) area to be avoided"
+    navwarn_area_affected:
+      - id: "ID02"
+        geometry:
+          - "Circle by Center Point 12-01.05S 077-11.37W, RADIUS 5NM"
+
+  - cls_num: "3.15.2"
+    title: "Example 2 - Piracy"
+    message: |
+      NAVAREA II 223/21
+      GULF OF GUINEA.
+      NIGERIA.
+      ACT OF PIRACY.
+      1. M/V ATTACKED IN 02-49N 002-31E AT 061700 UTC JUN
+      2021.
+      VESSELS ARE ADVISED TO KEEP CLEAR OF THIS
+      POSITION AND TO EXERCISE EXTREME CAUTION.
+      REPORT TO MDAT-GOG,
+      PHONE: +33 2 98 22 88 88
+      E-MAIL: WATCHKEEPERS@MDAT-GOG.ORG
+      2. CANCEL THIS MSG 091930 UTC JUN 2021.
+    note: 5NM radius for area to be avoided
+    navwarn_preamble:
+      id: "ID00"
+      general_area:
+        location_name:
+          language: "eng"
+          text: "GULF OF GUINEA"
+      locality:
+        location_name:
+          language: "eng"
+          text: "NIGERIA"
+      message_series_identifier:
+        agency_responsible_for_production: "FRXX"
+        nationality: "FR"
+        name_of_series: "NAVAREA II"
+        series_number: "223"
+        warning_type: "(4) NAVAREA navigational warnings"
+        year: "2021"
+      cancellation_date: "20210609T193000Z"
+      publication_time: "20210606T150000Z"
+      navwarn_type_general: "Piracy or robbery"
+      int_service: true
+    navwarn_preamble_content:
+      header_role: "ID00"
+      the_warning_part_role: "ID01"
+    area_affected:
+      impacts_role: "ID01"
+      affects_role: "ID02"
+    navwarn_parts:
+      - id: "ID01"
+        fixed_date_range:
+          - date_start: "20210606"
+            time_of_day_start: "170000Z"
+        warning_information:
+          information:
+            language: "eng"
+            text: "M/V ATTACKED AT 061700 UTC JUN 2021. VESSELS ARE ADVISED TO KEEP CLEAR OF THIS POSITION AND TO EXERCISE EXTREME CAUTION. REPORT TO MDAT-GOG, PHONE: +33 2 98 22 88 88 E-MAIL: WATCHKEEPERS@MDAT-GOG.ORG"
+          navwarn_type_details:
+        geometry:
+          - "Point 02-49N 002-31E"
+        restriction: "(14) area to be avoided"
+    navwarn_area_affected:
+      - id: "ID02"
+        geometry:
+          - "Circle by Center Point 02-49N 002-31E, RADIUS 5NM"
+
+  - cls_num: "3.15.3"
+    title: "Example 3 -- Piracy (Kidnapping)"
+    message: |
+      NAVAREA II 2031/20
+      GULF OF GUINEA.
+      NIGERIA.
+      OFF BAYELSA.
+      ACT OF PIRACY.
+      1. M/V ATTACKED BY PIRATES IN 04-28.15N 005-31.17E
+      AT 261258 UTC NOV 2020. TEN PERSONS KIDNAPPED.
+      VESSELS ARE ADVISED TO KEEP CLEAR OF THIS
+      POSITION AND TO EXERCISE EXTREME CAUTION.
+      REPORTS TO IMB PIRACY REPORTING CENTER,
+      PHONE: 603 2031 0014, 603 2078 5763,
+      FAX: 603 2078 5769,
+      E-MAIL: IMBKL@ICC-CCS.ORG, PIRACY@ICC-CCS.ORG.
+      2. CANCEL THIS MSG 291200 UTC NOV 2020.
+    note: 5NM radius for area to be avoided
+    navwarn_preamble:
+      id: "ID00"
+      general_area:
+        location_name:
+          language: "eng"
+          text: "GULF OF GUINEA"
+      locality:
+        location_name:
+          language: "eng"
+          text: "NIGERIA"
+      message_series_identifier:
+        agency_responsible_for_production: "FRXX"
+        nationality: "FR"
+        name_of_series: "NAVAREA II"
+        series_number: "2031"
+        warning_type: "(4) NAVAREA navigational warnings"
+        year: "2020"
+      cancellation_date: "20201129T120000Z"
+      publication_time: "20201126T135800Z"
+      navwarn_type_general: "Piracy or robbery"
+      int_service: true
+    navwarn_preamble_content:
+      header_role: "ID00"
+      the_warning_part_role: "ID01"
+    area_affected:
+      impacts_role: "ID01"
+      affects_role: "ID02"
+    navwarn_parts:
+      - id: "ID01"
+        fixed_date_range:
+          - date_start: "20201126"
+            time_of_day_start: "125800Z"
+        warning_information:
+          information:
+            language: "eng"
+            text: "M/V ATTACKED BY PIRATES IN AT 261258 UTC NOV 2020. TEN PERSONS KIDNAPPED. VESSELS ARE ADVISED TO KEEP CLEAR OF THIS POSITION AND TO EXERCISE EXTREME CAUTION. REPORTS TO IMB PIRACY REPORTING CENTER, PHONE: 603 2031 0014, 603 2078 5763, FAX: 603 2078 5769, E-MAIL: IMBKL@ICC-CCS.ORG, PIRACY@ICC-CCS.ORG."
+          navwarn_type_details:
+        geometry:
+          - "Point 04-28.15N 005-31.17E"
+        restriction: "(14) area to be avoided"
+    navwarn_area_affected:
+      - id: "ID02"
+        geometry:
+          - "Circle by Center Point 04-28.15N 005-31.17E, RADIUS 5NM"
