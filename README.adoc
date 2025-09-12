@@ -1,6 +1,6 @@
 //image::./sources/3.0.0/images/figure-s124-logo.svg[S124_logo__signalFlagsSpellingS124,248,120]
 
-= IHO S-124 Bathymetric Surface Product Specification
+= IHO S-124 Navigational Warnings Product Specification
 
 //image:https://github.com/metanorma/S-124-Product-Specification/actions/workflows/generate.yml/badge.svg["Build Status", link="https://github.com/metanorma/S-124-Product-Specification/actions/workflows/generate.yml"]
 
@@ -11,7 +11,7 @@ This document is available in its rendered forms here:
 == Purpose
 
 This is the IHO repository for developing the next edition of
-the S-124 Bathymetric Surface Product Specification.
+the S-124 Navigational Warnings Product Specification.
 
 WARNING: The contents of this repository are in draft form and are not necessarily in force yet.
 Please refer to the final version published on the official
