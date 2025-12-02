@@ -10,7 +10,10 @@
 
 === document history
 
+[.boilerplate]
+--
 Changes to this Product Specification are coordinated by the IHO World-Wide Navigational Warning Service Sub-Committee (WWNWS-SC). New editions will be made available via the IHO web site. Maintenance of the Product Specification shall conform to IHO Technical Resolution 2/2007 (as amended).
+--
 
 [source,yaml]
 ----
